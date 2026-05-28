@@ -51,7 +51,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
               <Link
-                href="/course/bcom"
+                href="#courses"
                 className="bg-indigo-600 text-white px-5 py-3 rounded-xl text-center"
               >
                 Explore Courses
@@ -70,7 +70,10 @@ export default function HomePage() {
 
         </section>
 
-        <section className="max-w-6xl mx-auto px-4 pb-16">
+        <section
+          id="courses"
+          className="max-w-6xl mx-auto px-4 pb-16"
+        >
 
           <h2 className="text-2xl font-bold">
             Popular Courses
