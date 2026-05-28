@@ -12,19 +12,28 @@ type CoursePageProps = {
 
 export default function CoursePage({ params }: CoursePageProps) {
   const courseName = params?.slug
-    ? params.slug.replaceAll("-", " ").toUpperCase()
+    ? params.slug
+        .replaceAll("-", " ")
+        .replaceAll("plus", "+")
+        .replaceAll("and", "&")
+        .toUpperCase()
     : "COURSE";
 
-  const courseSlug = params?.slug || "bcom-hons";
+  const courseSlug = params?.slug || "bcom";
 
   return (
     <>
       <Navbar />
 
       <main className="min-h-screen bg-slate-50">
+
         <div className="max-w-6xl mx-auto px-4 py-10">
 
-          <h1 className="text-4xl font-bold text-indigo-600">
+          <p className="text-sm font-semibold text-indigo-600">
+            Select Semester
+          </p>
+
+          <h1 className="text-4xl font-bold text-gray-900 mt-2">
             {courseName}
           </h1>
 
@@ -44,7 +53,9 @@ export default function CoursePage({ params }: CoursePageProps) {
               >
 
                 <div className="bg-indigo-100 w-fit p-3 rounded-xl">
+
                   <Layers className="text-indigo-600" />
+
                 </div>
 
                 <h2 className="text-xl font-semibold mt-5">
@@ -66,6 +77,7 @@ export default function CoursePage({ params }: CoursePageProps) {
           </div>
 
         </div>
+
       </main>
 
       <Footer />
