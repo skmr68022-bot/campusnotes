@@ -29,17 +29,12 @@ export default function CoursePage({ params }: CoursePageProps) {
 
         <div className="max-w-6xl mx-auto px-4 py-10">
 
-          <p className="text-sm font-semibold text-indigo-600">
+          <h1 className="text-4xl font-bold text-indigo-600">
             Select Semester
-          </p>
-
-          <h1 className="text-4xl font-bold text-gray-900 mt-2">
-            {courseName}
           </h1>
 
-          <p className="text-gray-600 mt-3 max-w-2xl">
-            Browse semester-wise subject compilations including syllabus,
-            notes and previous year questions.
+          <p className="text-gray-600 mt-3">
+            {courseName}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
