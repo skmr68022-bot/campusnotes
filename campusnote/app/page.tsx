@@ -3,14 +3,26 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const courses = [
-  "B.Com Hons",
-  "B.Com Program",
-  "BMS",
+  "B.Com",
+  "B.Com (Hons.)",
+  "B.A. Programme",
+  "B.A. (Hons.) English",
+  "B.A. (Hons.) Political Science",
+  "B.A. (Hons.) History",
+  "B.A. (Hons.) Economics",
+  "B.A. (Hons.) Psychology",
+  "B.Sc. (Hons.) Computer Science",
+  "B.Sc. Physical Sciences",
+  "B.Sc. Life Sciences",
+  "B.Sc. (Hons.) Mathematics",
+  "B.Sc. (Hons.) Chemistry",
+  "B.Sc. (Hons.) Physics",
+  "B.A. Programme (History + Political Science)",
+  "B.A. Programme (English + Political Science)",
+  "B.A. Programme (English + Economics)",
+  "BMS (Bachelor of Management Studies)",
   "BBA FIA",
-  "BA Program",
-  "English Hons",
-  "Political Science Hons",
-  "Economics Hons",
+  "B.A. (Hons.) Journalism & Mass Communication",
 ];
 
 export default function HomePage() {
@@ -19,8 +31,11 @@ export default function HomePage() {
       <Navbar />
 
       <main className="min-h-screen bg-slate-50">
+
         <section className="max-w-6xl mx-auto px-4 py-16">
+
           <div className="bg-white border rounded-3xl p-8 md:p-12 shadow-sm">
+
             <p className="text-sm font-semibold text-indigo-600">
               For Delhi University Students
             </p>
@@ -34,8 +49,9 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
+
               <Link
-                href="/course/bcom-hons"
+                href="/course/bcom"
                 className="bg-indigo-600 text-white px-5 py-3 rounded-xl text-center"
               >
                 Explore Courses
@@ -47,26 +63,40 @@ export default function HomePage() {
               >
                 Browse Notes
               </Link>
+
             </div>
+
           </div>
+
         </section>
 
         <section className="max-w-6xl mx-auto px-4 pb-16">
+
           <h2 className="text-2xl font-bold">
             Popular Courses
           </h2>
 
           <p className="text-gray-600 mt-2">
-            Choose your course and start browsing semester-wise resources.
+            Choose your course and browse semester-wise resources.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
+
             {courses.map((course) => (
+
               <Link
                 key={course}
-                href={`/course/${course.toLowerCase().replaceAll(" ", "-")}`}
+                href={`/course/${course
+                  .toLowerCase()
+                  .replaceAll(" ", "-")
+                  .replaceAll(".", "")
+                  .replaceAll("(", "")
+                  .replaceAll(")", "")
+                  .replaceAll("+", "plus")
+                  .replaceAll("&", "and")}`}
                 className="bg-white border rounded-2xl p-5 shadow-sm hover:shadow-md transition"
               >
+
                 <h3 className="font-semibold text-lg">
                   {course}
                 </h3>
@@ -78,27 +108,35 @@ export default function HomePage() {
                 <p className="text-indigo-600 text-sm mt-5">
                   Explore →
                 </p>
+
               </Link>
+
             ))}
+
           </div>
+
         </section>
 
         <section className="max-w-6xl mx-auto px-4 pb-16">
+
           <h2 className="text-2xl font-bold">
             How It Works
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-6">
+
             {[
               "Select Course",
               "Select Semester",
               "Purchase Subject Compilation",
               "Access Notes + PYQs + Syllabus",
             ].map((step, index) => (
+
               <div
                 key={step}
                 className="bg-white border rounded-2xl p-5 shadow-sm"
               >
+
                 <p className="text-indigo-600 font-bold">
                   Step {index + 1}
                 </p>
@@ -106,10 +144,15 @@ export default function HomePage() {
                 <h3 className="font-semibold mt-3">
                   {step}
                 </h3>
+
               </div>
+
             ))}
+
           </div>
+
         </section>
+
       </main>
 
       <Footer />
