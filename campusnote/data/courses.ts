@@ -78,22 +78,71 @@ export const courses: Course[] = [
         number: 1,
         subjects: [
           createSubject("bcom", 1, "Financial Accounting", "financial-accounting"),
-          createSubject("bcom", 1, "Business Law", "business-law"),
-          createSubject("bcom", 1, "Business Economics", "business-economics"),
-          createSubject("bcom", 1, "Computer Applications", "computer-applications"),
+          createSubject("bcom", 1, "Business Organisation and Management", "business-organisation-and-management"),
         ],
       },
       {
         number: 2,
         subjects: [
-          createSubject("bcom", 2, "Corporate Accounting", "corporate-accounting"),
-          createSubject("bcom", 2, "Company Law", "company-law"),
-          createSubject("bcom", 2, "Business Mathematics", "business-mathematics"),
-          createSubject("bcom", 2, "Income Tax Law", "income-tax-law"),
+          createSubject("bcom", 2, "Business Laws", "business-laws"),
+          createSubject("bcom", 2, "Business Mathematics and Statistics", "business-mathematics-and-statistics"),
+        ],
+      },
+      {
+        number: 3,
+        subjects: [
+          createSubject("bcom", 3, "Company Law", "company-law"),
+          createSubject("bcom", 3, "Income Tax Law and Practice", "income-tax-law-and-practice"),
+          createSubject("bcom", 3, "Computer Applications in Business", "computer-applications-in-business"),
+          createSubject("bcom", 3, "Cyber Crimes and Laws", "cyber-crimes-and-laws"),
+        ],
+      },
+      {
+        number: 4,
+        subjects: [
+          createSubject("bcom", 4, "Corporate Accounting", "corporate-accounting"),
+          createSubject("bcom", 4, "Cost Accounting", "cost-accounting"),
+          createSubject("bcom", 4, "E-Commerce", "e-commerce"),
+          createSubject("bcom", 4, "Investing in Stock Markets", "investing-in-stock-markets"),
+          createSubject("bcom", 4, "Personal Tax Planning", "personal-tax-planning"),
+        ],
+      },
+      {
+        number: 5,
+        subjects: [
+          createSubject("bcom", 5, "Human Resource Management", "human-resource-management"),
+          createSubject("bcom", 5, "Principles of Marketing", "principles-of-marketing"),
+          createSubject("bcom", 5, "Auditing and Corporate Governance", "auditing-and-corporate-governance"),
+          createSubject("bcom", 5, "Financial Reporting and Analysis", "financial-reporting-and-analysis"),
+          createSubject("bcom", 5, "Document Management System", "document-management-system"),
+          createSubject("bcom", 5, "Fundamentals of Financial Management", "fundamentals-of-financial-management"),
+          createSubject("bcom", 5, "Goods and Service Tax (GST) and Customs Laws", "gst-and-customs-laws"),
+          createSubject("bcom", 5, "Training and Development", "training-and-development"),
+          createSubject("bcom", 5, "Industrial Laws", "industrial-laws"),
+        ],
+      },
+      {
+        number: 6,
+        subjects: [
+          createSubject("bcom", 6, "Corporate Tax Planning", "corporate-tax-planning"),
+          createSubject("bcom", 6, "Banking and Insurance", "banking-and-insurance"),
+          createSubject("bcom", 6, "Management Accounting", "management-accounting"),
+          createSubject("bcom", 6, "Computerised Accounting System", "computerised-accounting-system"),
+          createSubject("bcom", 6, "Financial Markets Institutions and Services", "financial-markets-institutions-and-services"),
+          createSubject("bcom", 6, "International Business", "international-business"),
+          createSubject("bcom", 6, "Fundamentals of Investment", "fundamentals-of-investment"),
+          createSubject("bcom", 6, "Consumer Protection", "consumer-protection"),
+          createSubject("bcom", 6, "Organizational Behaviour", "organizational-behaviour"),
+          createSubject("bcom", 6, "Advertising Personal Selling and Salesmanship", "advertising-personal-selling-and-salesmanship"),
+          createSubject("bcom", 6, "Collective Bargaining and Negotiation Skills", "collective-bargaining-and-negotiation-skills"),
+          createSubject("bcom", 6, "Entrepreneurship Development", "entrepreneurship-development"),
+          createSubject("bcom", 6, "Finance for Non-Finance Executives", "finance-for-non-finance-executives"),
         ],
       },
     ]),
   },
+
+
   {
     name: "B.Com (Hons.)",
     slug: "bcom-hons",
@@ -102,271 +151,81 @@ export const courses: Course[] = [
         number: 1,
         subjects: [
           createSubject("bcom-hons", 1, "Financial Accounting", "financial-accounting"),
-          createSubject("bcom-hons", 1, "Business Law", "business-law"),
-          createSubject("bcom-hons", 1, "Micro Economics", "micro-economics"),
-          createSubject("bcom-hons", 1, "Business Organisation", "business-organisation"),
+          createSubject("bcom-hons", 1, "Business Laws", "business-laws"),
+          createSubject("bcom-hons", 1, "Basics of Accounting", "basics-of-accounting"),
+          createSubject("bcom-hons", 1, "Business Organization and Management", "business-organization-and-management"),
         ],
       },
       {
         number: 2,
         subjects: [
           createSubject("bcom-hons", 2, "Corporate Accounting", "corporate-accounting"),
-          createSubject("bcom-hons", 2, "Company Law", "company-law"),
-          createSubject("bcom-hons", 2, "Macro Economics", "macro-economics"),
-          createSubject("bcom-hons", 2, "Business Statistics", "business-statistics"),
+          createSubject("bcom-hons", 2, "Corporate Laws", "corporate-laws"),
+          createSubject("bcom-hons", 2, "Entrepreneurship", "entrepreneurship"),
+          createSubject("bcom-hons", 2, "Finance for Non-Finance Executives", "finance-for-non-finance-executives"),
         ],
       },
-    ]),
-  },
-  {
-    name: "B.A. Programme",
-    slug: "ba-programme",
-    semesters: emptySemesters([
       {
-        number: 1,
+        number: 3,
         subjects: [
-          createSubject("ba-programme", 1, "English Language", "english-language"),
-          createSubject("ba-programme", 1, "Political Science", "political-science"),
-          createSubject("ba-programme", 1, "History", "history"),
-          createSubject("ba-programme", 1, "Environmental Studies", "environmental-studies"),
+          createSubject("bcom-hons", 3, "Human Resource Management", "human-resource-management"),
+          createSubject("bcom-hons", 3, "Income Tax Law and Practice", "income-tax-law-and-practice"),
+          createSubject("bcom-hons", 3, "Management Principles and Applications", "management-principles-and-applications"),
+          createSubject("bcom-hons", 3, "Investing in Stock Markets", "investing-in-stock-markets"),
+          createSubject("bcom-hons", 3, "Fundamentals of Marketing", "fundamentals-of-marketing"),
+          createSubject("bcom-hons", 3, "E-Commerce", "e-commerce"),
+          createSubject("bcom-hons", 3, "Training and Development", "training-and-development"),
+          createSubject("bcom-hons", 3, "Digital Marketing", "digital-marketing"),
+          createSubject("bcom-hons", 3, "Personal Tax Planning", "personal-tax-planning"),
+          createSubject("bcom-hons", 3, "Communication and Documentation in Business", "communication-and-documentation-in-business"),
+          createSubject("bcom-hons", 3, "Personal Finance and Planning", "personal-finance-and-planning"),
         ],
       },
-    ]),
-  },
-  {
-    name: "B.A. (Hons.) English",
-    slug: "ba-hons-english",
-    semesters: emptySemesters([
       {
-        number: 1,
+        number: 4,
         subjects: [
-          createSubject("ba-hons-english", 1, "Indian Classical Literature", "indian-classical-literature"),
-          createSubject("ba-hons-english", 1, "European Classical Literature", "european-classical-literature"),
-          createSubject("ba-hons-english", 1, "Academic Writing", "academic-writing"),
+          createSubject("bcom-hons", 4, "Cost Accounting", "cost-accounting"),
+          createSubject("bcom-hons", 4, "Business Mathematics", "business-mathematics"),
+          createSubject("bcom-hons", 4, "Computer Applications in Business", "computer-applications-in-business"),
+          createSubject("bcom-hons", 4, "Insurance and Risk Management", "insurance-and-risk-management"),
+          createSubject("bcom-hons", 4, "Project Management and Techniques", "project-management-and-techniques"),
+          createSubject("bcom-hons", 4, "Computerised Accounting System", "computerised-accounting-system"),
+          createSubject("bcom-hons", 4, "Business Research Methods and Analytics", "business-research-methods-and-analytics"),
+          createSubject("bcom-hons", 4, "Leadership and Team Development", "leadership-and-team-development"),
+          createSubject("bcom-hons", 4, "Collective Bargaining and Negotiation Skills", "collective-bargaining-and-negotiation-skills"),
+          createSubject("bcom-hons", 4, "E-Filing of Returns", "e-filing-of-returns"),
+          createSubject("bcom-hons", 4, "Cyber Crimes and Laws", "cyber-crimes-and-laws"),
         ],
       },
-    ]),
-  },
-  {
-    name: "B.A. (Hons.) Political Science",
-    slug: "ba-hons-political-science",
-    semesters: emptySemesters([
       {
-        number: 1,
+        number: 5,
         subjects: [
-          createSubject("ba-hons-political-science", 1, "Understanding Political Theory", "understanding-political-theory"),
-          createSubject("ba-hons-political-science", 1, "Constitutional Government", "constitutional-government"),
-          createSubject("ba-hons-political-science", 1, "Political Processes", "political-processes"),
+          createSubject("bcom-hons", 5, "Principles of Marketing", "principles-of-marketing"),
+          createSubject("bcom-hons", 5, "Financial Management", "financial-management"),
+          createSubject("bcom-hons", 5, "Management Accounting", "management-accounting"),
+          createSubject("bcom-hons", 5, "Organizational Behaviour", "organizational-behaviour"),
+          createSubject("bcom-hons", 5, "Macro Economics", "macro-economics"),
+          createSubject("bcom-hons", 5, "Entrepreneurship Development", "entrepreneurship-development"),
+          createSubject("bcom-hons", 5, "Corporate Tax Planning", "corporate-tax-planning"),
+          createSubject("bcom-hons", 5, "Financial Markets Institutions and Services", "financial-markets-institutions-and-services"),
+          createSubject("bcom-hons", 5, "Advertising and Personal Selling", "advertising-and-personal-selling"),
+          createSubject("bcom-hons", 5, "Business Statistics", "business-statistics"),
         ],
       },
-    ]),
-  },
-  {
-    name: "B.A. (Hons.) History",
-    slug: "ba-hons-history",
-    semesters: emptySemesters([
       {
-        number: 1,
+        number: 6,
         subjects: [
-          createSubject("ba-hons-history", 1, "History of India", "history-of-india"),
-          createSubject("ba-hons-history", 1, "Social Formations", "social-formations"),
-          createSubject("ba-hons-history", 1, "History Writing", "history-writing"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.A. (Hons.) Economics",
-    slug: "ba-hons-economics",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("ba-hons-economics", 1, "Introductory Microeconomics", "introductory-microeconomics"),
-          createSubject("ba-hons-economics", 1, "Mathematical Methods", "mathematical-methods"),
-          createSubject("ba-hons-economics", 1, "Economic History", "economic-history"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.A. (Hons.) Psychology",
-    slug: "ba-hons-psychology",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("ba-hons-psychology", 1, "Introduction to Psychology", "introduction-to-psychology"),
-          createSubject("ba-hons-psychology", 1, "Biopsychology", "biopsychology"),
-          createSubject("ba-hons-psychology", 1, "Statistical Methods", "statistical-methods"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.Sc. (Hons.) Computer Science",
-    slug: "bsc-hons-computer-science",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bsc-hons-computer-science", 1, "Programming Fundamentals", "programming-fundamentals"),
-          createSubject("bsc-hons-computer-science", 1, "Computer System Architecture", "computer-system-architecture"),
-          createSubject("bsc-hons-computer-science", 1, "Discrete Mathematics", "discrete-mathematics"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.Sc. Physical Sciences",
-    slug: "bsc-physical-sciences",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bsc-physical-sciences", 1, "Mechanics", "mechanics"),
-          createSubject("bsc-physical-sciences", 1, "Calculus", "calculus"),
-          createSubject("bsc-physical-sciences", 1, "Chemistry Basics", "chemistry-basics"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.Sc. Life Sciences",
-    slug: "bsc-life-sciences",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bsc-life-sciences", 1, "Botany", "botany"),
-          createSubject("bsc-life-sciences", 1, "Zoology", "zoology"),
-          createSubject("bsc-life-sciences", 1, "Chemistry", "chemistry"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.Sc. (Hons.) Mathematics",
-    slug: "bsc-hons-mathematics",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bsc-hons-mathematics", 1, "Calculus", "calculus"),
-          createSubject("bsc-hons-mathematics", 1, "Algebra", "algebra"),
-          createSubject("bsc-hons-mathematics", 1, "Real Analysis", "real-analysis"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.Sc. (Hons.) Chemistry",
-    slug: "bsc-hons-chemistry",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bsc-hons-chemistry", 1, "Organic Chemistry", "organic-chemistry"),
-          createSubject("bsc-hons-chemistry", 1, "Inorganic Chemistry", "inorganic-chemistry"),
-          createSubject("bsc-hons-chemistry", 1, "Physical Chemistry", "physical-chemistry"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.Sc. (Hons.) Physics",
-    slug: "bsc-hons-physics",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bsc-hons-physics", 1, "Mechanics", "mechanics"),
-          createSubject("bsc-hons-physics", 1, "Electricity and Magnetism", "electricity-and-magnetism"),
-          createSubject("bsc-hons-physics", 1, "Mathematical Physics", "mathematical-physics"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.A. Programme (History + Political Science)",
-    slug: "ba-programme-history-plus-political-science",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("ba-programme-history-plus-political-science", 1, "History", "history"),
-          createSubject("ba-programme-history-plus-political-science", 1, "Political Science", "political-science"),
-          createSubject("ba-programme-history-plus-political-science", 1, "English Language", "english-language"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.A. Programme (English + Political Science)",
-    slug: "ba-programme-english-plus-political-science",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("ba-programme-english-plus-political-science", 1, "English", "english"),
-          createSubject("ba-programme-english-plus-political-science", 1, "Political Science", "political-science"),
-          createSubject("ba-programme-english-plus-political-science", 1, "Environmental Studies", "environmental-studies"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.A. Programme (English + Economics)",
-    slug: "ba-programme-english-plus-economics",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("ba-programme-english-plus-economics", 1, "English", "english"),
-          createSubject("ba-programme-english-plus-economics", 1, "Economics", "economics"),
-          createSubject("ba-programme-english-plus-economics", 1, "Environmental Studies", "environmental-studies"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "BMS (Bachelor of Management Studies)",
-    slug: "bms",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bms", 1, "Principles of Management", "principles-of-management"),
-          createSubject("bms", 1, "Business Statistics", "business-statistics"),
-          createSubject("bms", 1, "Financial Accounting", "financial-accounting"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "BBA FIA",
-    slug: "bba-fia",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("bba-fia", 1, "Financial Accounting", "financial-accounting"),
-          createSubject("bba-fia", 1, "Business Mathematics", "business-mathematics"),
-          createSubject("bba-fia", 1, "Financial Markets", "financial-markets"),
-        ],
-      },
-    ]),
-  },
-  {
-    name: "B.A. (Hons.) Journalism & Mass Communication",
-    slug: "ba-hons-journalism-and-mass-communication",
-    semesters: emptySemesters([
-      {
-        number: 1,
-        subjects: [
-          createSubject("ba-hons-journalism-and-mass-communication", 1, "Introduction to Journalism", "introduction-to-journalism"),
-          createSubject("ba-hons-journalism-and-mass-communication", 1, "Media and Communication", "media-and-communication"),
-          createSubject("ba-hons-journalism-and-mass-communication", 1, "Reporting and Editing", "reporting-and-editing"),
+          createSubject("bcom-hons", 6, "Auditing and Corporate Governance", "auditing-and-corporate-governance"),
+          createSubject("bcom-hons", 6, "Goods and Service Tax (GST) and Customs Law", "gst-and-customs-law"),
+          createSubject("bcom-hons", 6, "Fundamentals of Investment", "fundamentals-of-investment"),
+          createSubject("bcom-hons", 6, "Compensation Management", "compensation-management"),
+          createSubject("bcom-hons", 6, "Business Tax Procedures and Management", "business-tax-procedures-and-management"),
+          createSubject("bcom-hons", 6, "Consumer Affairs and Customer Care", "consumer-affairs-and-customer-care"),
+          createSubject("bcom-hons", 6, "Financial Reporting and Analysis", "financial-reporting-and-analysis"),
+          createSubject("bcom-hons", 6, "Banking and Insurance", "banking-and-insurance"),
+          createSubject("bcom-hons", 6, "Project Management and Techniques", "project-management-and-techniques"),
+          createSubject("bcom-hons", 6, "International Business", "international-business"),
+          createSubject("bcom-hons", 6, "Industrial Relations and Labour Laws", "industrial-relations-and-labour-laws"),
         ],
       },
     ]),
