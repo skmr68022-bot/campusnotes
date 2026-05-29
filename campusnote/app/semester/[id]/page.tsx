@@ -96,7 +96,7 @@ export default async function SemesterPage({ params }: SemesterPageProps) {
                     </Link>
 
                     <button className="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm">
-                      Buy Now
+                       Now
                     </button>
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+import PaymentButton from "@/components/PaymentButton";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -96,9 +97,9 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
                 ₹{subject.price}
               </p>
 
-              <button className="w-full bg-indigo-600 text-white py-3 rounded-xl mt-4">
-                Buy Compilation
-              </button>
+              <PaymentButton amount={subject.price} subjectName={subject.name} />
+                
+              
             </aside>
           </div>
         </div>
