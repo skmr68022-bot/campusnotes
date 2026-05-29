@@ -51,7 +51,7 @@ export default async function SemesterPage({ params }: SemesterPageProps) {
           </h1>
 
           <p className="text-gray-600 mt-2">
-            Choose a subject compilation to preview or purchase.
+            Choose a subject compilation to purchase and access PDFs.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
@@ -87,18 +87,12 @@ export default async function SemesterPage({ params }: SemesterPageProps) {
                     ₹{subject.price}
                   </span>
 
-                  <div className="flex gap-3">
-                    <Link
-                      href={`/subject/${course.slug}/sem${semester.number}/${subject.slug}`}
-                      className="border px-4 py-2 rounded-xl text-sm"
-                    >
-                      Preview
-                    </Link>
-
-                    <button className="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm">
-                       Now
-                    </button>
-                  </div>
+                  <Link
+                    href={`/subject/${course.slug}/sem${semester.number}/${subject.slug}`}
+                    className="bg-indigo-600 text-white px-5 py-2 rounded-xl text-sm"
+                  >
+                    Buy Now
+                  </Link>
                 </div>
               </div>
             ))}
