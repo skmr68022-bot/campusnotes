@@ -52,7 +52,7 @@ const createSubject = (
 ): Subject => ({
   name,
   slug,
-  price: 49,
+  price: 1,
   resources: createResources(courseSlug, semester, slug),
 });
 
