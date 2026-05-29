@@ -97,7 +97,14 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
                 </p>
               </div>
 
-              <PaymentButton amount={subject.price} subjectName={subject.name} accessKey={accessKey} />
+              <PaymentButton
+                amount={subject.price}
+                subjectName={subject.name}
+                accessKey={accessKey}
+                courseSlug={courseSlug}
+                semesterNumber={semesterNumber}
+                subjectSlug={subject.slug}
+              />
               <Link href="/library" className="mt-3 block text-center text-sm font-medium text-indigo-600 hover:text-indigo-700">
                 View My Library
               </Link>
