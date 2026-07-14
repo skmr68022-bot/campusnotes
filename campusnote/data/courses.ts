@@ -34,8 +34,8 @@ const createResources = (
   },
   {
     title: "Notes",
-    size: "4.8 MB",
-    file: `/pdfs/${courseSlug}/sem${semester}/${subjectSlug}/notes.pdf`,
+    size: "html",
+    file: `/html/${courseSlug}/sem${semester}/${subjectSlug}/notes.html`,
   },
   {
     title: "PYQs",

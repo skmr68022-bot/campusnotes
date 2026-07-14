@@ -31,7 +31,7 @@ const libraryItems: LibraryItem[] = [
     course: "B.Com (Hons.)",
     semester: "Semester 1",
     subjectUrl: "/subject/bcom-hons/sem1/financial-accounting",
-    notesUrl: "/pdfs/bcom-hons/sem1/financial-accounting/notes.pdf",
+  notesUrl: "/html/bcom-hons/sem1/financial-accounting/notes.html",
   },
 ];
 

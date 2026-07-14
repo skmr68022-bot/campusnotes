@@ -52,7 +52,12 @@ export default function ResourceAccess({
   return (
     <div className="space-y-5">
       {resources.map((item) => {
-        const previewFile = item.file.replace(".pdf", "-preview.pdf");
+        const isHtml = item.file.endsWith(".html");
+const isPdf = item.file.endsWith(".pdf");
+
+const previewFile = isPdf
+  ? item.file.replace(".pdf", "-preview.pdf")
+  : item.file;
 
         return (
           <div
@@ -86,7 +91,7 @@ export default function ResourceAccess({
                     </div>
 
                     <p className="mt-2 text-sm font-medium text-slate-500">
-                      PDF File • {item.size}
+                     {isHtml ? "Online HTML Notes" : "PDF File"} • {item.size}
                     </p>
 
                     <p className="mt-3 max-w-xl text-sm leading-6 text-slate-600">
@@ -114,7 +119,7 @@ export default function ResourceAccess({
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-3 text-sm font-black text-blue-700 transition hover:bg-blue-100"
                     >
                       <Eye size={16} />
-                      View Full
+                      {isHtml ? "Read Full" : "View Full"}
                     </a>
 
                     <a
