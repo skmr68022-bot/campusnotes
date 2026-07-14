@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PaymentButton from "@/components/PaymentButton";
 import ResourceAccess from "@/components/ResourceAccess";
+import PurchaseStatus from "@/components/PurchaseStatus";
 import { getSubject } from "@/data/courses";
 import {
   ArrowLeft,
@@ -241,6 +242,8 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
                 </div>
               </div>
 
+              
+              <PurchaseStatus accessKey={accessKey} />
               <div className="mt-6 flex items-end justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -263,6 +266,12 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
                 subjectName={subject.name}
                 accessKey={accessKey}
               />
+              <Link
+  href="/library"
+  className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-4 text-sm font-black text-slate-700 transition hover:border-blue-300 hover:text-blue-700"
+>
+  Go to My Library
+</Link>
 
               <p className="mt-4 text-center text-xs leading-5 text-slate-500">
                 After successful payment, files unlock on this device/browser.

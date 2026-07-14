@@ -29,6 +29,9 @@ export default function Navbar() {
           <Link href="/#samples" className="hover:text-blue-700">
             Free Sample
           </Link>
+          <Link href="/library" className="hover:text-blue-700">
+           My Library
+          </Link>
           <Link href="/#faq" className="hover:text-blue-700">
             FAQ
           </Link>
