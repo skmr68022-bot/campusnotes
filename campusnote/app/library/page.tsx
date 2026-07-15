@@ -31,7 +31,7 @@ const libraryItems: LibraryItem[] = [
     course: "B.Com (Hons.)",
     semester: "Semester 1",
     subjectUrl: "/subject/bcom-hons/sem1/financial-accounting",
-  notesUrl: "/html/bcom-hons/sem1/financial-accounting/notes.html",
+ notesUrl: "/subject/bcom-hons/sem1/financial-accounting",
   },
 ];
 
@@ -143,14 +143,13 @@ export default function LibraryPage() {
                         Open Bundle
                       </Link>
 
-                      <a
-                        href={item.notesUrl}
-                        target="_blank"
-                        className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-4 py-3 text-sm font-black text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-blue-700"
-                      >
-                        <Download size={16} />
-                        Open Notes
-                      </a>
+                      <Link
+  href={item.notesUrl}
+  className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-4 py-3 text-sm font-black text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-blue-700"
+>
+  <Download size={16} />
+  Open Notes Hub
+</Link>
                     </div>
                   </div>
                 ))}

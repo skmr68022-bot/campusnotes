@@ -1,8 +1,51 @@
+export type ResourceFile = {
+  title: string;
+  file: string;
+};
+
 export type Resource = {
   title: string;
   size: string;
   file: string;
-};
+  files?: ResourceFile[];
+};const financialAccountingNoteFiles: ResourceFile[] = [
+  {
+    title: "Unit 1: Theoretical Framework",
+    file: "/html/bcom-hons/sem1/financial-accounting/unit-1.html",
+  },
+  {
+    title: "Unit 2: Accounting Process",
+    file: "/html/bcom-hons/sem1/financial-accounting/unit-2.html",
+  },
+  {
+    title: "Unit 3: Depreciation Accounting",
+    file: "/html/bcom-hons/sem1/financial-accounting/unit-3.html",
+  },
+  {
+    title: "Unit 4: Final Accounts",
+    file: "/html/bcom-hons/sem1/financial-accounting/unit-4.html",
+  },
+  {
+    title: "Unit 5: Partnership Accounts",
+    file: "/html/bcom-hons/sem1/financial-accounting/unit-5.html",
+  },
+  {
+    title: "Numerical Notes",
+    file: "/html/bcom-hons/sem1/financial-accounting/numerical-notes.html",
+  },
+  {
+    title: "Formula Sheet",
+    file: "/html/bcom-hons/sem1/financial-accounting/formula-sheet.html",
+  },
+  {
+    title: "Quick Revision",
+    file: "/html/bcom-hons/sem1/financial-accounting/quick-revision.html",
+  },
+  {
+    title: "Important Questions",
+    file: "/html/bcom-hons/sem1/financial-accounting/important-questions.html",
+  },
+];
 
 export type Subject = {
   name: string;
@@ -26,23 +69,33 @@ const createResources = (
   courseSlug: string,
   semester: number,
   subjectSlug: string
-): Resource[] => [
-  {
-    title: "Syllabus",
-    size: "1.2 MB",
-    file: `/pdfs/${courseSlug}/sem${semester}/${subjectSlug}/syllabus.pdf`,
-  },
-  {
-    title: "Notes",
-    size: "html",
-    file: `/html/${courseSlug}/sem${semester}/${subjectSlug}/notes.html`,
-  },
-  {
-    title: "PYQs",
-    size: "2.4 MB",
-    file: `/pdfs/${courseSlug}/sem${semester}/${subjectSlug}/pyqs.pdf`,
-  },
-];
+): Resource[] => {
+  const isFinancialAccounting =
+    courseSlug === "bcom-hons" &&
+    semester === 1 &&
+    subjectSlug === "financial-accounting";
+
+  return [
+    {
+      title: "Syllabus",
+      size: "1.2 MB",
+      file: `/pdfs/${courseSlug}/sem${semester}/${subjectSlug}/syllabus.pdf`,
+    },
+    {
+      title: "Notes",
+      size: isFinancialAccounting ? "9 HTML Files" : "HTML Notes",
+      file: isFinancialAccounting
+        ? `/html/${courseSlug}/sem${semester}/${subjectSlug}`
+        : `/html/${courseSlug}/sem${semester}/${subjectSlug}/notes.html`,
+      files: isFinancialAccounting ? financialAccountingNoteFiles : undefined,
+    },
+    {
+      title: "PYQs",
+      size: "2.4 MB",
+      file: `/pdfs/${courseSlug}/sem${semester}/${subjectSlug}/pyqs.pdf`,
+    },
+  ];
+};
 
 const createSubject = (
   courseSlug: string,
