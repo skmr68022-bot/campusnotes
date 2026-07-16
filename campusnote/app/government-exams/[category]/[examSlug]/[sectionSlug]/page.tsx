@@ -14,7 +14,10 @@ import {
 import ResourceAccess from "@/components/ResourceAccess";
 import PaymentButton from "@/components/PaymentButton";
 import PurchaseStatus from "@/components/PurchaseStatus";
-import { getContentStatusFromResources } from "@/data/contentStatus";
+import {
+  getContentStatusFromResources,
+  getHtmlFilesFromPublicFolder,
+} from "@/data/contentStatus";
 
 const examCategories = [
   {
@@ -178,28 +181,32 @@ export default async function GovernmentBundlePage({
   const examName = examNames[examSlug];
   const accessKey = `government-${category}-${examSlug}-${sectionSlug}`;
 
-  const resources = [
-    {
-      title: "Syllabus",
-      size: "Exam Syllabus",
-      file: `/pdfs/government-exams/${category}/${examSlug}/${sectionSlug}/syllabus.pdf`,
-    },
-    {
-      title: "Notes",
-      size: "9 HTML Files",
-      file: `/html/government-exams/${category}/${examSlug}/${sectionSlug}`,
-      files: createGovernmentHtmlNoteFiles(category, examSlug, sectionSlug),
-    },
-    {
-      title: "Practice + PYQs",
-      size: "Exam Practice",
-      file: `/pdfs/government-exams/${category}/${examSlug}/${sectionSlug}/practice-pyqs.pdf`,
-    },
-  ];
+  const notesFolderPath = `/html/government-exams/${category}/${examSlug}/${sectionSlug}`;
+const dynamicHtmlFiles = getHtmlFilesFromPublicFolder(notesFolderPath);
 
-  const contentStatus = getContentStatusFromResources(resources);
-  const isContentAvailable = contentStatus === "available";
+const resources = [
+  {
+    title: "Syllabus",
+    size: "Exam Syllabus",
+    file: `/pdfs/government-exams/${category}/${examSlug}/${sectionSlug}/syllabus.pdf`,
+  },
+  {
+    title: "Notes",
+    size: `${dynamicHtmlFiles.length} HTML File${
+      dynamicHtmlFiles.length === 1 ? "" : "s"
+    }`,
+    file: notesFolderPath,
+    files: dynamicHtmlFiles,
+  },
+  {
+    title: "Practice + PYQs",
+    size: "Exam Practice",
+    file: `/pdfs/government-exams/${category}/${examSlug}/${sectionSlug}/practice-pyqs.pdf`,
+  },
+];
 
+const contentStatus = getContentStatusFromResources(resources);
+const isContentAvailable = contentStatus === "available";
   return (
     <main className="min-h-screen bg-[#FFFDF7]">
       <section className="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8">

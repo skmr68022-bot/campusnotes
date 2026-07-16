@@ -13,7 +13,10 @@ import {
 import ResourceAccess from "@/components/ResourceAccess";
 import PaymentButton from "@/components/PaymentButton";
 import PurchaseStatus from "@/components/PurchaseStatus";
-import { getContentStatusFromResources } from "@/data/contentStatus";
+import {
+  getContentStatusFromResources,
+  getHtmlFilesFromPublicFolder,
+} from "@/data/contentStatus";
 
 const boards = [
   {
@@ -152,27 +155,32 @@ export default async function BoardSubjectPage({
 
   const accessKey = `boards-${board}-${classSlug}-${subjectSlug}`;
 
-  const resources = [
-    {
-      title: "Syllabus",
-      size: "Board Syllabus",
-      file: `/pdfs/boards/${board}/${classSlug}/${subjectSlug}/syllabus.pdf`,
-    },
-    {
-      title: "Notes",
-      size: "9 HTML Files",
-      file: `/html/boards/${board}/${classSlug}/${subjectSlug}`,
-      files: createBoardHtmlNoteFiles(board, classSlug, subjectSlug),
-    },
-    {
-      title: "Important Questions",
-      size: "Exam Practice",
-      file: `/pdfs/boards/${board}/${classSlug}/${subjectSlug}/important-questions.pdf`,
-    },
-  ];
+  const notesFolderPath = `/html/boards/${board}/${classSlug}/${subjectSlug}`;
+const dynamicHtmlFiles = getHtmlFilesFromPublicFolder(notesFolderPath);
 
-  const contentStatus = getContentStatusFromResources(resources);
-  const isContentAvailable = contentStatus === "available";
+const resources = [
+  {
+    title: "Syllabus",
+    size: "Board Syllabus",
+    file: `/pdfs/boards/${board}/${classSlug}/${subjectSlug}/syllabus.pdf`,
+  },
+  {
+    title: "Notes",
+    size: `${dynamicHtmlFiles.length} HTML File${
+      dynamicHtmlFiles.length === 1 ? "" : "s"
+    }`,
+    file: notesFolderPath,
+    files: dynamicHtmlFiles,
+  },
+  {
+    title: "Important Questions",
+    size: "Exam Practice",
+    file: `/pdfs/boards/${board}/${classSlug}/${subjectSlug}/important-questions.pdf`,
+  },
+];
+
+const contentStatus = getContentStatusFromResources(resources);
+const isContentAvailable = contentStatus === "available";
 
   return (
     <main className="min-h-screen bg-[#FFFDF7]">

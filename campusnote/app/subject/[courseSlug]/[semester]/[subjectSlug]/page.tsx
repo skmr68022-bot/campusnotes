@@ -14,7 +14,10 @@ import ResourceAccess from "@/components/ResourceAccess";
 import PaymentButton from "@/components/PaymentButton";
 import PurchaseStatus from "@/components/PurchaseStatus";
 import { getCourse, getSemester, getSubject } from "@/data/courses";
-import { getContentStatusFromResources } from "@/data/contentStatus";
+import {
+  getContentStatusFromResources,
+  getHtmlFilesFromPublicFolder,
+} from "@/data/contentStatus";
 
 type SubjectPageProps = {
   params: Promise<{
@@ -39,8 +42,27 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
 
   const accessKey = `${courseSlug}-${semesterNumber}-${subject.slug}`;
 
-  const contentStatus = getContentStatusFromResources(subject.resources);
-  const isContentAvailable = contentStatus === "available";
+const notesFolderPath = `/html/${courseSlug}/sem${semesterNumber}/${subject.slug}`;
+
+const dynamicHtmlFiles = getHtmlFilesFromPublicFolder(notesFolderPath);
+
+const dynamicResources = subject.resources.map((resource) => {
+  if (resource.title.toLowerCase() === "notes") {
+    return {
+      ...resource,
+      file: notesFolderPath,
+      size: `${dynamicHtmlFiles.length} HTML File${
+        dynamicHtmlFiles.length === 1 ? "" : "s"
+      }`,
+      files: dynamicHtmlFiles,
+    };
+  }
+
+  return resource;
+});
+
+const contentStatus = getContentStatusFromResources(dynamicResources);
+const isContentAvailable = contentStatus === "available";
 
   return (
     <main className="min-h-screen bg-[#FFFDF7]">
@@ -236,7 +258,7 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
             </div>
 
             {isContentAvailable ? (
-              <ResourceAccess resources={subject.resources} accessKey={accessKey} />
+              <ResourceAccess resources={dynamicResources} accessKey={accessKey} />
             ) : (
               <div className="rounded-[2rem] border border-yellow-200 bg-yellow-50 p-7">
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-yellow-700">
