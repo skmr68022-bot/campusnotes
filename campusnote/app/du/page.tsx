@@ -14,8 +14,8 @@ import {
   Star,
   Zap,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
+
 import { courses } from "@/data/courses";
 
 const stats = [
@@ -67,7 +67,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar />
+    
 
       <main className="min-h-screen overflow-hidden bg-[#FFFDF7]">
         <section className="relative">
@@ -378,7 +378,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <Footer />
+    
     </>
   );
 }

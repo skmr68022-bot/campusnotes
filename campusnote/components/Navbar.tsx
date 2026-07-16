@@ -1,58 +1,116 @@
+
 import Link from "next/link";
+import {
+  BookOpen,
+  GraduationCap,
+  Home,
+  Landmark,
+  Library,
+  LogIn,
+  School,
+} from "lucide-react";
+
+const navLinks = [
+  {
+    label: "Home",
+    href: "/",
+    icon: Home,
+  },
+  {
+    label: "Delhi University",
+    href: "/du",
+    icon: GraduationCap,
+  },
+  {
+    label: "Board Exams",
+    href: "/boards",
+    icon: School,
+  },
+  {
+    label: "Government Exams",
+    href: "/government-exams",
+    icon: Landmark,
+  },
+  {
+    label: "My Library",
+    href: "/library",
+    icon: Library,
+  },
+];
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
-        <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-linear-to-br from-blue-700 to-indigo-600 text-lg font-black text-white shadow-lg shadow-blue-900/20">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-700 text-lg font-black text-white shadow-lg shadow-blue-700/20">
             CN
           </div>
 
           <div>
-            <p className="text-lg font-black tracking-tight text-slate-950">
-              CampusNotes
+            <p className="text-lg font-black leading-none text-slate-950">
+              Campusnotes
             </p>
-            <p className="-mt-1 hidden text-xs font-medium text-slate-500 sm:block">
-              Premium study resources
+            <p className="mt-1 text-xs font-bold text-slate-500">
+              Notes • Boards • Exams
             </p>
           </div>
         </Link>
 
-        <div className="hidden items-center gap-7 text-sm font-semibold text-slate-600 md:flex">
-          <Link href="/#explore" className="hover:text-blue-700">
-            Explore Notes
-          </Link>
-          <Link href="/#courses" className="hover:text-blue-700">
-            Courses
-          </Link>
-          <Link href="/#samples" className="hover:text-blue-700">
-            Free Sample
-          </Link>
-          <Link href="/library" className="hover:text-blue-700">
-           My Library
-          </Link>
-          <Link href="/#faq" className="hover:text-blue-700">
-            FAQ
-          </Link>
+        <div className="hidden items-center gap-2 lg:flex">
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-slate-600 transition hover:bg-blue-50 hover:text-blue-700"
+              >
+                <Icon size={16} />
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <Link
             href="/login"
-            className="hidden rounded-full px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100 sm:block"
+            className="hidden items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 transition hover:border-blue-200 hover:text-blue-700 sm:inline-flex"
           >
+            <LogIn size={16} />
             Login
           </Link>
 
           <Link
-            href="/#courses"
-            className="rounded-full bg-slate-950 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-blue-700"
+            href="/boards"
+            className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-2 text-sm font-black text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-blue-700"
           >
-            Get Started
+            <BookOpen size={16} />
+            Explore
           </Link>
         </div>
+      </nav>
+
+      <div className="border-t border-slate-100 bg-white px-4 py-3 lg:hidden">
+        <div className="flex gap-2 overflow-x-auto">
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#FFFDF7] px-4 py-2 text-xs font-black text-slate-700"
+              >
+                <Icon size={15} />
+                {link.label}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </nav>
+    </header>
   );
 }

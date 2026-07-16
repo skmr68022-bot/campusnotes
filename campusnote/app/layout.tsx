@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "CampusNotes | Premium College Notes",
+  title: "Campusnotes | Notes, Boards & Exams",
   description:
-    "Premium exam-oriented notes, syllabus, PYQs and quick revision resources for college students.",
+    "Campusnotes is a premium educational hub for Delhi University notes, board exam notes and government exam preparation.",
 };
 
 export default function RootLayout({
@@ -24,11 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
-    >
-      <body className="min-h-full bg-[#FFFDF7] text-slate-900">{children}</body>
+    <html lang="en">
+      <body className="min-h-screen bg-[#FFFDF7] text-slate-900">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
