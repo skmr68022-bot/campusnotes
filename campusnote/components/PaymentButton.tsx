@@ -57,10 +57,36 @@ export default function PaymentButton({
         order_id: order.id,
 
         handler: function () {
-          localStorage.setItem(`paid_${accessKey}`, "true");
-          alert("Payment successful! PDFs unlocked.");
-          window.location.reload();
-        },
+  localStorage.setItem(`paid_${accessKey}`, "true");
+
+  const existingPurchases = JSON.parse(
+    localStorage.getItem("campusnotes_purchases") || "[]"
+  );
+
+  const currentPath = window.location.pathname;
+
+  const newPurchase = {
+    accessKey,
+    title: subjectName,
+    url: currentPath,
+    purchasedAt: new Date().toISOString(),
+  };
+
+  const updatedPurchases = [
+    newPurchase,
+    ...existingPurchases.filter(
+      (item: { accessKey: string }) => item.accessKey !== accessKey
+    ),
+  ];
+
+  localStorage.setItem(
+    "campusnotes_purchases",
+    JSON.stringify(updatedPurchases)
+  );
+
+  alert("Payment successful! Full notes unlocked.");
+  window.location.reload();
+},
 
         modal: {
           ondismiss: function () {
