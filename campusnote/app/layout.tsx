@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Campusnotes | Notes, Boards & Exams",
   description:
     "Campusnotes is a premium educational hub for Delhi University notes, board exam notes and government exam preparation.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
