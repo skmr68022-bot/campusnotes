@@ -60,9 +60,20 @@ export default function AdminContentPage() {
             Campusnotes Admin
           </p>
 
-          <h1 className="mt-3 text-3xl font-black text-slate-950 md:text-5xl">
-            Content Status Dashboard
-          </h1>
+          <div className="mt-3 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+  <h1 className="text-3xl font-black text-slate-950 md:text-5xl">
+    Content Status Dashboard
+  </h1>
+
+ <form action="/api/admin-logout" method="POST">
+  <button
+    type="submit"
+    className="rounded-full bg-red-50 px-5 py-2 text-sm font-black text-red-700 transition hover:bg-red-100"
+  >
+    Logout
+  </button>
+</form>
+</div>
 
           <p className="mt-3 max-w-3xl text-slate-600">
             Dynamic dashboard showing uploaded and not uploaded notes separately
