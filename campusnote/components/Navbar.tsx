@@ -8,6 +8,7 @@ import {
   Library,
   LogIn,
   School,
+  Search,
 } from "lucide-react";
 
 const navLinks = [
@@ -16,6 +17,11 @@ const navLinks = [
     href: "/",
     icon: Home,
   },
+  {
+  label: "Search",
+  href: "/search",
+  icon: Search,
+},
   {
     label: "Delhi University",
     href: "/du",
