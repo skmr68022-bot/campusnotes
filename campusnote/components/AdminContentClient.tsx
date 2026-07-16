@@ -7,6 +7,7 @@ import type { AdminContentItem } from "@/data/adminContent";
 type Props = {
   items: AdminContentItem[];
 };
+
 const getWindowsFolderCommand = (folderPath: string) => {
   return `mkdir public${folderPath.replaceAll("/", "\\")}`;
 };
@@ -19,15 +20,6 @@ const getSampleHtmlFileName = (itemTitle: string) => {
     lowerTitle.includes("financial accounting")
   ) {
     return "unit-1.html";
-  }
-
-  if (
-    lowerTitle.includes("class") ||
-    lowerTitle.includes("cbse") ||
-    lowerTitle.includes("science") ||
-    lowerTitle.includes("mathematics")
-  ) {
-    return "chapter-1.html";
   }
 
   return "chapter-1.html";
@@ -128,6 +120,7 @@ export default function AdminContentClient({ items }: Props) {
 
           {(searchQuery || sectionFilter !== "all" || statusFilter !== "all") && (
             <button
+              type="button"
               onClick={() => {
                 setSearchQuery("");
                 setSectionFilter("all");
@@ -169,6 +162,21 @@ function ContentSection({
   items: AdminContentItem[];
   statusType: "uploaded" | "not-uploaded";
 }) {
+  const [copiedCommand, setCopiedCommand] = useState("");
+
+  const copyToClipboard = async (command: string) => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setCopiedCommand(command);
+
+      setTimeout(() => {
+        setCopiedCommand("");
+      }, 1500);
+    } catch {
+      alert("Copy failed. Please select and copy manually.");
+    }
+  };
+
   return (
     <section className="mb-10">
       <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
@@ -194,127 +202,163 @@ function ContentSection({
         </div>
       ) : (
         <div className="grid gap-5">
-          {items.map((item) => (
-            <div
-              key={`${item.section}-${item.href}`}
-              className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm"
-            >
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
-                      {item.section}
-                    </span>
+          {items.map((item) => {
+            const folderCommand = getWindowsFolderCommand(item.folderPath);
+            const sampleFileCommand = getWindowsSampleFileCommand(
+              item.folderPath,
+              item.title
+            );
 
-                    <span
-                      className={`rounded-full px-3 py-1 text-xs font-bold ${
-                        item.status === "available"
-                          ? "bg-emerald-50 text-emerald-700"
-                          : "bg-amber-50 text-amber-700"
-                      }`}
-                    >
-                      {item.status === "available"
-                        ? "Available"
-                        : "Coming Soon"}
-                    </span>
+            return (
+              <div
+                key={`${item.section}-${item.href}`}
+                className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm"
+              >
+                <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+                        {item.section}
+                      </span>
 
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">
-                      {item.htmlFileCount} HTML File
-                      {item.htmlFileCount === 1 ? "" : "s"}
-                    </span>
-                  </div>
+                      <span
+                        className={`rounded-full px-3 py-1 text-xs font-bold ${
+                          item.status === "available"
+                            ? "bg-emerald-50 text-emerald-700"
+                            : "bg-amber-50 text-amber-700"
+                        }`}
+                      >
+                        {item.status === "available"
+                          ? "Available"
+                          : "Coming Soon"}
+                      </span>
 
-                  <h3 className="mt-3 text-xl font-black text-slate-950">
-                    {item.title}
-                  </h3>
+                      <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">
+                        {item.htmlFileCount} HTML File
+                        {item.htmlFileCount === 1 ? "" : "s"}
+                      </span>
+                    </div>
 
-                  <p className="mt-1 text-sm text-slate-500">
-                    {item.subtitle}
-                  </p>
+                    <h3 className="mt-3 text-xl font-black text-slate-950">
+                      {item.title}
+                    </h3>
 
-                  <div className="mt-4 rounded-2xl bg-slate-50 p-4">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-                      Folder Path
+                    <p className="mt-1 text-sm text-slate-500">
+                      {item.subtitle}
                     </p>
 
-                    <code className="mt-2 block break-all rounded-xl bg-white p-3 text-sm text-slate-700">
-                      public{item.folderPath}
-                    </code>
-                  </div>
-
-                 {item.status === "coming-soon" && (
-  <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-    <p className="text-sm font-black text-amber-800">
-      Quick Upload Guide
-    </p>
-
-    <p className="mt-2 text-sm text-amber-700">
-      Create this folder and add at least one HTML file to make this bundle available.
-    </p>
-
-    <div className="mt-3">
-      <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
-        Create Folder Command
-      </p>
-
-      <code className="mt-2 block break-all rounded-xl bg-white p-3 text-xs text-slate-700">
-        {getWindowsFolderCommand(item.folderPath)}
-      </code>
-    </div>
-
-    <div className="mt-3">
-      <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
-        Create Sample HTML File
-      </p>
-
-      <code className="mt-2 block break-all rounded-xl bg-white p-3 text-xs text-slate-700">
-        {getWindowsSampleFileCommand(item.folderPath, item.title)}
-      </code>
-    </div>
-  </div>
-)}
-                  <div className="mt-4">
-                    <p className="text-sm font-bold text-slate-800">
-                      Uploaded HTML Files
-                    </p>
-
-                    {item.htmlFiles.length > 0 ? (
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {item.htmlFiles.map((file) => (
-                          <span
-                            key={file}
-                            className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600"
-                          >
-                            {file}
-                          </span>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="mt-2 text-sm text-slate-500">
-                        No HTML file uploaded yet.
+                    <div className="mt-4 rounded-2xl bg-slate-50 p-4">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                        Folder Path
                       </p>
+
+                      <code className="mt-2 block break-all rounded-xl bg-white p-3 text-sm text-slate-700">
+                        public{item.folderPath}
+                      </code>
+                    </div>
+
+                    {item.status === "coming-soon" && (
+                      <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+                        <p className="text-sm font-black text-amber-800">
+                          Quick Upload Guide
+                        </p>
+
+                        <p className="mt-2 text-sm text-amber-700">
+                          Create this folder and add at least one HTML file to
+                          make this bundle available.
+                        </p>
+
+                        <div className="mt-3">
+                          <div className="flex items-center justify-between gap-3">
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
+                              Create Folder Command
+                            </p>
+
+                            <button
+                              type="button"
+                              onClick={() => copyToClipboard(folderCommand)}
+                              className="rounded-full bg-slate-950 px-3 py-1 text-xs font-bold text-white transition hover:bg-blue-700"
+                            >
+                              {copiedCommand === folderCommand
+                                ? "Copied"
+                                : "Copy"}
+                            </button>
+                          </div>
+
+                          <code className="mt-2 block break-all rounded-xl bg-white p-3 text-xs text-slate-700">
+                            {folderCommand}
+                          </code>
+                        </div>
+
+                        <div className="mt-3">
+                          <div className="flex items-center justify-between gap-3">
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
+                              Create Sample HTML File
+                            </p>
+
+                            <button
+                              type="button"
+                              onClick={() =>
+                                copyToClipboard(sampleFileCommand)
+                              }
+                              className="rounded-full bg-slate-950 px-3 py-1 text-xs font-bold text-white transition hover:bg-blue-700"
+                            >
+                              {copiedCommand === sampleFileCommand
+                                ? "Copied"
+                                : "Copy"}
+                            </button>
+                          </div>
+
+                          <code className="mt-2 block break-all rounded-xl bg-white p-3 text-xs text-slate-700">
+                            {sampleFileCommand}
+                          </code>
+                        </div>
+                      </div>
                     )}
+
+                    <div className="mt-4">
+                      <p className="text-sm font-bold text-slate-800">
+                        Uploaded HTML Files
+                      </p>
+
+                      {item.htmlFiles.length > 0 ? (
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {item.htmlFiles.map((file) => (
+                            <span
+                              key={file}
+                              className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600"
+                            >
+                              {file}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="mt-2 text-sm text-slate-500">
+                          No HTML file uploaded yet.
+                        </p>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex gap-2 lg:flex-col">
-                  <Link
-                    href={item.href}
-                    className="rounded-full bg-slate-950 px-5 py-2 text-center text-sm font-bold text-white transition hover:bg-blue-700"
-                  >
-                    View Page
-                  </Link>
+                  <div className="flex gap-2 lg:flex-col">
+                    <Link
+                      href={item.href}
+                      className="rounded-full bg-slate-950 px-5 py-2 text-center text-sm font-bold text-white transition hover:bg-blue-700"
+                    >
+                      View Page
+                    </Link>
 
-                  <Link
-                    href={item.folderPath}
-                    className="rounded-full border border-slate-200 px-5 py-2 text-center text-sm font-bold text-slate-700 transition hover:bg-slate-50"
-                  >
-                    Open URL
-                  </Link>
+                    <Link
+                      href={item.folderPath}
+                      className="rounded-full border border-slate-200 px-5 py-2 text-center text-sm font-bold text-slate-700 transition hover:bg-slate-50"
+                    >
+                      Open URL
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </section>
