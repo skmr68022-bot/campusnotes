@@ -1,3 +1,4 @@
+import AdminContentClient from "@/components/AdminContentClient";
 import Link from "next/link";
 import { getAdminContentItems } from "@/data/adminContent";
 
@@ -181,19 +182,7 @@ export default function AdminContentPage() {
           ))}
         </div>
 
-        <ContentSection
-          title="Uploaded Notes"
-          description="These bundles have at least one HTML file uploaded and are available on the public website."
-          items={uploadedItems}
-          statusType="uploaded"
-        />
-
-        <ContentSection
-          title="Not Uploaded Yet"
-          description="These bundles have no HTML file yet and will remain Coming Soon."
-          items={notUploadedItems}
-          statusType="not-uploaded"
-        />
+        <AdminContentClient items={items} />
       </section>
     </main>
   );
