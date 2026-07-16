@@ -7,6 +7,38 @@ import type { AdminContentItem } from "@/data/adminContent";
 type Props = {
   items: AdminContentItem[];
 };
+const getWindowsFolderCommand = (folderPath: string) => {
+  return `mkdir public${folderPath.replaceAll("/", "\\")}`;
+};
+
+const getSampleHtmlFileName = (itemTitle: string) => {
+  const lowerTitle = itemTitle.toLowerCase();
+
+  if (
+    lowerTitle.includes("business laws") ||
+    lowerTitle.includes("financial accounting")
+  ) {
+    return "unit-1.html";
+  }
+
+  if (
+    lowerTitle.includes("class") ||
+    lowerTitle.includes("cbse") ||
+    lowerTitle.includes("science") ||
+    lowerTitle.includes("mathematics")
+  ) {
+    return "chapter-1.html";
+  }
+
+  return "chapter-1.html";
+};
+
+const getWindowsSampleFileCommand = (folderPath: string, itemTitle: string) => {
+  const windowsFolderPath = `public${folderPath.replaceAll("/", "\\")}`;
+  const fileName = getSampleHtmlFileName(itemTitle);
+
+  return `echo ^<!DOCTYPE html^>^<html^>^<body^>^<h1^>${itemTitle}^</h1^>^<p^>CampusNotes content will be added here.^</p^>^</body^>^</html^> > ${windowsFolderPath}\\${fileName}`;
+};
 
 export default function AdminContentClient({ items }: Props) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -210,6 +242,37 @@ function ContentSection({
                     </code>
                   </div>
 
+                 {item.status === "coming-soon" && (
+  <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+    <p className="text-sm font-black text-amber-800">
+      Quick Upload Guide
+    </p>
+
+    <p className="mt-2 text-sm text-amber-700">
+      Create this folder and add at least one HTML file to make this bundle available.
+    </p>
+
+    <div className="mt-3">
+      <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
+        Create Folder Command
+      </p>
+
+      <code className="mt-2 block break-all rounded-xl bg-white p-3 text-xs text-slate-700">
+        {getWindowsFolderCommand(item.folderPath)}
+      </code>
+    </div>
+
+    <div className="mt-3">
+      <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-700">
+        Create Sample HTML File
+      </p>
+
+      <code className="mt-2 block break-all rounded-xl bg-white p-3 text-xs text-slate-700">
+        {getWindowsSampleFileCommand(item.folderPath, item.title)}
+      </code>
+    </div>
+  </div>
+)}
                   <div className="mt-4">
                     <p className="text-sm font-bold text-slate-800">
                       Uploaded HTML Files
