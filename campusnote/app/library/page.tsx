@@ -63,13 +63,34 @@ export default function LibraryPage() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const savedPurchases = JSON.parse(
-      localStorage.getItem("campusnotes_purchases") || "[]"
-    );
+  const savedPurchases: PurchaseItem[] = JSON.parse(
+    localStorage.getItem("campusnotes_purchases") || "[]"
+  );
 
-    setPurchases(savedPurchases);
-    setLoaded(true);
-  }, []);
+  const legacyPurchases: PurchaseItem[] = [];
+
+  if (localStorage.getItem("paid_bcom-hons-1-financial-accounting") === "true") {
+    legacyPurchases.push({
+      accessKey: "bcom-hons-1-financial-accounting",
+      title: "Financial Accounting",
+      url: "/subject/bcom-hons/sem1/financial-accounting",
+      purchasedAt: new Date().toISOString(),
+    });
+  }
+
+  const mergedPurchases = [
+    ...savedPurchases,
+    ...legacyPurchases.filter(
+      (legacyItem) =>
+        !savedPurchases.some(
+          (savedItem) => savedItem.accessKey === legacyItem.accessKey
+        )
+    ),
+  ];
+
+  setPurchases(mergedPurchases);
+  setLoaded(true);
+}, []);
 
   const duPurchases = purchases.filter(
     (item) =>
