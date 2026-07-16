@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
   ArrowLeft,
@@ -14,7 +13,7 @@ import {
 export default function LoginPage() {
   return (
     <>
-      <Navbar />
+    
 
       <main className="min-h-screen bg-[#FFFDF7]">
         <section className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-10 px-4 py-12 md:px-6 lg:grid-cols-2">

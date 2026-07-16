@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  ArrowRight,
   BadgeCheck,
   BookOpen,
   CheckCircle2,
@@ -14,6 +13,7 @@ import {
 import ResourceAccess from "@/components/ResourceAccess";
 import PaymentButton from "@/components/PaymentButton";
 import PurchaseStatus from "@/components/PurchaseStatus";
+import { getContentStatusFromResources } from "@/data/contentStatus";
 
 const boards = [
   {
@@ -72,13 +72,6 @@ const slugify = (text: string) =>
 
 const formatClassName = (classSlug: string) => {
   return classSlug.replace("class-", "Class ");
-};
-
-const formatSubjectName = (subjectSlug: string) => {
-  return subjectSlug
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
 };
 
 const createBoardHtmlNoteFiles = (
@@ -148,6 +141,7 @@ export default async function BoardSubjectPage({
   }
 
   const subjects = subjectsByClass[classSlug];
+
   const selectedSubject = subjects.find(
     (subject) => slugify(subject) === subjectSlug
   );
@@ -177,10 +171,13 @@ export default async function BoardSubjectPage({
     },
   ];
 
+  const contentStatus = getContentStatusFromResources(resources);
+  const isContentAvailable = contentStatus === "available";
+
   return (
     <main className="min-h-screen bg-[#FFFDF7]">
       <section className="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
-        <div className="absolute right-0 top-0 -z-10 h-90 w-90 rounded-full bg-blue-100 blur-3xl" />
+        <div className="absolute right-0 top-0 -z-10 h-[360px] w-[360px] rounded-full bg-blue-100 blur-3xl" />
 
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-wrap gap-3">
@@ -242,7 +239,7 @@ export default async function BoardSubjectPage({
               </div>
             </div>
 
-            <aside className="rounded-4xl border border-slate-200 bg-white p-6 shadow-xl shadow-blue-900/10">
+            <aside className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-blue-900/10">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-700 text-white">
                 <BookOpen size={34} />
               </div>
@@ -268,31 +265,75 @@ export default async function BoardSubjectPage({
                 </div>
               </div>
 
-              <div className="mt-6 rounded-2xl border border-blue-100 bg-blue-50 p-4">
-                <PurchaseStatus accessKey={accessKey} />
+              <div
+                className={`mt-6 rounded-2xl border p-4 ${
+                  isContentAvailable
+                    ? "border-blue-100 bg-blue-50"
+                    : "border-yellow-200 bg-yellow-50"
+                }`}
+              >
+                {isContentAvailable ? (
+                  <PurchaseStatus accessKey={accessKey} />
+                ) : (
+                  <div>
+                    <p className="text-sm font-black text-yellow-800">
+                      Coming Soon
+                    </p>
+
+                    <p className="mt-1 text-xs font-bold leading-5 text-yellow-700">
+                      This bundle will become available automatically after all
+                      HTML notes files are uploaded.
+                    </p>
+                  </div>
+                )}
               </div>
 
               <div className="mt-6 rounded-2xl border border-slate-200 p-5">
-                <p className="flex items-center gap-2 text-sm font-bold text-slate-500">
-                  <IndianRupee size={16} />
-                  One-time access price
-                </p>
+                {isContentAvailable ? (
+                  <>
+                    <p className="flex items-center gap-2 text-sm font-bold text-slate-500">
+                      <IndianRupee size={16} />
+                      One-time access price
+                    </p>
 
-                <p className="mt-2 text-4xl font-black text-slate-950">₹1</p>
+                    <p className="mt-2 text-4xl font-black text-slate-950">
+                      ₹1
+                    </p>
 
-                <p className="mt-2 text-sm font-medium leading-6 text-slate-500">
-                  Unlock full board subject bundle with chapter-wise HTML notes.
-                </p>
+                    <p className="mt-2 text-sm font-medium leading-6 text-slate-500">
+                      Unlock full board subject bundle with chapter-wise HTML
+                      notes.
+                    </p>
 
-                <div className="mt-5">
-                  <PaymentButton
-                    amount={1}
-                    subjectName={`${selectedBoard.name} ${formatClassName(
-                      classSlug
-                    )} ${selectedSubject}`}
-                    accessKey={accessKey}
-                  />
-                </div>
+                    <div className="mt-5">
+                      <PaymentButton
+                        amount={1}
+                        subjectName={`${selectedBoard.name} ${formatClassName(
+                          classSlug
+                        )} ${selectedSubject}`}
+                        accessKey={accessKey}
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-sm font-black text-slate-950">
+                      Content Upload Pending
+                    </p>
+
+                    <p className="mt-2 text-sm font-medium leading-6 text-slate-500">
+                      Payment is disabled until all HTML notes files for this
+                      bundle are uploaded.
+                    </p>
+
+                    <button
+                      disabled
+                      className="mt-5 w-full cursor-not-allowed rounded-full bg-slate-200 px-5 py-3 text-sm font-black text-slate-500"
+                    >
+                      Coming Soon
+                    </button>
+                  </>
+                )}
               </div>
             </aside>
           </div>
@@ -303,6 +344,7 @@ export default async function BoardSubjectPage({
                 <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-700">
                   Study Resources
                 </p>
+
                 <h2 className="mt-2 text-3xl font-black text-slate-950">
                   What you get in this bundle
                 </h2>
@@ -314,7 +356,32 @@ export default async function BoardSubjectPage({
               </div>
             </div>
 
-            <ResourceAccess resources={resources} accessKey={accessKey} />
+            {isContentAvailable ? (
+              <ResourceAccess resources={resources} accessKey={accessKey} />
+            ) : (
+              <div className="rounded-[2rem] border border-yellow-200 bg-yellow-50 p-7">
+                <p className="text-sm font-black uppercase tracking-[0.2em] text-yellow-700">
+                  Coming Soon
+                </p>
+
+                <h3 className="mt-3 text-2xl font-black text-slate-950">
+                  Notes are being prepared
+                </h3>
+
+                <p className="mt-3 max-w-2xl text-sm font-medium leading-7 text-slate-700">
+                  This bundle will automatically become available when all
+                  required HTML files are uploaded in the correct folder.
+                </p>
+
+                <div className="mt-5 rounded-2xl bg-white p-4 text-sm font-bold text-slate-600">
+                  Required folder:
+                  <br />
+                  <span className="text-blue-700">
+                    public/html/boards/{board}/{classSlug}/{subjectSlug}
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -340,7 +407,7 @@ export default async function BoardSubjectPage({
               return (
                 <div
                   key={item.title}
-                  className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm"
+                  className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
                     <Icon size={24} />

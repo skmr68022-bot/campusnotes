@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getCourse } from "@/data/courses";
 import {
@@ -27,7 +26,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
   if (!course) {
     return (
       <>
-        <Navbar />
+        
         <main className="min-h-screen bg-[#FFFDF7]">
           <div className="mx-auto max-w-7xl px-4 py-16 md:px-6">
             <div className="rounded-4xl border bg-white p-8 shadow-sm">
@@ -59,7 +58,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
   return (
     <>
-      <Navbar />
+      
 
       <main className="min-h-screen bg-[#FFFDF7]">
         <section className="relative overflow-hidden border-b bg-slate-950 text-white">
@@ -158,15 +157,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
                       {available ? <Layers /> : <Lock />}
                     </div>
 
-                    <span
-                      className={`rounded-full px-3 py-1 text-xs font-black ${
-                        available
-                          ? "bg-green-50 text-green-700"
-                          : "bg-slate-100 text-slate-500"
-                      }`}
-                    >
-                      {available ? "Available" : "Coming Soon"}
-                    </span>
+                    
                   </div>
 
                   <h3 className="mt-6 text-2xl font-black text-slate-950">

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { courses, getSemester } from "@/data/courses";
 import {
@@ -36,7 +35,7 @@ export default async function SemesterPage({ params }: SemesterPageProps) {
   if (!course || !semester) {
     return (
       <>
-        <Navbar />
+      
         <main className="min-h-screen bg-[#FFFDF7]">
           <div className="mx-auto max-w-7xl px-4 py-16 md:px-6">
             <div className="rounded-4xl border bg-white p-8 shadow-sm">
@@ -63,7 +62,7 @@ export default async function SemesterPage({ params }: SemesterPageProps) {
 
   return (
     <>
-      <Navbar />
+    
 
       <main className="min-h-screen bg-[#FFFDF7]">
         <section className="border-b bg-white">
@@ -165,10 +164,7 @@ export default async function SemesterPage({ params }: SemesterPageProps) {
                       <span className="rounded-full bg-yellow-50 px-3 py-1 text-xs font-black text-yellow-700">
                         Subject {index + 1}
                       </span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-green-50 px-3 py-1 text-xs font-black text-green-700">
-                        <BadgeCheck size={14} />
-                        Available
-                      </span>
+                      
                     </div>
                   </div>
 
