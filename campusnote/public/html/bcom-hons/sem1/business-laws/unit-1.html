@@ -1,1 +1,392 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Business Laws Unit 1</title></head><body><h1>Business Laws - Unit 1</h1><p>CampusNotes premium notes content will be added here.</p></body></html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Laws - Unit 1 | Campusnotes</title>
+
+  <style>
+    :root {
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --sky: #e0f2fe;
+      --cream: #fffdf7;
+      --gold: #f59e0b;
+      --green: #059669;
+      --red: #dc2626;
+      --slate: #475569;
+      --border: #e2e8f0;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 18px 60px;
+    }
+
+    .brand-header {
+      border-radius: 28px;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: white;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+    }
+
+    .brand-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #bfdbfe;
+    }
+
+    .badge {
+      display: inline-flex;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    h1 {
+      margin: 20px 0 0;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin-top: 14px;
+      max-width: 720px;
+      color: #dbeafe;
+      font-size: 17px;
+    }
+
+    .meta-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .meta-card {
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 14px;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #bfdbfe;
+      font-weight: 900;
+    }
+
+    .meta-value {
+      margin-top: 4px;
+      font-size: 15px;
+      font-weight: 900;
+      color: white;
+    }
+
+    .section {
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 20px;
+      color: #1d4ed8;
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--slate);
+    }
+
+    ul, ol {
+      color: var(--slate);
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    .highlight-box {
+      margin: 18px 0;
+      border-radius: 20px;
+      padding: 18px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+
+    .exam-box {
+      margin: 18px 0;
+      border-radius: 20px;
+      padding: 18px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+    }
+
+    .quick-box {
+      margin: 18px 0;
+      border-radius: 20px;
+      padding: 18px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+    }
+
+    .box-title {
+      margin: 0 0 8px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    th {
+      background: #0f172a;
+      color: white;
+      text-align: left;
+      padding: 14px;
+      font-size: 14px;
+    }
+
+    td {
+      border: 1px solid var(--border);
+      padding: 14px;
+      color: var(--slate);
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .footer {
+      margin-top: 28px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .watermark {
+      margin-top: 8px;
+      font-weight: 900;
+      color: #1d4ed8;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .page {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .section,
+      .brand-header {
+        box-shadow: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section,
+      .brand-header {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="brand-header">
+      <div class="brand-row">
+        <div class="brand">Campusnotes</div>
+        <div class="badge">Premium Study Notes</div>
+      </div>
+
+      <h1>Business Laws</h1>
+
+      <p class="subtitle">
+        Unit 1 notes prepared for quick understanding, exam revision, and structured answer writing.
+      </p>
+
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="meta-label">Course</div>
+          <div class="meta-value">B.Com (Hons.)</div>
+        </div>
+
+        <div class="meta-card">
+          <div class="meta-label">Semester</div>
+          <div class="meta-value">Semester 1</div>
+        </div>
+
+        <div class="meta-card">
+          <div class="meta-label">Unit</div>
+          <div class="meta-value">Unit 1</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>1. Introduction to Business Laws</h2>
+
+      <p>
+        Business Laws are the rules and legal principles that regulate business transactions,
+        commercial relationships, contracts, rights, duties, liabilities, and remedies.
+      </p>
+
+      <div class="highlight-box">
+        <p class="box-title">Simple Meaning</p>
+        <p>
+          Business Law tells us how business agreements are created, how they are performed,
+          and what happens when one party fails to follow the agreement.
+        </p>
+      </div>
+
+      <h3>Why Business Law is Important</h3>
+
+      <ul>
+        <li>It creates trust between parties in commercial transactions.</li>
+        <li>It protects buyers, sellers, consumers, and business owners.</li>
+        <li>It provides legal remedies if a contract is broken.</li>
+        <li>It helps businesses operate in a fair and lawful manner.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>2. Indian Contract Act, 1872</h2>
+
+      <p>
+        The Indian Contract Act, 1872 is one of the most important business law statutes in India.
+        It explains how legally enforceable agreements are created.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+            <th>Exam Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agreement</td>
+            <td>Every promise and every set of promises forming consideration for each other.</td>
+            <td>Basic starting point of contract law.</td>
+          </tr>
+          <tr>
+            <td>Contract</td>
+            <td>An agreement enforceable by law.</td>
+            <td>Most important definition for exams.</td>
+          </tr>
+          <tr>
+            <td>Consideration</td>
+            <td>Something given in return for a promise.</td>
+            <td>Used to judge validity of contract.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="exam-box">
+        <p class="box-title">Exam Focus</p>
+        <p>
+          Remember this line: All contracts are agreements, but all agreements are not contracts.
+          This is one of the most commonly asked concepts in Business Laws.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. Essential Elements of a Valid Contract</h2>
+
+      <ol>
+        <li>Offer and acceptance</li>
+        <li>Lawful consideration</li>
+        <li>Capacity of parties</li>
+        <li>Free consent</li>
+        <li>Lawful object</li>
+        <li>Intention to create legal relationship</li>
+        <li>Agreement not expressly declared void</li>
+        <li>Certainty and possibility of performance</li>
+      </ol>
+
+      <div class="quick-box">
+        <p class="box-title">Quick Revision Trick</p>
+        <p>
+          A valid contract needs a clear promise, legal exchange, capable parties,
+          free consent, lawful purpose, and enforceability by law.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. One-Line Revision</h2>
+
+      <ul>
+        <li>Business Law regulates commercial transactions.</li>
+        <li>An agreement becomes a contract only when it is enforceable by law.</li>
+        <li>Free consent and lawful object are essential for validity.</li>
+        <li>A void agreement has no legal effect.</li>
+        <li>A valid contract creates legal rights and obligations.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div>Prepared for focused exam revision.</div>
+      <div class="watermark">Campusnotes</div>
+    </footer>
+  </main>
+</body>
+</html>
