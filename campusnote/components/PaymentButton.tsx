@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 type PaymentButtonProps = {
-  amount: string;
+  amount: string | number;
   subjectName: string;
   accessKey: string;
 };
@@ -37,11 +37,20 @@ export default function PaymentButton({
       const script = document.createElement("script");
       script.id = "razorpay-script";
       script.src = "https://checkout.razorpay.com/v1/checkout.js";
+
       script.onload = () => resolve(true);
       script.onerror = () => resolve(false);
 
       document.body.appendChild(script);
     });
+  };
+
+  const getCleanAmount = () => {
+    if (typeof amount === "number") {
+      return amount;
+    }
+
+    return Number(String(amount).replace("₹", "").trim()) || 49;
   };
 
   const handlePayment = async () => {
@@ -55,7 +64,7 @@ export default function PaymentButton({
       return;
     }
 
-    const cleanAmount = Number(amount.replace("₹", "").trim()) || 49;
+    const cleanAmount = getCleanAmount();
 
     const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_demo",
@@ -108,6 +117,12 @@ export default function PaymentButton({
       },
     };
 
+    if (!window.Razorpay) {
+      alert("Razorpay is not available. Please refresh and try again.");
+      setLoading(false);
+      return;
+    }
+
     const paymentObject = new window.Razorpay(options);
 
     paymentObject.on("payment.failed", function () {
@@ -130,7 +145,7 @@ export default function PaymentButton({
       disabled={loading}
       className="rounded-full bg-blue-600 px-6 py-3 text-sm font-black text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
     >
-      {loading ? "Processing..." : `Purchase Bundle • ${amount}`}
+      {loading ? "Processing..." : `Purchase Bundle • ₹${getCleanAmount()}`}
     </button>
   );
 }
