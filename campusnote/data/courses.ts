@@ -129,6 +129,7 @@ export const courses: Course[] = [
       {
         number: 1,
         subjects: [
+          createSubject("bcom", 1, "Business Laws", "business-laws"),
           createSubject("bcom", 1, "Financial Accounting", "financial-accounting"),
           createSubject("bcom", 1, "Business Organisation and Management", "business-organisation-and-management"),
         ],
