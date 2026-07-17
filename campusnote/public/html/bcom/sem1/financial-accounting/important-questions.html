@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top 10 Numerical Questions · Financial Accounting · CampusNotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f0f4fa;
+      font-family: 'Inter', -apple-system, sans-serif;
+      padding: 30px 20px;
+      color: #0b1e33;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    /* Header */
+    .sheet-header {
+      background: linear-gradient(145deg, #0b2b4a, #1a4b6d);
+      border-radius: 28px;
+      padding: 35px 40px 28px;
+      color: white;
+      box-shadow: 0 20px 40px rgba(0, 20, 40, 0.15);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .sheet-header .badge {
+      background: rgba(255, 215, 0, 0.15);
+      color: #fcd34d;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 6px 20px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255, 215, 0, 0.15);
+    }
+    .sheet-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .sheet-header p {
+      font-size: 1rem;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sheet-header .sub {
+      font-size: 0.8rem;
+      opacity: 0.5;
+      margin-top: 6px;
+    }
+
+    /* Question Card */
+    .q-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 24px 28px 28px;
+      box-shadow: 0 8px 24px rgba(0, 20, 40, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      margin-bottom: 22px;
+      transition: 0.2s;
+      position: relative;
+    }
+    .q-card:hover {
+      box-shadow: 0 14px 32px rgba(0, 20, 40, 0.08);
+    }
+    .q-number {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      font-weight: 800;
+      font-size: 0.8rem;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      margin-right: 10px;
+    }
+    .q-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0a1e3c;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .q-title .unit-tag {
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 30px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .q-title .unit-tag.u2 { background: #dcfce7; color: #15803d; }
+    .q-title .unit-tag.u3 { background: #fef3c7; color: #d97706; }
+    .q-title .unit-tag.u4 { background: #ede9fe; color: #7c3aed; }
+    .q-title .unit-tag.u5 { background: #fce4ec; color: #dc2626; }
+
+    .q-body {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 18px 22px;
+      border-left: 4px solid #2563eb;
+      margin: 8px 0 14px;
+    }
+    .q-body p {
+      margin-bottom: 6px;
+    }
+    .q-body ul {
+      margin-left: 20px;
+      list-style-type: disc;
+      line-height: 2;
+    }
+    .q-body ul li {
+      font-size: 0.95rem;
+    }
+
+    .hint-box {
+      background: #fffbeb;
+      border-radius: 14px;
+      padding: 14px 20px;
+      border-left: 6px solid #f59e0b;
+      margin: 12px 0 6px;
+    }
+    .hint-box .hint-label {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #d97706;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hint-box .hint-label i { color: #d97706; }
+    .hint-box p {
+      font-size: 0.92rem;
+      color: #78350f;
+      margin-top: 4px;
+    }
+    .hint-box .key-formula {
+      background: #fef3c7;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #92400e;
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    .difficulty {
+      display: inline-block;
+      padding: 2px 14px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.3px;
+      margin-left: 10px;
+    }
+    .difficulty.easy { background: #dcfce7; color: #15803d; }
+    .difficulty.medium { background: #fef3c7; color: #d97706; }
+    .difficulty.hard { background: #fecaca; color: #dc2626; }
+
+    .footer-note {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+      padding: 20px 0 10px;
+      border-top: 2px solid #e9edf2;
+      margin-top: 10px;
+    }
+    .footer-note i { color: #2563eb; }
+
+    @media (max-width: 700px) {
+      .sheet-header h1 { font-size: 1.8rem; }
+      .q-card { padding: 18px 16px; }
+      .q-body { padding: 14px 16px; }
+      .q-title { font-size: 1rem; flex-wrap: wrap; }
+    }
+    @media print {
+      body { background: white; padding: 10px; }
+      .q-card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+      .sheet-header { background: #0b2b4a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <header class="sheet-header">
+    <span class="badge"><i class="fas fa-calculator"></i> EXAM PRACTICE</span>
+    <h1>Top 10 Numerical Questions</h1>
+    <p>Financial Accounting · B.Com (Hons.) Semester 1 · University of Delhi</p>
+    <p class="sub">Important exam-style problems from all 5 units · Each with a hint to guide you</p>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 1                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">1</span>
+      Depreciation Accounting — Machinery Account
+      <span class="unit-tag u2">Unit 2</span>
+      <span class="difficulty medium">Medium</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>On 1st April 2020,</strong> XYZ Ltd. purchased a machine for ₹6,00,000. Installation charges were ₹50,000.</p>
+      <p><strong>On 1st October 2021,</strong> another machine was purchased for ₹3,50,000.</p>
+      <p><strong>On 1st July 2022,</strong> the first machine was sold for ₹3,80,000.</p>
+      <p><strong>On the same date (1st July 2022),</strong> a new machine was purchased for ₹2,80,000.</p>
+      <p>Depreciation is charged @ <strong>10% p.a. on the Written Down Value (WDV) Method</strong>.</p>
+      <p>Accounts are closed on 31st March every year.</p>
+      <p style="font-weight:600; margin-top:8px;">Required: Prepare the Machinery Account for 2020-21, 2021-22, and 2022-23.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Calculate total cost of M1 = ₹6,00,000 + ₹50,000 = ₹6,50,000</p>
+      <p><strong>Step 2:</strong> WDV Depreciation = Opening WDV × Rate %</p>
+      <p><strong>Step 3:</strong> For sale, calculate depreciation up to <em>date of sale</em> only.</p>
+      <p><strong>Step 4:</strong> Loss/Profit on sale = Sale Price – WDV on sale date.</p>
+      <div class="key-formula">WDV Dep = Opening WDV × 10%</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 2                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">2</span>
+      Depreciation — Change in Method
+      <span class="unit-tag u2">Unit 2</span>
+      <span class="difficulty hard">Hard</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>On 1st April 2019,</strong> a company purchased machinery for ₹8,00,000.</p>
+      <p>Depreciation was charged @ <strong>15% p.a. on SLM</strong> for the first 2 years.</p>
+      <p>From 2021-22 onwards, the company decided to change the method to <strong>WDV @ 20% p.a.</strong></p>
+      <p>Accounts are closed on 31st March every year.</p>
+      <p style="font-weight:600; margin-top:8px;">Required: Calculate the depreciation for each year and show the adjustment entry for the change in method.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Calculate SLM depreciation for 2019-20 and 2020-21.</p>
+      <p><strong>Step 2:</strong> Recalculate depreciation under WDV from <em>Day 1</em> (retrospective).</p>
+      <p><strong>Step 3:</strong> Compare total depreciation charged (SLM) vs total under WDV.</p>
+      <p><strong>Step 4:</strong> Shortfall = Debit to P&L; Excess = Credit to P&L in the year of change.</p>
+      <div class="key-formula">Shortfall = WDV Depreciation – SLM Depreciation (cumulative)</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 3                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">3</span>
+      Inventory Valuation — FIFO &amp; Weighted Average
+      <span class="unit-tag u2">Unit 2</span>
+      <span class="difficulty medium">Medium</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>M/s. Rajesh Traders</strong> gives you the following details of material:</p>
+      <ul>
+        <li><strong>01.01.2024:</strong> Opening Stock — 300 units @ ₹50 per unit</li>
+        <li><strong>10.01.2024:</strong> Purchases — 400 units @ ₹55 per unit</li>
+        <li><strong>15.01.2024:</strong> Sales — 350 units @ ₹80 per unit</li>
+        <li><strong>20.01.2024:</strong> Purchases — 500 units @ ₹60 per unit</li>
+        <li><strong>25.01.2024:</strong> Normal Loss — 20 units</li>
+        <li><strong>28.01.2024:</strong> Sales — 400 units @ ₹90 per unit</li>
+        <li><strong>30.01.2024:</strong> Purchases — 300 units @ ₹65 per unit</li>
+      </ul>
+      <p style="font-weight:600; margin-top:8px;">Required: Find <strong>Closing Stock</strong> and <strong>COGS</strong> using (1) FIFO and (2) Weighted Average (Perpetual).</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>FIFO:</strong> Oldest stock sold first. Closing stock from latest purchases.</p>
+      <p><strong>Weighted Average:</strong> Recalculate average after EVERY purchase.</p>
+      <p><strong>Normal Loss:</strong> Reduce quantity only (no cost impact).</p>
+      <div class="key-formula">Weighted Avg = Total Cost ÷ Total Units</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 4                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">4</span>
+      Final Accounts — Sole Proprietorship
+      <span class="unit-tag u3">Unit 3</span>
+      <span class="difficulty hard">Hard</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>From the following Trial Balance of M/s. Verma Traders, prepare Trading Account, Profit &amp; Loss Account for the year ended 31st March 2024 and Balance Sheet as on that date.</strong></p>
+
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Particulars</th><th style="padding:8px 12px; text-align:right;">Debit (₹)</th><th style="padding:8px 12px; text-align:right;">Credit (₹)</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Capital</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Drawings</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Opening Stock</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,00,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Purchases</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">18,00,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Sales</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">35,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Sales Returns</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">40,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Wages</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,20,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Salaries</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Rent</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">72,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Insurance</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Sundry Debtors</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">5,00,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Sundry Creditors</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,20,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash in Hand</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash at Bank</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">90,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Plant &amp; Machinery</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">7,00,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Furniture</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Bad Debts</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">12,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Commission Received</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">20,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Interest on Investment</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Investments</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">General Expenses</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">45,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Bills Receivable</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">60,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Bills Payable</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">50,000</td></tr>
+            <tr style="font-weight:700; background:#f8fafc;"><td style="padding:6px 12px;">Total</td><td style="padding:6px 12px; text-align:right;">48,89,000</td><td style="padding:6px 12px; text-align:right;">48,89,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:10px;">Additional Information (Adjustments):</p>
+      <ol style="margin-left:20px; line-height:2.2;">
+        <li><strong>Closing Stock</strong> on 31st March 2024 was ₹3,50,000.</li>
+        <li><strong>Salaries</strong> outstanding as on 31st March 2024: ₹25,000.</li>
+        <li><strong>Insurance</strong> prepaid as on 31st March 2024: ₹5,000.</li>
+        <li><strong>Depreciate</strong> Plant &amp; Machinery @ 10% p.a. and Furniture @ 15% p.a.</li>
+        <li><strong>Write off</strong> further bad debts ₹8,000.</li>
+        <li><strong>Create Provision for Doubtful Debts</strong> @ 5% on Sundry Debtors.</li>
+        <li><strong>Create Provision for Discount on Debtors</strong> @ 2% on Sundry Debtors.</li>
+        <li><strong>Goods worth ₹6,000</strong> were distributed as free samples.</li>
+      </ol>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Identify items for Trading A/c, P&amp;L A/c, and Balance Sheet.</p>
+      <p><strong>Step 2:</strong> Prepare Trading A/c first (Opening Stock + Purchases + Wages → Sales + Closing Stock).</p>
+      <p><strong>Step 3:</strong> Calculate all adjustments before preparing P&amp;L A/c.</p>
+      <p><strong>Step 4:</strong> PDD = (Debtors – Further Bad Debts) × 5%</p>
+      <p><strong>Step 5:</strong> Discount on Debtors = (Debtors – Further Bad Debts – PDD) × 2%</p>
+      <div class="key-formula">COGS = Opening Stock + Purchases – Closing Stock</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 5                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">5</span>
+      NPO — Income &amp; Expenditure Account
+      <span class="unit-tag u3">Unit 3</span>
+      <span class="difficulty medium">Medium</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>The following is the Receipt and Payment Account of ABC Club for the year ended 31st March 2024:</strong></p>
+
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Receipts</th><th style="padding:8px 12px; text-align:right;">₹</th><th style="padding:8px 12px; text-align:left;">Payments</th><th style="padding:8px 12px; text-align:right;">₹</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">To Balance b/d (Cash)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Salaries</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,50,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">To Subscriptions: 2022-23</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">8,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Rent</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">60,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">To Subscriptions: 2023-24</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,20,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Electricity</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">22,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">To Subscriptions: 2024-25</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">12,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Sports Equipment (purchased 1.10.2023)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">80,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">To Donations (General)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">40,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Stationery</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">To Life Membership Fees</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Sundry Expenses</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">15,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">To Sale of Old Furniture (Book Value ₹12,000)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Furniture (purchased 1.4.2023)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;"></td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">By Balance c/d (Cash)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">45,000</td></tr>
+            <tr style="font-weight:700; background:#f8fafc;"><td style="padding:6px 12px;">Total</td><td style="padding:6px 12px; text-align:right;">3,70,000</td><td style="padding:6px 12px;"></td><td style="padding:6px 12px; text-align:right;">3,70,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:10px;">Additional Information:</p>
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Particulars</th><th style="padding:8px 12px; text-align:right;">31.03.2023 (₹)</th><th style="padding:8px 12px; text-align:right;">31.03.2024 (₹)</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Outstanding Salaries</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">15,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Outstanding Rent</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">5,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">8,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Prepaid Electricity</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">4,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Subscription Outstanding</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">7,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Subscription Received in Advance</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">4,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">6,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Stock of Stationery</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">4,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Creditors for Stationery</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Building (01.04.2023)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">–</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Furniture (01.04.2023)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">80,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">–</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Sports Equipment (01.04.2023)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">–</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:8px;">Depreciation: Building @ 6%, Furniture @ 10%, Sports Equipment @ 20%</p>
+      <p style="font-weight:600; margin-top:8px;">Required: Prepare (1) Income &amp; Expenditure Account and (2) Balance Sheet.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Calculate actual subscription using the formula.</p>
+      <p><strong>Step 2:</strong> Calculate Stationery Consumed = Opening + Purchases – Closing.</p>
+      <p><strong>Step 3:</strong> Calculate depreciation on all assets.</p>
+      <p><strong>Step 4:</strong> Prepare I&amp;E A/c (Surplus = Balancing figure).</p>
+      <p><strong>Step 5:</strong> Prepare Balance Sheet (Capital Fund = Opening + Surplus + Life Membership – Loss on Sale).</p>
+      <div class="key-formula">Subscription = Received – Outstanding(beg) – Advance(end) + Outstanding(end) + Advance(beg)</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 6                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">6</span>
+      Branch Accounting — Debtors System
+      <span class="unit-tag u4">Unit 4</span>
+      <span class="difficulty medium">Medium</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>M/s. Gupta Traders</strong> has a Head Office in Delhi and a Branch in Jaipur.</p>
+      <p>Goods are sent to the branch at cost. All expenses are paid by HO. Cash collected is remitted to HO.</p>
+
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Particulars</th><th style="padding:8px 12px; text-align:right;">Amount (₹)</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Opening Stock at Branch</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">40,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Opening Debtors at Branch</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">35,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Opening Petty Cash</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Goods sent to Branch</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,60,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash Sales</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">80,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Credit Sales</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,20,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash received from Debtors</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,10,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Goods returned by Branch to HO</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">8,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash sent for Expenses: Rent</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">18,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash sent for Expenses: Salaries</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">48,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Petty Expenses paid by Branch</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Discount allowed</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">4,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Bad Debts</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Closing Stock at Branch</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">50,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Closing Petty Cash</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:8px;">Required: Prepare the Branch Account in the books of Head Office.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Find Closing Debtors = Opening + Credit Sales – Cash – Discount – Bad Debts</p>
+      <p><strong>Step 2:</strong> Debit side: Opening Stock, Opening Debtors, Goods sent, Expenses, Petty Expenses</p>
+      <p><strong>Step 3:</strong> Credit side: Cash Sales, Cash from Debtors, Returns, Discount, Bad Debts, Closing Stock, Closing Debtors</p>
+      <p><strong>Step 4:</strong> Balancing figure = Profit (Credit bigger) or Loss (Debit bigger)</p>
+      <div class="key-formula">Closing Debtors = 35,000 + 1,20,000 – 1,10,000 – 4,000 – 3,000 = ₹38,000</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 7                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">7</span>
+      Branch Accounting — Stock &amp; Debtors System (with Loading)
+      <span class="unit-tag u4">Unit 4</span>
+      <span class="difficulty hard">Hard</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>M/s. Sharma Traders</strong> has a HO in Mumbai and a Branch in Pune. Goods are invoiced to the branch at <strong>cost plus 50%</strong>.</p>
+
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Particulars</th><th style="padding:8px 12px; text-align:right;">Amount (₹)</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Opening Stock at IP</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,20,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Opening Debtors</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">60,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Goods sent to Branch at IP</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">6,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash Sales</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,50,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Credit Sales</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,50,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Cash received from Debtors</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,20,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Discount allowed</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">6,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Bad Debts</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">4,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Goods returned by Branch to HO at IP</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">15,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Goods returned by Debtors</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Expenses paid by HO: Rent</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">20,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Expenses paid by HO: Salaries</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">60,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Petty Expenses paid by Branch</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">8,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Closing Stock at IP</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,50,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:8px;">Required: Prepare (1) Branch Stock Account, (2) Branch Debtors Account, (3) Branch Adjustment Account, and (4) Branch P&amp;L Account.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Cost + 50% → Loading = 1/3 of Invoice Price.</p>
+      <p><strong>Step 2:</strong> Branch Stock A/c — all entries at Invoice Price.</p>
+      <p><strong>Step 3:</strong> Branch Debtors A/c — find closing debtors.</p>
+      <p><strong>Step 4:</strong> Branch Adjustment A/c — remove loading from Goods sent, Returns, Stock, Abnormal Loss.</p>
+      <p><strong>Step 5:</strong> Branch P&amp;L A/c — Gross Profit – Expenses = Net Profit.</p>
+      <div class="key-formula">Loading = 1/3 of IP · Stock Reserve = Closing Stock × 1/3</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 8                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">8</span>
+      Departmental Accounting
+      <span class="unit-tag u4">Unit 4</span>
+      <span class="difficulty medium">Medium</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>M/s. Rajesh Ltd.</strong> has two departments: A and B.</p>
+
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Particulars</th><th style="padding:8px 12px; text-align:right;">Dept A (₹)</th><th style="padding:8px 12px; text-align:right;">Dept B (₹)</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Opening Stock</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">50,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Purchases</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,00,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Sales</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">5,00,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">4,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Sales Returns</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">15,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">10,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Closing Stock</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">60,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">40,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Wages</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">20,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Salaries</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">40,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:10px;">Common Expenses (To Be Allocated):</p>
+      <ul style="margin-left:20px; line-height:2.2;">
+        <li><strong>Rent:</strong> ₹24,000</li>
+        <li><strong>Electricity:</strong> ₹16,000</li>
+        <li><strong>Depreciation:</strong> ₹30,000</li>
+        <li><strong>Selling Expenses:</strong> ₹15,000</li>
+      </ul>
+
+      <p style="font-weight:600; margin-top:10px;">Other Information for Allocation:</p>
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Basis</th><th style="padding:8px 12px; text-align:right;">Dept A</th><th style="padding:8px 12px; text-align:right;">Dept B</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Floor Area (sq. ft.)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">600</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">400</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Light Points</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">50</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">30</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Value of Assets (₹)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">3,00,000</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">2,00,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:8px;">Required: Prepare Departmental Trading and Profit &amp; Loss Account.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Prepare Trading A/c for each department (find Gross Profit).</p>
+      <p><strong>Step 2:</strong> Allocate common expenses using the given bases.</p>
+      <p><strong>Step 3:</strong> Rent → Floor Area; Electricity → Light Points; Depreciation → Asset Value; Selling Expenses → Sales.</p>
+      <p><strong>Step 4:</strong> Prepare P&amp;L A/c for each department (Gross Profit – Expenses = Net Profit).</p>
+      <div class="key-formula">Rent A = 24,000 × 600/1000 = ₹14,400 · Rent B = 24,000 × 400/1000 = ₹9,600</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 9                                                    -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">9</span>
+      Lease Accounting (AS 19)
+      <span class="unit-tag u4">Unit 4</span>
+      <span class="difficulty easy">Easy</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>M/s. ABC Finance Ltd.</strong> leased a machine to <strong>M/s. XYZ Ltd.</strong> on the following terms:</p>
+
+      <div class="table-wrap" style="margin:8px 0; overflow-x:auto; border:1px solid #e2e8f0; border-radius:12px;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+          <thead><tr style="background:#f1f5f9;"><th style="padding:8px 12px; text-align:left;">Particulars</th><th style="padding:8px 12px; text-align:right;">Amount (₹)</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Fair Value of the Machine</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">1,00,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Lease Period</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">5 Years</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Annual Lease Rental (paid at year end)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">22,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Guaranteed Residual Value (GRV)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">5,00,000</td></tr>
+            <tr><td style="padding:6px 12px; border-bottom:1px solid #eef2f6;">Unguaranteed Residual Value (UGRV)</td><td style="padding:6px 12px; border-bottom:1px solid #eef2f6; text-align:right;">6,00,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight:600; margin-top:8px;">Required: Calculate (1) Gross Investment in Lease (GIL), (2) Unearned Finance Income (UFI), and (3) Net Investment in Lease.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>GIL</strong> = (Annual Rental × Years) + GRV + UGRV</p>
+      <p><strong>UFI</strong> = GIL – Fair Value</p>
+      <p><strong>Net Investment</strong> = Fair Value – UGRV</p>
+      <div class="key-formula">GIL = (22,00,000 × 5) + 5,00,000 + 6,00,000 = ₹1,21,00,000</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUESTION 10                                                   -->
+  <!-- ============================================================ -->
+
+  <div class="q-card">
+    <div class="q-title">
+      <span class="q-number">10</span>
+      GST — Order of Utilization of ITC
+      <span class="unit-tag u5">Unit 5</span>
+      <span class="difficulty easy">Easy</span>
+    </div>
+
+    <div class="q-body">
+      <p><strong>M/s. Verma Traders</strong> has the following Input Tax Credit (ITC) available:</p>
+      <ul style="margin-left:20px; line-height:2.2;">
+        <li>Input IGST: ₹40,000</li>
+        <li>Input CGST: ₹60,000</li>
+        <li>Input SGST: ₹50,000</li>
+      </ul>
+
+      <p style="font-weight:600; margin-top:10px;">The Output GST payable is as follows:</p>
+      <ul style="margin-left:20px; line-height:2.2;">
+        <li>Outward IGST: ₹55,000</li>
+        <li>Outward CGST: ₹50,000</li>
+        <li>Outward SGST: ₹35,000</li>
+      </ul>
+
+      <p style="font-weight:600; margin-top:8px;">Required: Determine the order of utilization of ITC and prepare a statement showing the amount due, adjusted, and payable in cash.</p>
+    </div>
+
+    <div class="hint-box">
+      <div class="hint-label"><i class="fas fa-lightbulb"></i> Hint</div>
+      <p><strong>Step 1:</strong> Input IGST → set off against Output IGST first.</p>
+      <p><strong>Step 2:</strong> Input CGST → set off against Output CGST first, then IGST.</p>
+      <p><strong>Step 3:</strong> Input SGST → set off against Output SGST first, then IGST.</p>
+      <p><strong>Step 4:</strong> CGST and SGST can NEVER be set off against each other.</p>
+      <div class="key-formula">Cash Payable = Total Output GST – Total ITC Utilized</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                        -->
+  <!-- ============================================================ -->
+
+  <div class="footer-note">
+    <i class="fas fa-check-circle"></i> Top 10 Numerical Questions — Complete Practice Set.
+    <span style="display:inline-block; margin-left:12px;"><i class="fas fa-copyright"></i> CampusNotes · B.Com Sem 1</span>
+  </div>
+
+</div>
+
+</body>
+</html>

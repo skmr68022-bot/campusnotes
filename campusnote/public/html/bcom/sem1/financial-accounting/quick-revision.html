@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Revision · Financial Accounting · CampusNotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f0f4fa;
+      font-family: 'Inter', -apple-system, sans-serif;
+      padding: 30px 20px;
+      color: #0b1e33;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* Header */
+    .revision-header {
+      background: linear-gradient(145deg, #0b2b4a, #1a4b6d);
+      border-radius: 32px;
+      padding: 40px 40px 32px;
+      color: white;
+      box-shadow: 0 20px 40px rgba(0, 20, 40, 0.15);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .revision-header .badge {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      color: #f0f9ff;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      padding: 6px 20px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .revision-header h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .revision-header p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 28px 32px 34px;
+      box-shadow: 0 8px 24px rgba(0, 20, 40, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      margin-bottom: 28px;
+      transition: 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 14px 32px rgba(0, 20, 40, 0.07);
+    }
+    .card .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e4a8b;
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.5px;
+      padding: 4px 14px;
+      border-radius: 40px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .card .badge i { margin-right: 6px; }
+    .card h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0a1e3c;
+      margin-bottom: 6px;
+    }
+    .card .subtitle {
+      font-size: 0.95rem;
+      color: #475569;
+      margin-bottom: 20px;
+      border-left: 4px solid #3b82f6;
+      padding-left: 16px;
+      background: #f8fafc;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 18px;
+    }
+    .card .subtitle i { color: #2563eb; margin-right: 8px; }
+
+    hr { border: 0; border-top: 1px solid #e2e8f0; margin: 18px 0; }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 650;
+      margin: 18px 0 10px 0;
+      color: #0b2b4a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h3 i { color: #2563eb; }
+    h4 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin: 12px 0 6px;
+      color: #1e3a5f;
+    }
+
+    /* Grids */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 10px 0 8px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 10px 0 8px; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; margin: 10px 0 8px; }
+
+    .grid-card {
+      background: #fafcff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      border: 1px solid #e4eaf2;
+    }
+    .grid-card.blue { border-left: 5px solid #2563eb; }
+    .grid-card.green { border-left: 5px solid #16a34a; }
+    .grid-card.red { border-left: 5px solid #dc2626; }
+    .grid-card.purple { border-left: 5px solid #9333ea; }
+    .grid-card.orange { border-left: 5px solid #f59e0b; }
+    .grid-card.teal { border-left: 5px solid #0d9488; }
+    .grid-card h4 { margin-top: 0; margin-bottom: 4px; font-size: 0.9rem; }
+    .grid-card ul { list-style: none; padding-left: 4px; margin: 4px 0 2px; }
+    .grid-card ul li { padding: 2px 0 2px 18px; position: relative; font-size: 0.88rem; }
+    .grid-card ul li::before { content: "▹"; position: absolute; left: 0; color: #2563eb; font-weight: 700; }
+
+    /* Lists */
+    .study-list { list-style: none; padding-left: 4px; margin: 6px 0 10px; }
+    .study-list li { padding: 4px 0 4px 22px; position: relative; font-size: 0.92rem; }
+    .study-list li::before { content: "▹"; position: absolute; left: 0; color: #2563eb; font-weight: 700; }
+
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      margin: 8px 0 12px;
+      padding-left: 6px;
+    }
+    .step-list li {
+      counter-increment: step;
+      padding: 4px 0 5px 26px;
+      position: relative;
+      font-size: 0.92rem;
+    }
+    .step-list li::before {
+      content: counter(step) ".";
+      font-weight: 700;
+      color: #2563eb;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Callouts */
+    .callout {
+      background: #f1f5f9;
+      border-left: 6px solid #3b82f6;
+      padding: 14px 20px;
+      border-radius: 14px;
+      margin: 12px 0;
+      font-size: 0.95rem;
+    }
+    .callout.warning {
+      border-left-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .callout.alert {
+      border-left-color: #ef4444;
+      background: #fef2f2;
+    }
+    .callout.tip {
+      border-left-color: #10b981;
+      background: #ecfdf5;
+    }
+    .callout hr { margin: 8px 0; border-color: #e2e8f0; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 12px 0 10px;
+      border-radius: 14px;
+      border: 1px solid #e9edf2;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      background: white;
+    }
+    th {
+      background: #f1f6fa;
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 14px;
+      color: #1e3a5f;
+      border-bottom: 2px solid #d0d9e5;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #eef2f6;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* Formula Box */
+    .formula-box {
+      background: #0b2b4a;
+      color: #f0f9ff;
+      border-radius: 16px;
+      padding: 16px 22px;
+      margin: 12px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.92rem;
+      border-left: 6px solid #f59e0b;
+    }
+    .formula-box strong { color: #fcd34d; }
+    .formula-box .label {
+      font-weight: 600;
+      color: #fcd34d;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .green-tag {
+      background: #dcfce7;
+      color: #15803d;
+      padding: 2px 10px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      display: inline-block;
+    }
+    .blue-tag {
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 2px 10px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      display: inline-block;
+    }
+    .red-tag {
+      background: #fecaca;
+      color: #dc2626;
+      padding: 2px 10px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      display: inline-block;
+    }
+
+    .note-tip {
+      background: #fffbeb;
+      border-radius: 16px;
+      padding: 14px 20px;
+      border-left: 6px solid #f59e0b;
+      margin: 14px 0 8px 0;
+      color: #78350f;
+      font-size: 0.92rem;
+    }
+    .note-tip i { color: #d97706; margin-right: 8px; }
+
+    .footer-note {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 2px solid #e9edf2;
+      text-align: center;
+      color: #64748b;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+    .footer-note i { color: #2563eb; }
+
+    @media (max-width: 800px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .revision-header h1 { font-size: 2rem; }
+      .card { padding: 20px 16px; }
+      .revision-header { padding: 28px 20px; }
+    }
+    @media print {
+      body { background: white; padding: 10px; }
+      .card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+      .revision-header { background: #0b2b4a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .card:hover { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <header class="revision-header">
+    <span class="badge"><i class="fas fa-bolt"></i> QUICK REVISION</span>
+    <h1>Financial Accounting · All Units</h1>
+    <p>Formulas · Mnemonics · Key Points · Exam-Day Cheat Sheet</p>
+    <p style="font-size:0.85rem; opacity:0.6; margin-top:8px;">B.Com (Hons.) Semester 1 · University of Delhi</p>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- UNIT 1                                                         -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <span class="badge"><i class="fas fa-book-open"></i> Unit 1</span>
+    <h2>Theoretical Framework &amp; Accounting Process</h2>
+    <div class="subtitle"><i class="fas fa-memory"></i> Key Mnemonics &amp; Concepts</div>
+
+    <div class="grid-2">
+      <div class="grid-card blue">
+        <h4>🔑 Mnemonics</h4>
+        <ul>
+          <li><strong>I-M-R-C</strong> — Identification → Measurement → Recording → Communication</li>
+          <li><strong>B-I-T</strong> — Banks, Investors, Tax authorities (External Users)</li>
+          <li><strong>C-U-T-V</strong> — Comparability, Understandability, Timeliness, Verifiability</li>
+          <li><strong>G-C-A</strong> — Going Concern, Consistency, Accrual (AS-1)</li>
+          <li><strong>D-D-P-P</strong> — Describe, Diagnose, Predict, Prescribe</li>
+        </ul>
+      </div>
+      <div class="grid-card green">
+        <h4>📌 Qualitative Characteristics</h4>
+        <ul>
+          <li><strong>Fundamental:</strong> Relevance (Materiality) + Faithful Representation</li>
+          <li><strong>Enhancing (C-U-T-V):</strong> Comparability, Understandability, Timeliness, Verifiability</li>
+        </ul>
+        <hr>
+        <h4>📌 GAAP – 12 Pillars</h4>
+        <ul>
+          <li>Entity, Money Measurement, Going Concern, Cost</li>
+          <li>Revenue Recognition, Realization, Accruals</li>
+          <li>Periodicity, Full Disclosure, Consistency</li>
+          <li>Materiality, Prudence (Conservatism)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="grid-card purple">
+        <h4>📌 Provisions vs Contingencies</h4>
+        <ul>
+          <li><strong>Provision:</strong> Probable (≥50%) + Reliable estimate → Recognized</li>
+          <li><strong>Contingent Liability:</strong> Possible → NOT recognized (Disclose in Notes)</li>
+          <li><strong>Contingent Asset:</strong> Probable → NOT recognized (Disclose in Notes)</li>
+        </ul>
+      </div>
+      <div class="grid-card orange">
+        <h4>📌 Change in Estimate vs Policy</h4>
+        <ul>
+          <li><strong>Estimate:</strong> Prospective (forward only)</li>
+          <li><strong>Policy:</strong> Retrospective (restate past)</li>
+        </ul>
+        <hr>
+        <h4>📌 Ind AS Applicability</h4>
+        <ul>
+          <li><strong>Listed:</strong> Ind AS (Mandatory)</li>
+          <li><strong>Unlisted (Net Worth ≥ ₹250 Cr):</strong> Ind AS</li>
+          <li><strong>Unlisted (Net Worth &lt; ₹250 Cr):</strong> Traditional AS</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout warning">
+      <strong>🎯 Exam Tip:</strong> For a 15-mark essay on "Accounting as an Information System," use I-M-R-C framework and add a daily-life example (burger stall / sneaker store) for extra marks!
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- UNIT 2                                                         -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <span class="badge"><i class="fas fa-book-open"></i> Unit 2</span>
+    <h2>Business Income, PPE &amp; Inventory Valuation</h2>
+    <div class="subtitle"><i class="fas fa-calculator"></i> Formulas &amp; Key Concepts</div>
+
+    <div class="grid-3">
+      <div class="grid-card blue">
+        <h4>📌 R.G.I.N.</h4>
+        <ul>
+          <li><strong>R</strong>evenue is <strong>G</strong>ross</li>
+          <li><strong>I</strong>ncome is <strong>N</strong>et</li>
+        </ul>
+        <hr>
+        <h4>📌 AS 9 – Revenue Recognition</h4>
+        <ul>
+          <li><strong>Goods:</strong> Transfer of risks &amp; rewards</li>
+          <li><strong>Services:</strong> Percentage of Completion</li>
+          <li><strong>Interest:</strong> Time proportion basis</li>
+        </ul>
+      </div>
+      <div class="grid-card green">
+        <h4>📌 AS 10 – PPE</h4>
+        <ul>
+          <li><strong>Cost =</strong> Purchase Price + Freight + Customs + Installation + Testing</li>
+          <li><strong>Models:</strong> Cost Model OR Revaluation Model</li>
+        </ul>
+        <hr>
+        <h4>📌 AS 26 – Intangibles</h4>
+        <ul>
+          <li><strong>Acquired:</strong> Capitalized at cost</li>
+          <li><strong>Research:</strong> Always expensed</li>
+          <li><strong>Development:</strong> Capitalized (if criteria met)</li>
+        </ul>
+      </div>
+      <div class="grid-card red">
+        <h4>📌 AS 2 – Inventory</h4>
+        <ul>
+          <li><strong>Valuation =</strong> Lower of Cost or NRV</li>
+          <li><strong>FIFO:</strong> Oldest stock sold first</li>
+          <li><strong>Weighted Avg:</strong> New Avg = Total Cost ÷ Total Units</li>
+        </ul>
+        <hr>
+        <h4>📌 Loss Types</h4>
+        <ul>
+          <li><span class="green-tag">Normal</span> → Reduce quantity only</li>
+          <li><span class="red-tag">Abnormal</span> → Remove quantity &amp; cost → Charge to P&L</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <span class="label"><i class="fas fa-calculator"></i> Depreciation Formulas</span>
+      <strong>SLM:</strong> (Cost – Scrap) × Rate % &nbsp;|&nbsp; <strong>WDV:</strong> Opening WDV × Rate %
+    </div>
+
+    <div class="callout tip">
+      <strong>💡 Exam Tip:</strong> If machine purchased <strong>before 1st April</strong> → Full year; after <strong>1st October</strong> → Half year. Change in method → Recalculate from Day 1!
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- UNIT 3                                                         -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <span class="badge"><i class="fas fa-book-open"></i> Unit 3</span>
+    <h2>Final Accounts (Sole Proprietorship &amp; NPOs)</h2>
+    <div class="subtitle"><i class="fas fa-balance-scale"></i> Formulas &amp; Adjustments Cheat Sheet</div>
+
+    <div class="formula-box">
+      <span class="label"><i class="fas fa-calculator"></i> Core Formulas</span>
+      <strong>COGS</strong> = Opening Stock + Purchases + Direct Expenses – Closing Stock<br>
+      <strong>Gross Profit</strong> = Sales – COGS<br>
+      <strong>Net Profit</strong> = GP + Other Incomes – Other Expenses<br>
+      <strong>Assets</strong> = Liabilities + Capital
+    </div>
+
+    <h3><i class="fas fa-wrench"></i> Adjustments Cheat Sheet</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Adjustment</th><th>P&amp;L / Trading</th><th>Balance Sheet</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Closing Stock</strong></td><td><span class="green-tag">Credit</span> to Trading</td><td><span class="blue-tag">Asset</span></td></tr>
+          <tr><td><strong>Outstanding Expense</strong></td><td><span class="blue-tag">Add</span> to expense</td><td><span class="red-tag">Liability</span></td></tr>
+          <tr><td><strong>Prepaid Expense</strong></td><td><span class="blue-tag">Subtract</span> from expense</td><td><span class="blue-tag">Asset</span></td></tr>
+          <tr><td><strong>Depreciation</strong></td><td><span class="blue-tag">Debit</span> P&amp;L</td><td><span class="blue-tag">Deduct</span> from Asset</td></tr>
+          <tr><td><strong>Bad Debts</strong></td><td><span class="blue-tag">Debit</span> P&amp;L</td><td><span class="blue-tag">Deduct</span> from Debtors</td></tr>
+          <tr><td><strong>PDD</strong></td><td><span class="blue-tag">Debit</span> P&amp;L</td><td><span class="blue-tag">Deduct</span> from Debtors (after bad debts)</td></tr>
+          <tr><td><strong>Discount on Debtors</strong></td><td><span class="blue-tag">Debit</span> P&amp;L</td><td><span class="blue-tag">Deduct</span> from Debtors (after PDD)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout alert">
+      <strong>⚡ Golden Rule:</strong> Every adjustment has <strong>TWO</strong> effects — one in P&amp;L/Trading and one in Balance Sheet!
+    </div>
+
+    <hr>
+
+    <h3><i class="fas fa-hand-holding-heart"></i> NPO – Quick Reference</h3>
+    <div class="grid-2">
+      <div class="grid-card purple">
+        <h4>📌 Subscription Formula</h4>
+        <ul>
+          <li><strong>Actual Subscription =</strong></li>
+          <li>Cash Received – Outstanding(beg) – Advance(end) + Outstanding(end) + Advance(beg)</li>
+        </ul>
+      </div>
+      <div class="grid-card orange">
+        <h4>📌 NPO Special Items</h4>
+        <ul>
+          <li><strong>Life Membership:</strong> Capital → Add to Capital Fund</li>
+          <li><strong>Specific Donation:</strong> Capital → Add to specific Fund</li>
+          <li><strong>General Donation:</strong> Revenue → Credit to I&amp;E A/c</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- UNIT 4                                                         -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <span class="badge"><i class="fas fa-book-open"></i> Unit 4</span>
+    <h2>Branches, Departments &amp; Leases</h2>
+    <div class="subtitle"><i class="fas fa-store-alt"></i> Key Formulas &amp; Rules</div>
+
+    <div class="grid-2">
+      <div class="grid-card blue">
+        <h4>📌 Debtors System – Branch Account</h4>
+        <ul>
+          <li><span class="blue-tag">Debit:</span> Opening Stock, Goods sent, Expenses</li>
+          <li><span class="green-tag">Credit:</span> Cash Sales, Cash from Debtors, Closing Stock, Closing Debtors</li>
+        </ul>
+        <hr>
+        <h4>📌 Closing Debtors Formula</h4>
+        <ul>
+          <li>Opening + Credit Sales – Cash – Discount – Bad Debts = Closing Debtors</li>
+        </ul>
+      </div>
+      <div class="grid-card green">
+        <h4>📌 Stock &amp; Debtors System (Loading)</h4>
+        <ul>
+          <li><strong>Cost + 25%</strong> → Loading = <span class="blue-tag">1/5</span> of Invoice Price</li>
+          <li><strong>Cost + 50%</strong> → Loading = <span class="blue-tag">1/3</span> of Invoice Price</li>
+        </ul>
+        <hr>
+        <h4>📌 4 Accounts to Prepare</h4>
+        <ul>
+          <li>Branch Stock A/c (at IP)</li>
+          <li>Branch Debtors A/c</li>
+          <li>Branch Adjustment A/c → Gross Profit</li>
+          <li>Branch P&amp;L A/c → Net Profit</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="grid-card purple">
+        <h4>📌 Departmental – Allocation Bases</h4>
+        <ul>
+          <li><strong>Rent, Lighting:</strong> Floor Area / Light Points</li>
+          <li><strong>Salaries:</strong> Number of Employees</li>
+          <li><strong>Depreciation:</strong> Value of Assets</li>
+          <li><strong>Selling Expenses:</strong> Sales</li>
+        </ul>
+      </div>
+      <div class="grid-card red">
+        <h4>📌 Lease Accounting (AS 19)</h4>
+        <ul>
+          <li><strong>GIL</strong> = (Rental × Years) + GRV + UGRV</li>
+          <li><strong>UFI</strong> = GIL – Fair Value</li>
+          <li><strong>Net Investment</strong> = Fair Value – UGRV</li>
+        </ul>
+        <hr>
+        <p style="font-size:0.85rem; font-weight:500;"><i class="fas fa-memory" style="color:#f59e0b;"></i> <strong>Memory:</strong> GIL = Total money lessor gets; UFI = Profit/Interest part</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- UNIT 5                                                         -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <span class="badge"><i class="fas fa-book-open"></i> Unit 5</span>
+    <h2>Computerized Accounting Systems</h2>
+    <div class="subtitle"><i class="fas fa-laptop"></i> Voucher Types, GST Rules &amp; Security</div>
+
+    <div class="grid-3">
+      <div class="grid-card blue">
+        <h4>📌 Voucher Types</h4>
+        <ul>
+          <li><strong>Contra (F4):</strong> Cash/Bank transfers</li>
+          <li><strong>Payment (F5):</strong> All payments</li>
+          <li><strong>Receipt (F6):</strong> All receipts</li>
+          <li><strong>Journal (F7):</strong> Adjustments, credit purchases of assets</li>
+          <li><strong>Sales (F8):</strong> All sales</li>
+          <li><strong>Purchase (F9):</strong> All purchases</li>
+        </ul>
+      </div>
+      <div class="grid-card green">
+        <h4>📌 GST – ITC Utilization Order</h4>
+        <ul>
+          <li><strong>Input IGST:</strong> IGST → CGST → SGST</li>
+          <li><strong>Input CGST:</strong> CGST → IGST <span class="red-tag">(NOT SGST)</span></li>
+          <li><strong>Input SGST:</strong> SGST → IGST <span class="red-tag">(NOT CGST)</span></li>
+        </ul>
+      </div>
+      <div class="grid-card red">
+        <h4>📌 Reports Generated</h4>
+        <ul>
+          <li>Cash Book &amp; Ledgers</li>
+          <li>Trial Balance (Live)</li>
+          <li>P&amp;L Account</li>
+          <li>Balance Sheet</li>
+          <li>Cash Flow Statement</li>
+        </ul>
+        <hr>
+        <h4>📌 3-2-1 Backup Strategy</h4>
+        <ul>
+          <li><strong>3</strong> copies • <strong>2</strong> media • <strong>1</strong> off-site</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout warning">
+      <strong>🚀 Final Memory Trick — GST:</strong> "IGST can go anywhere (IGST → CGST → SGST). CGST can go to CGST or IGST. SGST can go to SGST or IGST. <span style="color:#dc2626;">CGST and SGST can NEVER swap with each other!</span>"
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MASTER FORMULA SHEET                                           -->
+  <!-- ============================================================ -->
+
+  <div class="card" style="border: 2px solid #f59e0b; background: #fffbeb;">
+    <span class="badge" style="background: #f59e0b; color: #fff;"><i class="fas fa-star"></i> MASTER CHEAT SHEET</span>
+    <h2>All Formulas – One Page</h2>
+    <div class="subtitle" style="border-left-color: #f59e0b; background: #fef9e7;"><i class="fas fa-calculator"></i> Exam-Day Formula Reference</div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Topic</th><th>Formula</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SLM Depreciation</strong></td><td>(Cost – Scrap) × Rate %</td></tr>
+          <tr><td><strong>WDV Depreciation</strong></td><td>Opening WDV × Rate %</td></tr>
+          <tr><td><strong>COGS</strong></td><td>Opening Stock + Purchases – Closing Stock</td></tr>
+          <tr><td><strong>Gross Profit</strong></td><td>Sales – COGS</td></tr>
+          <tr><td><strong>Net Profit</strong></td><td>GP + Other Incomes – Other Expenses</td></tr>
+          <tr><td><strong>Balance Sheet</strong></td><td>Assets = Liabilities + Capital</td></tr>
+          <tr><td><strong>NPO – Subscription</strong></td><td>Received – Outstanding(beg) – Advance(end) + Outstanding(end) + Advance(beg)</td></tr>
+          <tr><td><strong>Branch – Closing Debtors</strong></td><td>Opening + Credit Sales – Cash – Discount – Bad Debts</td></tr>
+          <tr><td><strong>Loading (Cost+25%)</strong></td><td>1/5 of Invoice Price</td></tr>
+          <tr><td><strong>Loading (Cost+50%)</strong></td><td>1/3 of Invoice Price</td></tr>
+          <tr><td><strong>GIL (Lease)</strong></td><td>(Rental × Years) + GRV + UGRV</td></tr>
+          <tr><td><strong>UFI (Lease)</strong></td><td>GIL – Fair Value</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- QUICK EXAM TIPS                                               -->
+  <!-- ============================================================ -->
+
+  <div class="card" style="border: 2px solid #2563eb; background: #eff6ff;">
+    <span class="badge" style="background: #2563eb; color: #fff;"><i class="fas fa-check-circle"></i> EXAM TIPS</span>
+    <h2>Final Exam-Day Checklist</h2>
+
+    <div class="grid-3">
+      <div class="grid-card blue">
+        <h4>📌 Final Accounts</h4>
+        <ul>
+          <li>✓ Every adjustment has TWO effects</li>
+          <li>✓ PDD calculated AFTER bad debts</li>
+          <li>✓ Discount on Debtors calculated AFTER PDD</li>
+          <li>✓ Trial Balance items go to ONLY ONE place</li>
+        </ul>
+      </div>
+      <div class="grid-card green">
+        <h4>📌 Branch Accounting</h4>
+        <ul>
+          <li>✓ Opening items → Debit side</li>
+          <li>✓ Goods sent &amp; Expenses → Debit side</li>
+          <li>✓ Sales &amp; Cash from Debtors → Credit side</li>
+          <li>✓ Closing Stock &amp; Debtors → Credit side</li>
+          <li>✓ Balancing = Profit (Credit bigger) or Loss (Debit bigger)</li>
+        </ul>
+      </div>
+      <div class="grid-card red">
+        <h4>📌 GST</h4>
+        <ul>
+          <li>✓ Input IGST → IGST → CGST → SGST</li>
+          <li>✓ Input CGST → CGST → IGST (NOT SGST)</li>
+          <li>✓ Input SGST → SGST → IGST (NOT CGST)</li>
+          <li>✓ CGST and SGST can NEVER swap!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout tip" style="margin-top:12px;">
+      <strong>💡 Day-Before-Exam Revision:</strong>
+      <ul class="study-list">
+        <li>Review all <strong>mnemonics</strong> (I-M-R-C, B-I-T, C-U-T-V, G-C-A, R.G.I.N.)</li>
+        <li>Practice <strong>adjustments</strong> – memorize the dual-effect rule</li>
+        <li>Know <strong>voucher types</strong> and their shortcuts (F4-F9)</li>
+        <li>Remember <strong>GST order</strong> – IGST can go anywhere, CGST &amp; SGST can't swap</li>
+        <li>Write <strong>narrations</strong> in journal entries – they secure marks!</li>
+      </ul>
+    </div>
+
+    <div class="formula-box" style="background: #1e293b; border-left-color: #f59e0b;">
+      <strong style="color: #fcd34d; font-size:1.1rem;">“Accounting is not about numbers, it’s about the story those numbers tell.”</strong><br>
+      <span style="opacity:0.6; font-size:0.9rem;">— Stay calm, read carefully, and write with clarity. You’ve got this! 💪</span>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer-note">
+    <i class="fas fa-check-circle"></i> Quick Revision — All 5 Units Complete.  
+    <span style="display:inline-block; margin-left:14px;"><i class="fas fa-copyright"></i> CampusNotes · B.Com Sem 1</span>
+  </div>
+
+</div>
+
+</body>
+</html>

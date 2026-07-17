@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2: Business Law | B.Com (Hons) Sem 1 - CampusNotes</title>
+    <style>
+        :root {
+            --navy: #0f172a;
+            --blue: #2563eb;
+            --sky: #e0f2fe;
+            --cream: #fffdf7;
+            --gold: #f59e0b;
+            --green: #059669;
+            --red: #dc2626;
+            --slate: #475569;
+            --border: #e2e8f0;
+            --card: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.65;
+        }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 18px 60px;
+        }
+
+        .brand-header {
+            border-radius: 28px;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: white;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #bfdbfe;
+        }
+
+        .badge {
+            display: inline-flex;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin: 20px 0 0;
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin-top: 14px;
+            max-width: 720px;
+            color: #dbeafe;
+            font-size: 17px;
+        }
+
+        .meta-grid {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .meta-card {
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #bfdbfe;
+            font-weight: 900;
+        }
+
+        .meta-value {
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .section {
+            margin-top: 28px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 26px;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            margin: 22px 0 10px;
+            font-size: 20px;
+            color: #1d4ed8;
+        }
+
+        p {
+            margin: 10px 0;
+            color: var(--slate);
+        }
+
+        ul,
+        ol {
+            color: var(--slate);
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .highlight-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .exam-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+        }
+
+        .quick-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+        }
+
+        .box-title {
+            margin: 0 0 8px;
+            font-weight: 900;
+            color: var(--navy);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        th {
+            background: #0f172a;
+            color: white;
+            text-align: left;
+            padding: 14px;
+            font-size: 14px;
+        }
+
+        td {
+            border: 1px solid var(--border);
+            padding: 14px;
+            color: var(--slate);
+            vertical-align: top;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .watermark {
+            margin-top: 8px;
+            font-weight: 900;
+            color: #1d4ed8;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                max-width: 100%;
+                padding: 0;
+            }
+            .section,
+            .brand-header {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+            .section,
+            .brand-header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- ==================== HEADER ==================== -->
+        <div class="brand-header">
+            <div class="brand-row">
+                <span class="brand">CampusNotes</span>
+                <span class="badge">Premium Academic Resources</span>
+            </div>
+            <h1>Unit 2: Discharge of Contract & Remedies for Breach</h1>
+            <div class="subtitle">Discipline Specific Core (DSC-2) | B.Com (Hons) - Semester I | Paper Code: 1404</div>
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-label">Unit Duration</div>
+                    <div class="meta-value">16 Hours</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-label">Exam Weightage</div>
+                    <div class="meta-value">Very High (~35-40 Marks)</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-label">PDF Export</div>
+                    <div class="meta-value">Press Ctrl+P</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== CONTENT ==================== -->
+        
+        <div class="section">
+            <h2>2.1 Discharge of Contract (Meaning & Modes)</h2>
+            <p>In business and daily life, we make dozens of contracts. But a contract is not eternal—it has a lifecycle. Just as a movie has an ending, a contract must eventually come to an end. In legal terms, when all the rights, obligations, and duties of the parties under a contract come to a complete halt, we say the contract has been <strong>Discharged</strong>. Discharge simply means the parties are free from their legal obligations toward each other. There are several different ways this can happen, and it is crucial for any commerce student to know them all, because a large chunk of your exam will ask you exactly how a contract ends.</p>
+            
+            <h3>Modes of Discharge of Contract:</h3>
+            <p>There are broadly 6 ways a contract can be discharged. Let's break them down one by one in detail:</p>
+            <ul>
+                <li><strong>1. By Performance:</strong> This is the most natural, honorable, and common way a contract ends. It happens when both parties successfully complete their obligations exactly as they promised. For example, if A promises to deliver 100 chairs to B by Monday, and B promises to pay ₹50,000 upon delivery, then when the chairs are delivered and the money is paid on Monday, the contract is automatically discharged by performance. Nothing more needs to be done.</li>
+                
+                <li><strong>2. By Agreement (Mutual Consent - Sec 62):</strong> Sometimes, things change. The parties might realize the original contract is no longer beneficial. In such cases, the parties can mutually agree to end the contract before it is performed. Section 62 allows discharge by agreement in the following 5 specific ways:
+                    <ul>
+                        <li><strong>Novation:</strong> This means "renewal". The parties agree to replace the existing contract with a completely new one. The new contract might have new terms, a new subject matter, or even entirely new parties. For instance, A owes B ₹10,000. A, B, and C all agree that C will pay B the ₹10,000 instead of A. A is now discharged from his debt.</li>
+                        <li><strong>Rescission:</strong> The parties simply decide to cancel the contract entirely. They both agree to tear up the paper and walk away. The contract is wiped out from the beginning.</li>
+                        <li><strong>Alteration:</strong> This occurs when the parties agree to modify or change some of the existing terms of the contract. For example, they might agree to extend the delivery date from Monday to Friday. Once altered, the original contract is discharged, and the new altered terms take its place.</li>
+                        <li><strong>Waiver:</strong> This is a situation where one party intentionally gives up their legal right to enforce a specific term of the contract. For example, a buyer waives their right to receive goods by a specific date, effectively discharging the seller from the liability of late delivery.</li>
+                        <li><strong>Merger:</strong> This happens when a smaller, simpler contract merges into a larger, more complex contract. Once the bigger contract is signed, the smaller contract loses its identity and is effectively discharged.</li>
+                    </ul>
+                </li>
+                
+                <li><strong>3. By Supervening Impossibility (Doctrine of Frustration - Sec 56):</strong> This is perhaps the most dramatic way a contract ends. "Supervening" means "coming afterward". Under this doctrine, a contract becomes impossible to perform AFTER it was made, due to an unexpected event that neither party could have predicted or controlled. When this happens, the contract is automatically discharged without any fault of the parties. The courts call this the "Doctrine of Frustration". 
+                    <br>Let's look at a few examples where this applies:
+                    <ul>
+                        <li>When a specific piece of property that is the subject of the contract is destroyed (e.g., a concert hall burns down before a booked performance).</li>
+                        <li>When a war breaks out, making the trade of certain goods illegal.</li>
+                        <li>When a person whose personal services are crucial to the contract dies or becomes physically incapable (e.g., a famous singer booked for a show passes away).</li>
+                    </ul>
+                    <strong>Important Caution:</strong> This rule does <em>NOT</em> apply if the contract has just become "financially unprofitable" or "more expensive" to perform. It must be truly impossible to perform.
+                    <div class="quick-box">
+                        <div class="box-title">⚖️ Landmark Case: Taylor v. Caldwell (1863)</div>
+                        <p><strong>Facts:</strong> A music hall was rented out for a concert. Before the concert, the hall was completely destroyed by an accidental fire.</p>
+                        <p><strong>Judgment:</strong> The court ruled that the contract was discharged by supervening impossibility. Since the specific subject matter (the hall) was gone, neither party was liable to the other.</p>
+                    </div>
+                </li>
+                
+                <li><strong>4. By Operation of Law:</strong> Sometimes, the law itself steps in to end a contract without any action required by the parties. For example, if one party files for bankruptcy (insolvency), the law discharges their obligation to pay certain debts. Similarly, in personal contracts (like hiring a personal bodyguard), the death of either party automatically discharges the contract by operation of law.</li>
+                
+                <li><strong>5. By Lapse of Time:</strong> Many contracts have a specific time limit or a deadline for performance. If the parties fail to perform the contract within that legally specified time, the contract is discharged by the "lapse of time". Furthermore, under the Limitation Act, if someone doesn't sue to enforce their rights within a certain number of years (usually 3 years), the contract effectively expires.</li>
+                
+                <li><strong>6. By Breach of Contract:</strong> This happens when one party fails to fulfill their promise without any valid legal excuse. When a breach occurs, the innocent party is freed from their side of the contract and can immediately sue the defaulting party for compensation. </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2.2 Breach of Contract</h2>
+            <p>As mentioned in the modes above, a <strong>Breach</strong> simply means the violation of a legal obligation. In simple English, a breach occurs when a party breaks their promise. The law recognizes two specific types of breaches, and it is vital to differentiate between them in your exams.</p>
+            
+            <ul>
+                <li><strong>Actual Breach:</strong> This occurs on the exact date the performance of the contract is due. For example, A promises to deliver 100 boxes of apples to B on December 1st. On December 1st, A either delivers nothing or delivers rotten apples. Because the breach happens on the actual due date, it is called an Actual Breach.</li>
+                
+                <li><strong>Anticipatory Breach (Sec 39):</strong> This is an extremely interesting concept. "Anticipatory" means "beforehand". An anticipatory breach happens when a party clearly indicates, <em>before</em> the actual due date, that they are not going to fulfill their contractual obligations. For example, using the same dates: A promises to deliver apples on December 1st. But on November 15th, A calls B and says, "I am not going to deliver the apples at all." This is an anticipatory breach.
+                    <br><strong>What can the innocent party do?</strong> When faced with an anticipatory breach, the victim (B) has two legal options:
+                    <ul>
+                        <li><strong>Option 1:</strong> Accept the breach immediately. B can go to the court on November 16th, file a lawsuit, and claim damages right away without waiting for December 1st.</li>
+                        <li><strong>Option 2:</strong> Ignore the breach and wait. B can tell A, "Fine, but I'm going to wait until December 1st to see if you change your mind." If A still doesn't deliver on December 1st, B can then file a suit.</li>
+                    </ul>
+                    <div class="quick-box">
+                        <div class="box-title">⚖️ Landmark Case: Hochster v. De La Tour (1853)</div>
+                        <p><strong>Facts:</strong> A courier was hired to start a job on June 1st. In May, the employer cancelled the contract. The courier immediately sued on May 28th.</p>
+                        <p><strong>Judgment:</strong> The court allowed the courier to sue immediately. This case perfectly established the right to sue immediately in case of an Anticipatory Breach.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>2.3 Remedies for Breach of Contract</h2>
+            <p>When one party commits a breach, the law provides the innocent party with certain "Remedies" (solutions). You cannot just ask the court to "punish" the other party. You must specifically ask for one or more of these 5 legal remedies. Let's explore each one deeply.</p>
+            
+            <h3>1. Rescission (Sec 39)</h3>
+            <p>Rescission simply means "cancellation". When a contract is breached, the innocent party has the right to treat the contract as completely canceled. Once rescinded, the contract is treated as if it never existed, and both parties are legally bound to return any benefits they have already taken from each other. However, it is important to note that the victim can claim damages along with rescission; they don't have to choose just one.</p>
+            
+            <h3>2. Suit for Damages (Monetary Compensation - Sec 73 & 74)</h3>
+            <p>Damages are the most common remedy sought. It is the financial compensation given to the innocent party for the loss they have suffered. However, courts do not give money arbitrarily; they follow a strict rule called the <strong>Rule of Remoteness (Hadley v. Baxendale)</strong>. The court decides which losses are "too remote" to claim and which are directly connected. Under this rule, there are 5 clear types of damages:</p>
+            
+            <ul>
+                <li><strong>Ordinary Damages:</strong> These are the direct, natural, and immediate losses that arise from the breach. For example, if the buyer has to go to the market and buy the exact same goods at a higher price because the seller broke the contract, the difference in market price is Ordinary Damages.</li>
+                
+                <li><strong>Special Damages:</strong> These are losses caused by unusual, special circumstances that are unique to this specific case. The law states that Special Damages <em>can only</em> be recovered if the breaching party was <strong>told about these special circumstances</strong> at the time the contract was made. (This is the exact rule we apply to the Mr. Rahim case in the PYQs below).</li>
+                
+                <li><strong>Exemplary (Punitive) Damages:</strong> These are not given to compensate the victim for a loss, but rather to <em>punish</em> the party for their outrageous behavior. Courts rarely give these. They are usually only awarded in two situations: (1) For the wrongful dishonor of a bank cheque, and (2) For a breach of a promise to marry.</li>
+                
+                <li><strong>Nominal Damages:</strong> Sometimes, a party breaks the contract, but the other party hasn't actually lost any money. For example, you order ₹10 worth of pens, and the seller delivers them a day late, but the pens are still perfectly fine. In this case, the court might award just ₹1 (nominal damages) simply to recognize that a legal right was violated, even though there was no financial loss.</li>
+                
+                <li><strong>Liquidated Damages vs. Penalty (Sec 74) - EXTREMELY IMPORTANT:</strong> This is a huge exam topic. When drafting contracts, many businesses write a specific amount to be paid in case of a breach.
+                    <ul>
+                        <li>If the amount written in the contract is a <strong>genuine, careful estimate</strong> of the actual loss that would happen from a breach, it is called <strong>"Liquidated Damages"</strong>. The court allows this without question.</li>
+                        <li>However, if the amount written in the contract is <strong>huge and exorbitant</strong>, clearly designed to scare the other party into performing rather than compensating for a loss, it is called a <strong>"Penalty"</strong>. Under Sec 74, the court <strong>rejects the penalty</strong> and only awards a reasonable amount matching the actual loss suffered.</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>3. Suit for Quantum Meruit (Sec 65)</h3>
+            <p>The Latin term "Quantum Meruit" translates beautifully into English as <strong>"As much as earned"</strong>. This remedy is a lifesaver when a contract becomes void, is canceled, or is breached, but one party has already performed a significant amount of work for the other. In such cases, the innocent party cannot claim the profit of the whole contract, but they <em>can</em> sue for payment equal to the actual value of the work they have already completed.</p>
+            <p><em>Practical Example:</em> A agrees to build a 3-story house for B for ₹30,000. A builds 1 complete story (which is worth ₹10,000), but then B breaks the contract without cause. A can sue B for Quantum Meruit and claim ₹10,000, even though the house is not fully built.</p>
+            
+            <h3>4. Suit for Specific Performance</h3>
+            <p>Money is not always a suitable compensation. Suppose you enter into a contract to buy a 500-year-old, heritage mansion that holds high sentimental value. The seller backs out of the deal. If the court only gives you money, you still don't have your mansion. The law recognizes this. Under this remedy, the court <strong>forces the defaulting party to literally do exactly what they promised</strong>. The court issues a decree ordering the seller to transfer the property to you. Specific Performance is only granted when the subject matter is unique, rare, or cannot be easily replaced by money—such as land, rare works of art, or antique items.</p>
+            
+            <h3>5. Suit for Injunction</h3>
+            <p>An Injunction is the exact opposite of Specific Performance. Instead of forcing someone to DO something, an Injunction is a court order forcing someone to <strong>STOP DOING</strong> something. For example, if a builder is illegally dumping construction waste on a public road, the neighbors can sue the court for an Injunction to immediately order the builder to stop this illegal activity.</p>
+        </div>
+
+        <!-- ==================== PYQ SECTION ==================== -->
+        <div class="section">
+            <h2>📝 Exam Prep & PYQ Analysis (6+6+6 Marks)</h2>
+            <p>In DU exams, Unit 2 is a powerhouse because it combines theoretical questions with practical case studies. Here are the exact PYQs from your screenshot, broken down step-by-step with expert exam structure.</p>
+            
+            <div class="exam-box">
+                <div class="box-title">PYQ Analysis: Question 2 (6+6+6 Marks)</div>
+                
+                <h3>Q(a) What do you mean by the term discharge of contract? Discuss the modes of discharge of contract by agreement under Indian Contract Act, 1872.</h3>
+                <p><strong>Expert Exam Structure:</strong></p>
+                <ul>
+                    <li><strong>Definition (1 Mark):</strong> A contract imposes legal duties on both parties. When these duties come to an end, the contract is said to be discharged. Discharge frees the parties from future obligations toward each other. </li>
+                    <li><strong>Modes of Discharge (2 Marks):</strong> A contract can be discharged by (a) Performance, (b) Mutual Agreement (Sec 62), (c) Supervening Impossibility (Sec 56), (d) Breach of contract, (e) Operation of law, and (f) Lapse of time. Briefly describe each in one line.</li>
+                    <li><strong>Discharge by Agreement (3 Marks):</strong> Under Section 62, when both parties mutually agree, they can end a contract in the following specific ways:
+                        <ul>
+                            <li><strong>Novation:</strong> The parties replace the existing contract with a brand new contract, potentially with different parties or terms.</li>
+                            <li><strong>Rescission:</strong> The parties completely cancel the contract, wiping it out.</li>
+                            <li><strong>Alteration:</strong> The parties change the existing terms of the contract (e.g., extending the deadline).</li>
+                            <li><strong>Waiver:</strong> One party voluntarily gives up their right to enforce a specific term.</li>
+                            <li><strong>Merger:</strong> A smaller contract merges into a larger, more significant contract.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Q(b) Distinguish between damages and penalties under Indian Contract Act, 1872.</h3>
+                <p><strong>Expert Exam Structure:</strong> In your answer sheet, draw a neat, clean comparison table. It directly gives you full marks for clarity.</p>
+                <table>
+                    <tr>
+                        <th>Basis of Difference</th>
+                        <th>Damages (Liquidated)</th>
+                        <th>Penalty</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Meaning</strong></td>
+                        <td>It is a genuine, honest pre-estimate of the actual loss that would occur if the contract is breached.</td>
+                        <td>It is an exorbitant, excessive sum written into the contract solely to threaten or intimidate the other party into performing the contract.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Legal Nature</strong></td>
+                        <td>It is considered fair, reasonable, and a genuine compensation.</td>
+                        <td>It is considered a form of extortion or punishment, not compensation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Court's Power</strong></td>
+                        <td>Under Sec 74, the court accepts the liquidated damages and awards the full pre-agreed amount.</td>
+                        <td>Under Sec 74, the court completely ignores the penalty and only allows the injured party to recover a "reasonable sum" based on the actual loss.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example</strong></td>
+                        <td>A real estate contract says: "If we delay the flat by 3 months, we will pay ₹5,000 per month as compensation for your rent." (This is a genuine estimate).</td>
+                        <td>A contract says: "If you back out of this deal, pay us ₹50 Lakhs" when the actual loss is only ₹2 Lakhs. (This is a penalty).</td>
+                    </tr>
+                </table>
+
+                <h3>Q(c) Discuss "suit for Quantum Meruit" and "suit for Specific Performance" under the Indian Contract Act, 1872.</h3>
+                <p><strong>Expert Exam Structure:</strong></p>
+                <ul>
+                    <li><strong>Quantum Meruit (3 Marks):</strong> The Latin phrase means "As much as earned". This remedy is provided under Section 65. It is used when a contract is void, discharged, or breached, but one party has already put in considerable work or effort. The innocent party is allowed to claim payment based on the <em>actual value</em> of the work they have already completed. <br>
+                    <em>Example:</em> A hired a painter to paint an entire building for ₹5 Lakhs. The painter painted 2 floors (worth ₹1 Lakh) but then the owner breached the contract. The painter can sue for ₹1 Lakh under Quantum Meruit.</li>
+                    
+                    <li><strong>Specific Performance (3 Marks):</strong> This is an equitable, discretionary remedy. It means a court order compelling the defaulting party to literally perform the exact terms of their contractual promise. Money is not a sufficient replacement. This remedy is strictly used when the goods involved are unique, rare, or irreplaceable, such as land, ancient art, or custom-made items. (It is regulated by the Specific Relief Act).</li>
+                </ul>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">PYQ Analysis: Case Study - Mr. Rahim (Remoteness of Damages)</div>
+                <h4>Q: Mr. Rahim delivered clothes to railways for Lucknow by Nov 1. Needed by month-end for peak Sherwani orders. Did not bring delay to railways' notice. Delayed 1 month. Is he entitled to loss of profit?</h4>
+                <p><strong>Expert Exam Structure (6 marks):</strong></p>
+                <ul>
+                    <li><strong>Rule of Law (2 Marks):</strong> This case is governed by the foundational rule of <strong>Remoteness of Damages</strong>, established by the English case <em>Hadley v. Baxendale (1854)</em>. It states that a party can only claim damages for losses that naturally arise in the usual course of things (<em>Ordinary</em>), or losses that were specifically contemplated by both parties at the time of making the contract (<em>Special</em>). For Special Damages to be claimed, the breaching party must have actual prior knowledge of the special circumstances.</li>
+                    
+                    <li><strong>Application of Facts (2 Marks):</strong> Mr. Rahim delivered the clothes on November 1st. He desperately needed them by the end of November for the peak Sherwani season, which would have generated large profits. However, <strong>he completely failed to inform the railway authorities about this specific urgency or the peak-season demand</strong> at the time the contract was made.</li>
+                    
+                    <li><strong>Final Conclusion (2 Marks):</strong> The court will rule that Mr. Rahim <strong>is NOT entitled to claim the loss of profit</strong> (Special Damages). Because the railways were kept in the dark about the special seasonal circumstances, the loss of profit is considered "too remote" to be recoverable. Mr. Rahim can only claim Ordinary Damages (such as the standard cost of delayed transport or storage).</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px; padding: 15px; border: 1px dashed var(--blue); border-radius: 12px;">
+                <p><strong>✅ End of Expanded Unit 2 Notes.</strong></p>
+                <p style="font-size: 0.9rem; color: var(--slate);">Every syllabus heading covered deeply: Discharge by Performance, Agreement, Supervening Impossibility, Operation of Law, Lapse of Time, Breach (Actual/Anticipatory), and all 5 Remedies (Rescission, Damages, Quantum Meruit, Specific Performance, Injunction).</p>
+            </div>
+        </div>
+
+        <!-- ==================== FOOTER ==================== -->
+        <div class="footer">
+            <p>&copy; 2026 CampusNotes | Premium Study Materials for Delhi University</p>
+            <div class="watermark">B.Com (Hons) | Business Laws (DSC-2) | Sem I</div>
+        </div>
+
+    </div>
+</body>
+</html>

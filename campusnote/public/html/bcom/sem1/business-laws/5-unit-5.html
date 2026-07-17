@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 5: Business Law | B.Com (Hons) Sem 1 - CampusNotes</title>
+    <style>
+        :root {
+            --navy: #0f172a;
+            --blue: #2563eb;
+            --sky: #e0f2fe;
+            --cream: #fffdf7;
+            --gold: #f59e0b;
+            --green: #059669;
+            --red: #dc2626;
+            --slate: #475569;
+            --border: #e2e8f0;
+            --card: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.65;
+        }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 18px 60px;
+        }
+
+        .brand-header {
+            border-radius: 28px;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: white;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #bfdbfe;
+        }
+
+        .badge {
+            display: inline-flex;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin: 20px 0 0;
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin-top: 14px;
+            max-width: 720px;
+            color: #dbeafe;
+            font-size: 17px;
+        }
+
+        .meta-grid {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .meta-card {
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #bfdbfe;
+            font-weight: 900;
+        }
+
+        .meta-value {
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .section {
+            margin-top: 28px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 26px;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            margin: 22px 0 10px;
+            font-size: 20px;
+            color: #1d4ed8;
+        }
+
+        p {
+            margin: 10px 0;
+            color: var(--slate);
+        }
+
+        ul,
+        ol {
+            color: var(--slate);
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .highlight-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .exam-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+        }
+
+        .quick-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+        }
+
+        .box-title {
+            margin: 0 0 8px;
+            font-weight: 900;
+            color: var(--navy);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        th {
+            background: #0f172a;
+            color: white;
+            text-align: left;
+            padding: 14px;
+            font-size: 14px;
+        }
+
+        td {
+            border: 1px solid var(--border);
+            padding: 14px;
+            color: var(--slate);
+            vertical-align: top;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .watermark {
+            margin-top: 8px;
+            font-weight: 900;
+            color: #1d4ed8;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                max-width: 100%;
+                padding: 0;
+            }
+            .section,
+            .brand-header {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+            .section,
+            .brand-header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- ==================== HEADER ==================== -->
+        <div class="brand-header">
+            <div class="brand-row">
+                <span class="brand">CampusNotes</span>
+                <span class="badge">Premium Academic Resources</span>
+            </div>
+            <h1>Unit 5: The Limited Liability Partnership Act, 2008</h1>
+            <div class="subtitle">Discipline Specific Core (DSC-2) | B.Com (Hons) - Semester I | Paper Code: 1404</div>
+            <div class="meta-grid">
+                <div class="meta-card">
+                    <div class="meta-label">Unit Duration</div>
+                    <div class="meta-value">8 Hours</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-label">Exam Weightage</div>
+                    <div class="meta-value">High (1 Full Section + Short Notes)</div>
+                </div>
+                <div class="meta-card">
+                    <div class="meta-label">PDF Export</div>
+                    <div class="meta-value">Press Ctrl+P</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== CONTENT ==================== -->
+        
+        <div class="section">
+            <h2>5.1 Salient Features & Small LLP</h2>
+            <p>Before the LLP Act of 2008 came into existence, Indian businesses had two extreme choices: They could form a traditional Partnership Firm (cheap to set up, but partners had unlimited personal liability, meaning if the business went bankrupt, partners had to sell their personal homes to pay the debts). Or they could form a Company (limited liability, but heavily regulated by the government with massive compliance paperwork). The LLP Act introduced a brilliant <strong>"hybrid"</strong> business structure. It combines the limited liability of a Company with the operational flexibility and lower compliance costs of a traditional Partnership.</p>
+
+            <div class="highlight-box">
+                <div class="box-title">Salient Features of an LLP</div>
+                <ul>
+                    <li><strong>Separate Legal Entity:</strong> An LLP is a legal person separate from its partners. It can own assets, enter into contracts, and sue/be sued in its own name.</li>
+                    <li><strong>Limited Liability:</strong> The most important feature! Partners are not personally liable for the debts of the LLP (except in cases of their own intentional fraud). Their personal assets are completely safe.</li>
+                    <li><strong>Perpetual Succession:</strong> The death, insolvency, or retirement of a partner does <em>not</em> dissolve the LLP. The business continues to exist indefinitely.</li>
+                    <li><strong>Minimum & Maximum Partners:</strong> An LLP requires a minimum of 2 partners to start. There is <strong>no maximum limit</strong> on the number of partners, which gives it massive flexibility compared to traditional firms.</li>
+                    <li><strong>Designated Partners:</strong> Every LLP must have at least 2 "Designated Partners" who are individuals, responsible for all statutory filings and compliance.</li>
+                </ul>
+            </div>
+
+            <h3>Small LLP</h3>
+            <p>To encourage small startups and reduce the burden on tiny businesses, the government introduced the concept of a <strong>"Small LLP"</strong>. A Small LLP is a specific classification given to LLPs that meet certain financial thresholds. Currently, a Small LLP is defined as one where: (a) The contribution of the partners (capital) does not exceed ₹25 Lakhs, and (b) The turnover for the preceding financial year does not exceed ₹40 Lakhs. Being a Small LLP grants heavy benefits, like exemption from the mandatory audit requirements, which saves a lot of money and accounting hassle for budding entrepreneurs.</p>
+        </div>
+
+        <div class="section">
+            <h2>5.2 LLP v/s Partnership & LLP v/s Company</h2>
+            <p>Understanding the differences between these three business structures is an absolute exam favorite. Your DU papers frequently ask 6-mark questions on this exact comparison.</p>
+            
+            <h3>Comparison 1: LLP vs. Traditional Partnership Firm</h3>
+            <table>
+                <tr>
+                    <th>Basis of Difference</th>
+                    <th>Limited Liability Partnership (LLP)</th>
+                    <th>Traditional Partnership Firm</th>
+                </tr>
+                <tr>
+                    <td><strong>Registration</strong></td>
+                    <td>Must be registered with the Ministry of Corporate Affairs (MCA). Incorporation is mandatory.</td>
+                    <td>Registration is not mandatory (though recommended). It can be an "unregistered" entity.</td>
+                </tr>
+                <tr>
+                    <td><strong>Liability of Partners</strong></td>
+                    <td><strong>Limited.</strong> Partners are not personally liable for business debts (except fraud).</td>
+                    <td><strong>Unlimited.</strong> Partners are personally liable. Personal assets can be seized to pay business debts.</td>
+                </tr>
+                <tr>
+                    <td><strong>Perpetual Succession</strong></td>
+                    <td>Yes. The LLP continues even if a partner leaves or dies.</td>
+                    <td>No. The death or retirement of a partner usually dissolves the firm.</td>
+                </tr>
+                <tr>
+                    <td><strong>Number of Partners</strong></td>
+                    <td>Minimum 2, <strong>No maximum limit</strong>.</td>
+                    <td>Minimum 2, maximum 20 partners (or 50 for banking).</td>
+                </tr>
+            </table>
+
+            <h3>Comparison 2: LLP vs. Company</h3>
+            <table>
+                <tr>
+                    <th>Basis of Difference</th>
+                    <th>Limited Liability Partnership (LLP)</th>
+                    <th>Private/Public Company (Companies Act)</th>
+                </tr>
+                <tr>
+                    <td><strong>Governing Law</strong></td>
+                    <td>Governed by the LLP Act, 2008.</td>
+                    <td>Governed by the Companies Act, 2013.</td>
+                </tr>
+                <tr>
+                    <td><strong>Management Structure</strong></td>
+                    <td>Managed directly by the partners (who are owners). No Board of Directors (BoD).</td>
+                    <td>Managed by a Board of Directors, which may be separate from the Shareholders (owners).</td>
+                </tr>
+                <tr>
+                    <td><strong>Compliance Burden</strong></td>
+                    <td>Very low. Very few annual forms to file. Small LLPs are even exempt from audits.</td>
+                    <td>Extremely high. Must hold Annual General Meetings (AGMs), file multiple financial statements, and have mandatory audits.</td>
+                </tr>
+                <tr>
+                    <td><strong>Equity/Shares</strong></td>
+                    <td>Does not issue shares. Partners have "contributions" to the capital.</td>
+                    <td>Issues shares to shareholders. Shareholders can freely transfer their shares.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>5.3 LLP Agreement & Incorporation Document</h2>
+            <p>When two people decide to start an LLP, they cannot just rely on a handshake. They must formalize their relationship through a written document.</p>
+            
+            <ul>
+                <li><strong>LLP Agreement (Sec 23):</strong> The LLP Agreement is the "bible" of the LLP. It is a written contract between the partners that governs their mutual rights, duties, profit-sharing ratios, management roles, and dispute resolution mechanisms. If the partners do not draft a specific LLP Agreement, the law applies the "First Schedule" of the LLP Act, which contains default rules (like sharing profits equally). It is highly recommended to draft a custom agreement to avoid future disputes.</li>
+                
+                <li><strong>Incorporation Document (Sec 11):</strong> This is the foundational document used to formally establish the LLP. It must be filed with the Registrar of Companies (ROC). The Incorporation Document must clearly state:
+                    <ul>
+                        <li>The name of the LLP.</li>
+                        <li>The nature of the business.</li>
+                        <li>The address of the registered office.</li>
+                        <li>The name of the 2 designated partners and their consent to act as partners.</li>
+                        <li>The details of the partners' contributions to the capital.</li>
+                    </ul>
+                    Once this document is accepted by the ROC, the LLP is legally born as a separate legal entity.
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5.4 Incorporation by Registration & Registered Office</h2>
+            <p>Starting an LLP is a highly streamlined online process through the Ministry of Corporate Affairs (MCA) portal. Here is exactly how it happens:</p>
+            <ul>
+                <li><strong>Step 1: Name Reservation (RUN-LLP):</strong> The partners must apply for a unique name. They propose 2 or 3 choices of names, and the MCA approves one. The name must end with "LLP" and must not be identical to any existing registered company or LLP.</li>
+                <li><strong>Step 2: Filling Form LLP-1 (Incorporation Document):</strong> This is the main registration form. Along with the form, the partners must obtain a <strong>DPIN</strong> (Designated Partner Identification Number) and a <strong>DIN</strong> (Director Identification Number, if they are also directors of other companies).</li>
+                <li><strong>Step 3: Certificate of Incorporation:</strong> Once the Registrar verifies all documents, they issue a <strong>Certificate of Incorporation</strong>. This certificate acts as the "Birth Certificate" of the LLP. From this date, the LLP officially exists, and the partners' liability becomes limited.</li>
+            </ul>
+            <div class="highlight-box">
+                <div class="box-title">Registered Office of LLP and change therein</div>
+                <p>An LLP must have a <strong>Registered Office</strong> in India. This is the official address where all legal notices, government communications, and official correspondence are sent. This address must be declared in the Incorporation Document. <br>
+                <strong>Change of Registered Office:</strong> If the LLP needs to shift its headquarters to a new address, it must legally notify the ROC. The change must be filed with the Registrar within 30 days of the decision (usually through form LLP-15). This ensures that the government's official records always have the correct address.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5.5 Change of Name & Rectification of Name</h2>
+            <p>Just like an individual can change their name, an LLP can also change its registered name. This is governed by Section 28 of the LLP Act.</p>
+            <ul>
+                <li><strong>Change of Name:</strong> If the partners decide they want a fresher name, they must apply to the Registrar for approval. They need to file Form LLP-5 along with a special resolution passed by the partners. The Registrar checks if the new name is available and not identical to any existing business. Once approved, the LLP is issued a fresh Certificate of Registration (change of name).</li>
+                <li><strong>Rectification of Name:</strong> What if a name was approved by mistake? Sometimes, the Registrar accidentally approves a name that is too similar to an existing registered company. In such a case, the ROC has the power to <strong>rectify</strong> (correct) the name without the LLP's consent, and the LLP must change their name and file the necessary forms within a strict time limit.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5.6 Partners, Designated Partners, and their Relations</h2>
+            <p>The concept of a partner in an LLP is drastically different from a traditional partnership. Let’s break down the rules:</p>
+            
+            <h3>Who can become a partner?</h3>
+            <p>Any individual or any body corporate (like another company) can become a partner in an LLP. However, it is important to remember that only an <strong>individual</strong> can become a <strong>Designated Partner</strong>.</p>
+
+            <h3>Designated Partners (Sec 7 & 8)</h3>
+            <p>Every LLP <strong>must</strong> have at least two Designated Partners. The role of a Designated Partner is extremely crucial because they are solely responsible for:
+            <ul>
+                <li>Filing all annual returns and financial statements with the ROC.</li>
+                <li>Maintaining the statutory records of the LLP.</li>
+                <li>Ensuring the LLP complies with all tax and audit laws.</li>
+            </ul>
+            If the LLP fails to appoint 2 Designated Partners, the Registrar of Companies has the power to treat <em>all</em> partners as designated partners, making them all liable for compliance failures.</p>
+            
+            <div class="quick-box">
+                <div class="box-title">Disqualifications for Designated Partners</div>
+                <p>A designated partner must be a natural person (individual). They are disqualified from acting as a DP if they are:
+                <ul>
+                    <li>Convicted of a criminal offense involving fraud for a period of 10 years.</li>
+                    <li>An undischarged insolvent (bankrupt).</li>
+                    <li>Declared to be of unsound mind by a competent court.</li>
+                </ul>
+                </p>
+            </div>
+
+            <h3>Relations of Partners (Mutual Agency vs. Agent)</h3>
+            <p>There is a crucial distinction here. In a traditional partnership, every partner is the <strong>mutual agent</strong> of the other partners. This means one reckless partner can bind the entire firm into massive debts, making all partners personally liable!</p>
+            <p>In an LLP, however, Section 26 clearly states that <strong>"Every partner of an LLP is an agent of the LLP"</strong>. Notice carefully—the partner is an agent of the <strong>LLP</strong> (the entity), and not of the other partners personally. Because of this, if one partner signs a bad deal, the liability falls on the LLP's assets, <em>not</em> on the other partners' personal assets.</p>
+        </div>
+
+        <div class="section">
+            <h2>5.7 Extent of Liability & Whistleblowing</h2>
+            
+            <div class="highlight-box">
+                <div class="box-title">Extent and Limitation of Liability (Sec 26 & 27)</div>
+                <p>The liability of the LLP and its partners is the crown jewel of this act. Under Section 26, an LLP is <strong>not liable</strong> for the unauthorized actions of its partners that are beyond the ordinary scope of business. However, the rules on liability depend on the partner's own actions:</p>
+                <ul>
+                    <li><strong>Liability of an LLP:</strong> The LLP is completely liable for its own obligations. It must pay debts out of the LLP's own property.</li>
+                    <li><strong>Liability of a Partner for his own fraud:</strong> If a partner commits a fraud that causes a third party to lose money, the LLP remains liable, but that specific partner is <strong>personally liable</strong> to pay compensation to the victim, just like a traditional partnership.</li>
+                    <li><strong>Limitation of Liability:</strong> Crucially, a partner is <strong>not</strong> held personally liable for the negligence or wrongdoings of other partners.</li>
+                </ul>
+            </div>
+
+            <h3>Whistleblowing in LLP (Sec 34)</h3>
+            <p>In the corporate world, employees or partners often witness illegal accounting practices, fraud, or mismanagement happening inside the firm. Under Sec 34 of the LLP Act, the concept of <strong>Whistleblowing</strong> was introduced to protect the "whistleblower" (the person who exposes the wrongdoing). The law states that if a partner or employee honestly raises a complaint about fraud or mismanagement in the LLP, the LLP is strictly <strong>prohibited</strong> from taking any adverse action (like firing, demoting, or harassing) against them. If the LLP does try to penalize a whistleblower, the whistleblower can directly approach the tribunal for protection and compensation.</p>
+        </div>
+
+        <div class="section">
+            <h2>5.8 Conversion into LLP</h2>
+            <p>The LLP Act provides a simple, legal pathway for existing businesses to "upgrade" into an LLP to gain the benefit of limited liability. There are two main types of conversions allowed under Section 55:</p>
+            <ul>
+                <li><strong>Conversion of a Traditional Partnership Firm into LLP:</strong> A partnership firm can convert into an LLP. To do this, the firm must apply to the ROC with the consent of all partners. All assets, liabilities, and employees of the old firm are seamlessly transferred to the new LLP, and the old firm legally ceases to exist.</li>
+                <li><strong>Conversion of a Private Company into LLP:</strong> A private limited company can also convert into an LLP. However, this requires passing a special board resolution and obtaining the consent of 100% of the shareholders. The assets and liabilities of the company are automatically transferred to the new LLP.</li>
+            </ul>
+            <div class="quick-box">
+                <div class="box-title">⚠️ Important Exam Note</div>
+                <p>When a firm or company converts into an LLP, the Registrar will issue a fresh Certificate of Registration. This certificate acts as conclusive proof that the old business is now successfully a Limited Liability Partnership. All statutory fees and stamp duties must be paid before conversion is approved.</p>
+            </div>
+        </div>
+
+        <!-- ==================== PYQ SECTION ==================== -->
+        <div class="section">
+            <h2>📝 Exam Prep & PYQ Analysis (6+6+6 Marks)</h2>
+            <p>Unit 5 is extremely favorable in DU exams because the concepts are fresh and highly defined. Here are the exact PYQs from your screenshots, broken down step-by-step.</p>
+            
+            <div class="exam-box">
+                <div class="box-title">PYQ Analysis: Question 4 (6+6+6 Marks)</div>
+                
+                <h3>Q4(a) Who can become partner in an LLP? What are the disqualifications for becoming a partner?</h3>
+                <p><strong>Expert Exam Structure:</strong></p>
+                <ul>
+                    <li><strong>Who can be a partner? (2 Marks):</strong> Under the LLP Act, any person, whether an <strong>individual</strong> or a <strong>body corporate</strong> (like a Company), can become a partner in an LLP. However, to be a Designated Partner, the person must strictly be an individual (natural person).</li>
+                    <li><strong>Disqualifications (4 Marks):</strong> A person is disqualified from becoming a partner (or designated partner) if:
+                        <ul>
+                            <li>They have been convicted of a criminal offense involving fraud and 10 years have not passed since the conviction.</li>
+                            <li>They are an undischarged insolvent (bankrupt).</li>
+                            <li>They are declared of unsound mind by a court of law.</li>
+                            <li>They are disqualified by a court order issued under the Companies Act, 2013.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Q4(b) Explain the registration process of LLP under the LLP Act, 2008.</h3>
+                <p><strong>Expert Exam Structure:</strong></p>
+                <ul>
+                    <li><strong>Introduction (1 Mark):</strong> Registration is mandatory for an LLP under the MCA portal. It is a 100% online process that ensures the LLP gets a separate legal identity.</li>
+                    <li><strong>Step-by-Step Process (5 Marks):</strong>
+                        <ul>
+                            <li><strong>Step 1:</strong> Apply for Name Reservation via the RUN-LLP form. Propose 2-3 unique names ending with "LLP".</li>
+                            <li><strong>Step 2:</strong> Obtain DPIN (Designated Partner Identification Number) for the at least 2 designated partners.</li>
+                            <li><strong>Step 3:</strong> File the <strong>Incorporation Document (Form LLP-1)</strong> with the Registrar of Companies along with the partners' contributions and address details.</li>
+                            <li><strong>Step 4:</strong> Once the registrar is satisfied, they issue the <strong>Certificate of Incorporation</strong>. This certificate officially births the LLP.</li>
+                            <li><strong>Step 5:</strong> File the <strong>LLP Agreement (Form LLP-3)</strong> within 30 days of the certificate issuance.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Q4(c) Discuss the provisions related to conversion of a firm into LLP under the LLP Act, 2008.</h3>
+                <p><strong>Expert Exam Structure:</strong></p>
+                <ul>
+                    <li><strong>Background (2 Marks):</strong> Under Section 55, a Traditional Partnership Firm (which has unlimited liability) can legally convert itself into an LLP to instantly gain the benefit of limited liability.</li>
+                    <li><strong>Procedure (4 Marks):</strong>
+                        <ul>
+                            <li>All the partners of the existing firm must pass a resolution consenting to the conversion.</li>
+                            <li>The firm must file an application with the ROC and pay the necessary stamp duty and registration fees.</li>
+                            <li>The application includes an incorporation document and a statement of assets and liabilities.</li>
+                            <li>Upon approval, the Registrar issues a fresh certificate stating that the partnership firm has been converted.</li>
+                            <li>The assets, properties, and employees are seamlessly transferred to the LLP without needing separate legal transfer documents.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">PYQ Analysis: Short Notes (3x18 Marks)</div>
+                
+                <h3>Q(b) Whistle blowing under LLP Act, 2008.</h3>
+                <p><strong>Expert Answer Structure:</strong> Whistleblowing refers to the act of exposing illegal, unethical, or fraudulent practices within a company. Under Sec 34 of the LLP Act, a partner or employee who raises a genuine complaint about fraud or mismanagement is legally protected. The LLP is strictly prohibited from firing, harassing, or punishing the whistleblower. If the LLP does take adverse action, the whistleblower can approach the tribunal for justice.</p>
+
+                <h3>Q(e) Rules related to change of name of LLP firm.</h3>
+                <p><strong>Expert Answer Structure:</strong> An LLP can change its registered name under Section 28. To do so, the partners must pass a resolution and file <strong>Form LLP-5</strong> with the ROC. The Registrar checks if the new name is available and not identical to any existing entity. If approved, the ROC issues a fresh Certificate of Registration reflecting the new name. Additionally, if the Registrar realizes an existing name was approved accidentally (rectification), they can force the LLP to change the name.</p>
+                
+                <h3>Q(c) Differentiate between the partnership firm and LLP.</h3>
+                <p><strong>Expert Answer Structure:</strong> Draw the exact 4-row comparison table provided in Section 5.2 (LLP vs Traditional Partnership Firm) of this guide. Focus heavily on <strong>Limited vs Unlimited Liability</strong>, and <strong>Mandatory vs Optional Registration</strong>. (This guarantees full marks!).</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px; padding: 15px; border: 1px dashed var(--green); border-radius: 12px; background: #ecfdf5;">
+                <p><strong>🎉 Congratulations! You have completed the full Business Law (DSC-2) syllabus!</strong></p>
+                <p style="font-size: 0.9rem; color: var(--slate); margin-top:10px;">
+                    You now have premium, mobile-responsive HTML notes for Units 1, 2, 3, 4, and 5. Every syllabus heading is covered, and every PYQ from your paper is solved with step-by-step mark distributions. 
+                    <br><br>
+                    <strong>Next Step:</strong> You can press <strong>Ctrl+P</strong> on this page to instantly save this as a high-quality PDF for your exams. Best of luck for your B.Com (Hons) Semester 1 exams!
+                </p>
+            </div>
+        </div>
+
+        <!-- ==================== FOOTER ==================== -->
+        <div class="footer">
+            <p>&copy; 2026 CampusNotes | Premium Study Materials for Delhi University</p>
+            <div class="watermark">B.Com (Hons) | Business Laws (DSC-2) | Sem I</div>
+        </div>
+
+    </div>
+</body>
+</html>
