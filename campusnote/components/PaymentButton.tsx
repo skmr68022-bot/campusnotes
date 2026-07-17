@@ -1,18 +1,16 @@
 "use client";
 
-import Script from "next/script";
-import { CreditCard, Loader2, ShieldCheck } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type PaymentButtonProps = {
-  amount: number;
+  amount: string;
   subjectName: string;
   accessKey: string;
 };
 
 declare global {
   interface Window {
-    Razorpay: any;
+    Razorpay?: any;
   }
 }
 
@@ -22,120 +20,117 @@ export default function PaymentButton({
   accessKey,
 }: PaymentButtonProps) {
   const [loading, setLoading] = useState(false);
+  const [paid, setPaid] = useState(false);
 
-  const handlePayment = async () => {
-    if (!window.Razorpay) {
-      alert("Razorpay is loading. Try again.");
-      return;
-    }
+  useEffect(() => {
+    const alreadyPaid = localStorage.getItem(`paid_${accessKey}`) === "true";
+    setPaid(alreadyPaid);
+  }, [accessKey]);
 
-    setLoading(true);
-
-    try {
-      const response = await fetch("/api/create-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ amount }),
-      });
-
-      const order = await response.json();
-
-      if (!response.ok) {
-        alert("Could not create payment order.");
-        setLoading(false);
+  const loadRazorpayScript = () => {
+    return new Promise<boolean>((resolve) => {
+      if (document.getElementById("razorpay-script")) {
+        resolve(true);
         return;
       }
 
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-        amount: order.amount,
-        currency: "INR",
-        name: "CampusNotes",
-        description: subjectName,
-        order_id: order.id,
+      const script = document.createElement("script");
+      script.id = "razorpay-script";
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
 
-        handler: function () {
-  localStorage.setItem(`paid_${accessKey}`, "true");
-
-  const existingPurchases = JSON.parse(
-    localStorage.getItem("campusnotes_purchases") || "[]"
-  );
-
-  const currentPath = window.location.pathname;
-
-  const newPurchase = {
-    accessKey,
-    title: subjectName,
-    url: currentPath,
-    purchasedAt: new Date().toISOString(),
+      document.body.appendChild(script);
+    });
   };
 
-  const updatedPurchases = [
-    newPurchase,
-    ...existingPurchases.filter(
-      (item: { accessKey: string }) => item.accessKey !== accessKey
-    ),
-  ];
+  const handlePayment = async () => {
+    setLoading(true);
 
-  localStorage.setItem(
-    "campusnotes_purchases",
-    JSON.stringify(updatedPurchases)
-  );
+    const scriptLoaded = await loadRazorpayScript();
 
-  alert("Payment successful! Full notes unlocked.");
-  window.location.reload();
-},
-
-        modal: {
-          ondismiss: function () {
-            setLoading(false);
-          },
-        },
-
-        theme: {
-          color: "#2563EB",
-        },
-      };
-
-      const razorpay = new window.Razorpay(options);
-      razorpay.open();
-    } catch {
-      alert("Something went wrong while starting payment.");
+    if (!scriptLoaded) {
+      alert("Razorpay failed to load. Please check your internet connection.");
       setLoading(false);
+      return;
     }
+
+    const cleanAmount = Number(amount.replace("₹", "").trim()) || 49;
+
+    const options = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_demo",
+      amount: cleanAmount * 100,
+      currency: "INR",
+      name: "Campusnotes",
+      description: `${subjectName} Notes Bundle`,
+
+      handler: function () {
+        localStorage.setItem(`paid_${accessKey}`, "true");
+        setPaid(true);
+
+        const existingPurchases = JSON.parse(
+          localStorage.getItem("campusnotes_purchases") || "[]"
+        );
+
+        const currentPath = window.location.pathname;
+
+        const newPurchase = {
+          accessKey,
+          title: subjectName,
+          url: currentPath,
+          purchasedAt: new Date().toISOString(),
+        };
+
+        const updatedPurchases = [
+          newPurchase,
+          ...existingPurchases.filter(
+            (item: { accessKey: string }) => item.accessKey !== accessKey
+          ),
+        ];
+
+        localStorage.setItem(
+          "campusnotes_purchases",
+          JSON.stringify(updatedPurchases)
+        );
+
+        alert("Payment successful! Full notes unlocked.");
+        window.location.reload();
+      },
+
+      prefill: {
+        name: "",
+        email: "",
+        contact: "",
+      },
+
+      theme: {
+        color: "#2563EB",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+
+    paymentObject.on("payment.failed", function () {
+      alert("Payment failed. Please try again.");
+      setLoading(false);
+    });
+
+    paymentObject.open();
+    setLoading(false);
   };
+
+  if (paid) {
+    return null;
+  }
 
   return (
-    <>
-      <Script
-        src="https://checkout.razorpay.com/v1/checkout.js"
-        strategy="afterInteractive"
-      />
-
-      <button
-        onClick={handlePayment}
-        disabled={loading}
-        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-4 text-sm font-black text-white shadow-xl shadow-slate-900/20 transition hover:-translate-y-0.5 hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-slate-400"
-      >
-        {loading ? (
-          <>
-            <Loader2 size={18} className="animate-spin" />
-            Opening Payment...
-          </>
-        ) : (
-          <>
-            <CreditCard size={18} />
-            Buy Compilation
-          </>
-        )}
-      </button>
-
-      <div className="mt-3 flex items-center justify-center gap-2 text-xs font-bold text-slate-500">
-        <ShieldCheck size={15} className="text-green-600" />
-        Secure payment powered by Razorpay
-      </div>
-    </>
+    <button
+      type="button"
+      onClick={handlePayment}
+      disabled={loading}
+      className="rounded-full bg-blue-600 px-6 py-3 text-sm font-black text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      {loading ? "Processing..." : `Purchase Bundle • ${amount}`}
+    </button>
   );
 }
