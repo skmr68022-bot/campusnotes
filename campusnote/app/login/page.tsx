@@ -22,6 +22,10 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const resetMessage = () => {
+    setMessage("");
+  };
+
   const handleGoogleLogin = async () => {
     setLoading(true);
     setMessage("");
@@ -29,7 +33,7 @@ export default function LoginPage() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/library`,
+        redirectTo: `${window.location.origin}/`,
       },
     });
 
@@ -59,7 +63,9 @@ export default function LoginPage() {
       options: {
         data: {
           name: name.trim(),
+          full_name: name.trim(),
         },
+        emailRedirectTo: `${window.location.origin}/`,
       },
     });
 
@@ -96,11 +102,8 @@ export default function LoginPage() {
       return;
     }
 
-    setMessage("Email verified successfully. You can now login.");
-    setMode("login");
-    setSignupStep("details");
-    setOtp("");
-    setPassword("");
+    router.push("/");
+    router.refresh();
   };
 
   const handleLogin = async () => {
@@ -124,7 +127,7 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/library");
+    router.push("/");
     router.refresh();
   };
 
@@ -141,9 +144,9 @@ export default function LoginPage() {
 
         <p className="mt-2 text-sm text-slate-600">
           {mode === "login"
-            ? "Login to access your purchased notes and library."
+            ? "Login to access your purchased notes and study library."
             : signupStep === "details"
-            ? "Signup with email and password. We will send an OTP to confirm your email."
+            ? "Signup with your name, email and password. We will send an OTP to confirm your email."
             : "Enter the OTP sent to your email to confirm your account."}
         </p>
 
@@ -170,7 +173,8 @@ export default function LoginPage() {
             onClick={() => {
               setMode("login");
               setSignupStep("details");
-              setMessage("");
+              setOtp("");
+              resetMessage();
             }}
             className={`rounded-full px-4 py-2 text-sm font-black transition ${
               mode === "login"
@@ -186,7 +190,8 @@ export default function LoginPage() {
             onClick={() => {
               setMode("signup");
               setSignupStep("details");
-              setMessage("");
+              setOtp("");
+              resetMessage();
             }}
             className={`rounded-full px-4 py-2 text-sm font-black transition ${
               mode === "signup"
@@ -249,6 +254,18 @@ export default function LoginPage() {
             >
               {loading ? "Verifying..." : "Verify Email OTP"}
             </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setSignupStep("details");
+                setOtp("");
+                setMessage("");
+              }}
+              className="mt-3 w-full rounded-full bg-slate-100 px-5 py-3 text-sm font-black text-slate-700 transition hover:bg-slate-200"
+            >
+              Change email
+            </button>
           </>
         ) : (
           <>
@@ -295,7 +312,9 @@ export default function LoginPage() {
         <p className="mt-5 text-center text-xs font-semibold text-slate-500">
           {mode === "login"
             ? "First time here? Click Signup above."
-            : "Already have an account? Click Login above."}
+            : signupStep === "details"
+            ? "Already have an account? Click Login above."
+            : "OTP not received? Check spam or wait before trying again."}
         </p>
       </div>
     </main>
