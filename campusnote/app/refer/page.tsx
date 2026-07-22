@@ -92,7 +92,7 @@ export default function ReferPage() {
     <main className="min-h-screen bg-[#FFFDF7] px-4 py-16">
       <section className="mx-auto max-w-6xl">
         <div className="overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-sm">
-          <div className="bg-gradient-to-br from-blue-600 via-indigo-700 to-slate-950 p-8 text-white sm:p-10">
+          <div className="bg-linear-to-br from-blue-600 via-indigo-700 to-slate-950 p-8 text-white sm:p-10">
             <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-blue-100">
@@ -100,7 +100,7 @@ export default function ReferPage() {
                   Refer and Earn
                 </div>
 
-                <h1 className="mt-5 max-w-3xl text-5xl font-black leading-[0.95] tracking-[-0.05em] sm:text-6xl">
+                <h1 className="mt-5 max-w-3xl text-5xl font-black leading-[0.95] tracking-tighter sm:text-6xl">
                   Invite friends and earn Campusnotes rewards.
                 </h1>
 
@@ -111,7 +111,7 @@ export default function ReferPage() {
                 </p>
               </div>
 
-              <div className="rounded-[2rem] bg-white/10 p-6">
+              <div className="rounded-4xl bg-white/10 p-6">
                 <Trophy size={42} className="text-yellow-300" />
                 <p className="mt-4 text-3xl font-black">Coming Rewards</p>
                 <p className="mt-2 text-sm font-semibold text-blue-100">
@@ -130,7 +130,7 @@ export default function ReferPage() {
           )}
 
           <div className="grid gap-6 p-6 lg:grid-cols-[1fr_0.9fr] sm:p-8">
-            <div className="rounded-[2rem] border border-slate-200 bg-[#FFFDF7] p-6">
+            <div className="rounded-4xl border border-slate-200 bg-[#FFFDF7] p-6">
               {user ? (
                 <>
                   <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-600">
@@ -214,7 +214,7 @@ export default function ReferPage() {
             </div>
 
             <div className="grid gap-4">
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm">
                 <Users className="text-blue-600" size={28} />
                 <h3 className="mt-4 text-xl font-black text-slate-950">
                   Invite Students
@@ -225,7 +225,7 @@ export default function ReferPage() {
                 </p>
               </div>
 
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm">
                 <Sparkles className="text-yellow-600" size={28} />
                 <h3 className="mt-4 text-xl font-black text-slate-950">
                   Referral Tracking
@@ -236,7 +236,7 @@ export default function ReferPage() {
                 </p>
               </div>
 
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm">
                 <Wallet className="text-emerald-600" size={28} />
                 <h3 className="mt-4 text-xl font-black text-slate-950">
                   Reward Wallet

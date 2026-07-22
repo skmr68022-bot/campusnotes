@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 type PaymentButtonProps = {
   amount: string | number;
@@ -23,8 +24,12 @@ export default function PaymentButton({
   const [paid, setPaid] = useState(false);
 
   useEffect(() => {
-    const alreadyPaid = localStorage.getItem(`paid_${accessKey}`) === "true";
-    setPaid(alreadyPaid);
+    const checkLocalPurchase = () => {
+      const alreadyPaid = localStorage.getItem(`paid_${accessKey}`) === "true";
+      setPaid(alreadyPaid);
+    };
+
+    checkLocalPurchase();
   }, [accessKey]);
 
   const loadRazorpayScript = () => {
@@ -53,8 +58,80 @@ export default function PaymentButton({
     return Number(String(amount).replace("₹", "").trim()) || 49;
   };
 
+  const savePurchaseToSupabase = async () => {
+    const { data: userData, error: userError } = await supabase.auth.getUser();
+
+    if (userError || !userData.user) {
+      alert("Please login first to save this purchase to your account.");
+      window.location.href = "/login";
+      return false;
+    }
+
+    const currentPath = window.location.pathname;
+    const cleanAmount = getCleanAmount();
+
+    const { error } = await supabase.from("user_purchases").upsert(
+      {
+        user_id: userData.user.id,
+        access_key: accessKey,
+        subject_name: subjectName,
+        subject_url: currentPath,
+        amount: cleanAmount,
+      },
+      {
+        onConflict: "user_id,access_key",
+      }
+    );
+
+    if (error) {
+      console.error("Purchase save error:", error);
+      alert("Payment done, but purchase could not be saved. Please contact support.");
+      return false;
+    }
+
+    return true;
+  };
+
+  const savePurchaseLocally = () => {
+    localStorage.setItem(`paid_${accessKey}`, "true");
+
+    const existingPurchases = JSON.parse(
+      localStorage.getItem("campusnotes_purchases") || "[]"
+    );
+
+    const currentPath = window.location.pathname;
+
+    const newPurchase = {
+      accessKey,
+      title: subjectName,
+      url: currentPath,
+      purchasedAt: new Date().toISOString(),
+    };
+
+    const updatedPurchases = [
+      newPurchase,
+      ...existingPurchases.filter(
+        (item: { accessKey: string }) => item.accessKey !== accessKey
+      ),
+    ];
+
+    localStorage.setItem(
+      "campusnotes_purchases",
+      JSON.stringify(updatedPurchases)
+    );
+  };
+
   const handlePayment = async () => {
     setLoading(true);
+
+    const { data: userData } = await supabase.auth.getUser();
+
+    if (!userData.user) {
+      alert("Please login or signup before purchasing notes.");
+      setLoading(false);
+      window.location.href = "/login";
+      return;
+    }
 
     const scriptLoaded = await loadRazorpayScript();
 
@@ -73,42 +150,28 @@ export default function PaymentButton({
       name: "Campusnotes",
       description: `${subjectName} Notes Bundle`,
 
-      handler: function () {
-        localStorage.setItem(`paid_${accessKey}`, "true");
+      handler: async function () {
+        const savedInSupabase = await savePurchaseToSupabase();
+
+        if (!savedInSupabase) {
+          setLoading(false);
+          return;
+        }
+
+        savePurchaseLocally();
+
         setPaid(true);
-
-        const existingPurchases = JSON.parse(
-          localStorage.getItem("campusnotes_purchases") || "[]"
-        );
-
-        const currentPath = window.location.pathname;
-
-        const newPurchase = {
-          accessKey,
-          title: subjectName,
-          url: currentPath,
-          purchasedAt: new Date().toISOString(),
-        };
-
-        const updatedPurchases = [
-          newPurchase,
-          ...existingPurchases.filter(
-            (item: { accessKey: string }) => item.accessKey !== accessKey
-          ),
-        ];
-
-        localStorage.setItem(
-          "campusnotes_purchases",
-          JSON.stringify(updatedPurchases)
-        );
 
         alert("Payment successful! Full notes unlocked.");
         window.location.reload();
       },
 
       prefill: {
-        name: "",
-        email: "",
+        name:
+          userData.user.user_metadata?.name ||
+          userData.user.user_metadata?.full_name ||
+          "",
+        email: userData.user.email || "",
         contact: "",
       },
 
