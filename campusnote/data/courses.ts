@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type ResourceFile = {
   title: string;
   file: string;
@@ -56,6 +58,7 @@ export type Resource = {
 };
 
 export type Subject = {
+  description: ReactNode;
   name: string;
   slug: string;
   price: number;
@@ -106,6 +109,7 @@ const createSubject = (
   slug,
   price: 1,
   resources: createResources(courseSlug, semester, slug),
+  description: undefined
 });
 
 const emptySemesters = (usedSemesters: Semester[]): Semester[] => {

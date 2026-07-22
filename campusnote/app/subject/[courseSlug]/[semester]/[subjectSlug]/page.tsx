@@ -1,23 +1,30 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  BadgeCheck,
+  ArrowLeft,
   BookOpen,
   CheckCircle2,
-  FileQuestion,
+  Clock,
   FileText,
   GraduationCap,
-  IndianRupee,
+  Library,
+  Lock,
   ShieldCheck,
+  Sparkles,
+  Star,
+  Trophy,
+  Unlock,
+  Zap,
 } from "lucide-react";
-import ResourceAccess from "@/components/ResourceAccess";
-import PaymentButton from "@/components/PaymentButton";
-import PurchaseStatus from "@/components/PurchaseStatus";
+
 import { getCourse, getSemester, getSubject } from "@/data/courses";
 import {
   getContentStatusFromResources,
   getHtmlFilesFromPublicFolder,
 } from "@/data/contentStatus";
+import PaymentButton from "@/components/PaymentButton";
+import ResourceAccess from "@/components/ResourceAccess";
+import PurchaseStatus from "@/components/PurchaseStatus";
 
 type SubjectPageProps = {
   params: Promise<{
@@ -27,304 +34,335 @@ type SubjectPageProps = {
   }>;
 };
 
+const getSemesterNumber = (semester: string) => {
+  return Number(semester.replace("sem", ""));
+};
+
 export default async function SubjectPage({ params }: SubjectPageProps) {
   const { courseSlug, semester, subjectSlug } = await params;
 
-  const semesterNumber = Number(semester.replace("sem", ""));
-
+  const semesterNumber = getSemesterNumber(semester);
   const course = getCourse(courseSlug);
-  const semesterData = getSemester(courseSlug, semesterNumber);
+  const selectedSemester = getSemester(courseSlug, semesterNumber);
   const subject = getSubject(courseSlug, semesterNumber, subjectSlug);
 
-  if (!course || !semesterData || !subject) {
+  if (!course || !selectedSemester || !subject) {
     notFound();
   }
 
   const accessKey = `${courseSlug}-${semesterNumber}-${subject.slug}`;
+  const notesFolderPath = `/html/${courseSlug}/sem${semesterNumber}/${subject.slug}`;
+  const dynamicHtmlFiles = getHtmlFilesFromPublicFolder(notesFolderPath);
 
-const notesFolderPath = `/html/${courseSlug}/sem${semesterNumber}/${subject.slug}`;
+  const dynamicResources = subject.resources.map((resource) => {
+    if (resource.title.toLowerCase() === "notes") {
+      return {
+        ...resource,
+        file: notesFolderPath,
+        size: `${dynamicHtmlFiles.length} HTML File${
+          dynamicHtmlFiles.length === 1 ? "" : "s"
+        }`,
+        files: dynamicHtmlFiles,
+      };
+    }
 
-const dynamicHtmlFiles = getHtmlFilesFromPublicFolder(notesFolderPath);
+    return resource;
+  });
 
-const dynamicResources = subject.resources.map((resource) => {
-  if (resource.title.toLowerCase() === "notes") {
-    return {
-      ...resource,
-      file: notesFolderPath,
-      size: `${dynamicHtmlFiles.length} HTML File${
-        dynamicHtmlFiles.length === 1 ? "" : "s"
-      }`,
-      files: dynamicHtmlFiles,
-    };
-  }
+  const contentStatus = getContentStatusFromResources(dynamicResources);
+  const isContentAvailable = contentStatus === "available";
 
-  return resource;
-});
+  const totalFiles = dynamicHtmlFiles.length;
 
-const contentStatus = getContentStatusFromResources(dynamicResources);
-const isContentAvailable = contentStatus === "available";
+  const benefits = [
+    {
+      title: "Premium Notes",
+      description: "Structured HTML notes with clean formatting and exam focus.",
+      icon: BookOpen,
+    },
+    {
+      title: "Quick Revision",
+      description: "Fast revision material for last-day preparation.",
+      icon: Zap,
+    },
+    {
+      title: "PYQ-Oriented",
+      description: "Material designed around semester exam preparation.",
+      icon: Trophy,
+    },
+    {
+      title: "Library Access",
+      description: "Unlocked notes can be accessed from My Library.",
+      icon: Library,
+    },
+  ];
 
   return (
     <main className="min-h-screen bg-[#FFFDF7]">
-      <section className="relative overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
-        <div className="absolute right-0 top-0 -z-10 h-[360px] w-[360px] rounded-full bg-blue-100 blur-3xl" />
+      <section className="relative overflow-hidden px-4 py-10 sm:py-14">
+        <div className="absolute -left-30 -top-30 h-72 w-72 rounded-full bg-blue-200/50 blur-3xl" />
+        <div className="absolute -bottom-35 -right-30 h-80 w-80 rounded-full bg-yellow-200/60 blur-3xl" />
 
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700"
-            >
-              ← Campusnotes
-            </Link>
+        <div className="relative mx-auto max-w-7xl">
+          <Link
+            href={`/semester/sem${semesterNumber}?course=${courseSlug}`}
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700"
+          >
+            <ArrowLeft size={17} />
+            Back to Semester {semesterNumber}
+          </Link>
 
-            <Link
-              href="/du"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700"
-            >
-              ← Delhi University
-            </Link>
-
-            <Link
-              href={`/course/${course.slug}`}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700"
-            >
-              ← {course.name}
-            </Link>
-
-            <Link
-              href={`/semester/${course.slug}-sem${semesterNumber}`}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 shadow-sm transition hover:border-blue-200 hover:text-blue-700"
-            >
-              ← Semester {semesterNumber}
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-blue-700">
-                <GraduationCap size={17} />
-                {course.name} • Semester {semesterNumber}
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-blue-700 shadow-sm">
+                <GraduationCap size={15} />
+                Delhi University Bundle
               </div>
 
-              <h1 className="mt-6 text-4xl font-black leading-tight text-slate-950 md:text-6xl">
-                {subject.name} Notes Bundle
+              <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.95] tracking-tighter text-slate-950 sm:text-6xl">
+                {subject.name}
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-slate-600 md:text-lg">
-                Premium {subject.name} study material for {course.name} Semester{" "}
-                {semesterNumber} students. Access syllabus, unit-wise HTML notes,
-                PYQs, quick revision material and exam-focused resources.
+              <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-slate-600">
+                {subject.description}
               </p>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                {[
-                  "Unit-wise HTML Notes",
-                  "Exam-oriented Coverage",
-                  "Quick Revision",
-                  "PYQs Support",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-2xl bg-white p-4 text-sm font-black text-slate-700 shadow-sm"
-                  >
-                    <CheckCircle2 size={18} className="text-green-600" />
-                    {item}
-                  </div>
-                ))}
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span className="rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-blue-700">
+                  {course.name}
+                </span>
+
+                <span className="rounded-full bg-yellow-50 px-4 py-2 text-sm font-black text-yellow-700">
+                  Semester {semesterNumber}
+                </span>
+
+                <span
+                  className={`rounded-full px-4 py-2 text-sm font-black ${
+                    isContentAvailable
+                      ? "bg-emerald-50 text-emerald-700"
+                      : "bg-orange-50 text-orange-700"
+                  }`}
+                >
+                  {isContentAvailable ? "Available" : "Coming Soon"}
+                </span>
+              </div>
+
+              <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
+                <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <FileText className="text-blue-600" size={24} />
+                  <p className="mt-3 text-2xl font-black text-slate-950">
+                    {totalFiles}
+                  </p>
+                  <p className="mt-1 text-xs font-bold text-slate-500">
+                    Uploaded HTML Files
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <Clock className="text-emerald-600" size={24} />
+                  <p className="mt-3 text-2xl font-black text-slate-950">
+                    24/7
+                  </p>
+                  <p className="mt-1 text-xs font-bold text-slate-500">
+                    Study Access
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                  <Star className="text-yellow-600" size={24} />
+                  <p className="mt-3 text-2xl font-black text-slate-950">
+                    PYQ
+                  </p>
+                  <p className="mt-1 text-xs font-bold text-slate-500">
+                    Exam Focused
+                  </p>
+                </div>
               </div>
             </div>
 
-            <aside className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-blue-900/10">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-700 text-white">
-                <BookOpen size={34} />
-              </div>
-
-              <h2 className="mt-6 text-2xl font-black text-slate-950">
-                Bundle Summary
-              </h2>
-
-              <div className="mt-5 space-y-3">
-                <div className="flex items-center justify-between rounded-2xl bg-[#FFFDF7] p-4 text-sm font-bold text-slate-700">
-                  <span>Course</span>
-                  <span>{course.name}</span>
-                </div>
-
-                <div className="flex items-center justify-between rounded-2xl bg-[#FFFDF7] p-4 text-sm font-bold text-slate-700">
-                  <span>Semester</span>
-                  <span>Semester {semesterNumber}</span>
-                </div>
-
-                <div className="flex items-center justify-between rounded-2xl bg-[#FFFDF7] p-4 text-sm font-bold text-slate-700">
-                  <span>Subject</span>
-                  <span>{subject.name}</span>
-                </div>
-              </div>
-
-              <div
-                className={`mt-6 rounded-2xl border p-4 ${
-                  isContentAvailable
-                    ? "border-blue-100 bg-blue-50"
-                    : "border-yellow-200 bg-yellow-50"
-                }`}
-              >
-                {isContentAvailable ? (
-                  <PurchaseStatus accessKey={accessKey} />
-                ) : (
+            <aside className="rounded-4xl border border-slate-200 bg-white p-6 shadow-xl">
+              <div className="rounded-3xl bg-linear-to-br from-slate-950 to-blue-700 p-6 text-white">
+                <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-sm font-black text-yellow-800">
-                      Coming Soon
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-blue-200">
+                      Bundle Price
                     </p>
 
-                    <p className="mt-1 text-xs font-bold leading-5 text-yellow-700">
-                      This DU subject bundle will become available automatically
-                      after all HTML notes files are uploaded.
+                    <h2 className="mt-2 text-4xl font-black">
+                      {subject.price}
+                    </h2>
+
+                    <p className="mt-2 text-sm font-semibold text-blue-100">
+                      One-time unlock for this subject bundle.
                     </p>
                   </div>
-                )}
+
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15">
+                    {isContentAvailable ? (
+                      <Unlock size={28} />
+                    ) : (
+                      <Lock size={28} />
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-3">
+                    <CheckCircle2 size={18} className="text-emerald-300" />
+                    <p className="text-sm font-bold">
+                      Premium notes and revision files
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-3">
+                    <CheckCircle2 size={18} className="text-emerald-300" />
+                    <p className="text-sm font-bold">
+                      Subject-wise organised access
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-3">
+                    <CheckCircle2 size={18} className="text-emerald-300" />
+                    <p className="text-sm font-bold">
+                      Works on mobile and desktop
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-6 rounded-2xl border border-slate-200 p-5">
-                {isContentAvailable ? (
-                  <>
-                    <p className="flex items-center gap-2 text-sm font-bold text-slate-500">
-                      <IndianRupee size={16} />
-                      One-time access price
-                    </p>
+              <div className="mt-5">
+                <PurchaseStatus accessKey={accessKey} />
+              </div>
 
-                    <p className="mt-2 text-4xl font-black text-slate-950">
-                      ₹{subject.price}
-                    </p>
+              {isContentAvailable ? (
+                <div className="mt-5">
+                  <PaymentButton
+                    amount={subject.price}
+                    subjectName={subject.name}
+                    accessKey={accessKey}
+                  />
+                </div>
+              ) : (
+                <div className="mt-5 rounded-3xl bg-orange-50 p-5">
+                  <p className="text-sm font-black text-orange-800">
+                    Content is being prepared
+                  </p>
+                  <p className="mt-2 text-sm font-semibold leading-6 text-orange-700">
+                    This bundle will become available after notes are uploaded.
+                  </p>
+                </div>
+              )}
 
-                    <p className="mt-2 text-sm font-medium leading-6 text-slate-500">
-                      Unlock full DU subject bundle with unit-wise HTML notes,
-                      revision material and resources.
-                    </p>
+              <div className="mt-5 rounded-3xl bg-slate-50 p-5">
+                <p className="flex items-center gap-2 text-sm font-black text-slate-950">
+                  <ShieldCheck size={18} className="text-blue-600" />
+                  Access Status
+                </p>
 
-                    <div className="mt-5">
-                      <PaymentButton
-                        amount={subject.price}
-                        subjectName={subject.name}
-                        accessKey={accessKey}
-                      />
-                    </div>
-
-                    <Link
-                      href="/library"
-                      className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-700 transition hover:border-blue-200 hover:text-blue-700"
-                    >
-                      Go to My Library
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <p className="text-sm font-black text-slate-950">
-                      Content Upload Pending
-                    </p>
-
-                    <p className="mt-2 text-sm font-medium leading-6 text-slate-500">
-                      Payment is disabled until all HTML notes files for this DU
-                      subject bundle are uploaded.
-                    </p>
-
-                    <button
-                      disabled
-                      className="mt-5 w-full cursor-not-allowed rounded-full bg-slate-200 px-5 py-3 text-sm font-black text-slate-500"
-                    >
-                      Coming Soon
-                    </button>
-                  </>
-                )}
+                <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
+                  Before purchase, files stay locked. After purchase, notes
+                  unlock in this browser and appear in My Library.
+                </p>
               </div>
             </aside>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12">
-            <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <section className="px-4 pb-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-700">
-                  Study Resources
+                <p className="text-sm font-black uppercase tracking-[0.25em] text-blue-600">
+                  Bundle Files
                 </p>
 
-                <h2 className="mt-2 text-3xl font-black text-slate-950">
-                  What you get in this bundle
+                <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] text-slate-950">
+                  What you will get
                 </h2>
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-black text-slate-700 shadow-sm">
-                <ShieldCheck size={16} className="text-green-600" />
-                Preview first, unlock full access
-              </div>
+              <p className="max-w-md text-sm font-medium leading-6 text-slate-600">
+                Preview the available resources. Full access unlocks after
+                successful purchase.
+              </p>
             </div>
 
-            {isContentAvailable ? (
-              <ResourceAccess resources={dynamicResources} accessKey={accessKey} />
-            ) : (
-              <div className="rounded-[2rem] border border-yellow-200 bg-yellow-50 p-7">
-                <p className="text-sm font-black uppercase tracking-[0.2em] text-yellow-700">
-                  Coming Soon
-                </p>
-
-                <h3 className="mt-3 text-2xl font-black text-slate-950">
-                  DU notes are being prepared
-                </h3>
-
-                <p className="mt-3 max-w-2xl text-sm font-medium leading-7 text-slate-700">
-                  This DU subject bundle will automatically become available
-                  when all required HTML files are uploaded in the correct
-                  folder.
-                </p>
-
-                <div className="mt-5 rounded-2xl bg-white p-4 text-sm font-bold text-slate-600">
-                  Required folder:
-                  <br />
-                  <span className="text-blue-700">
-                    public/html/{courseSlug}/sem{semesterNumber}/{subject.slug}
-                  </span>
-                </div>
-              </div>
-            )}
+            <div className="mt-7">
+              <ResourceAccess
+                resources={dynamicResources}
+                accessKey={accessKey}
+              />
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: "Unit Notes",
-                text: "Structured unit-wise notes for concept clarity and exam preparation.",
-                icon: FileText,
-              },
-              {
-                title: "PYQs Support",
-                text: "Previous year questions help you understand exam pattern and important topics.",
-                icon: FileQuestion,
-              },
-              {
-                title: "Quick Revision",
-                text: "Final revision resources help you revise faster before exams.",
-                icon: BadgeCheck,
-              },
-            ].map((item) => {
-              const Icon = item.icon;
+      <section className="px-4 pb-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((benefit) => {
+              const Icon = benefit.icon;
 
               return (
                 <div
-                  key={item.title}
-                  className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm"
+                  key={benefit.title}
+                  className="rounded-4xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
-                    <Icon size={24} />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white">
+                    <Icon size={22} />
                   </div>
 
-                  <h3 className="mt-5 text-xl font-black text-slate-950">
-                    {item.title}
+                  <h3 className="mt-4 text-lg font-black text-slate-950">
+                    {benefit.title}
                   </h3>
 
-                  <p className="mt-3 text-sm font-medium leading-7 text-slate-600">
-                    {item.text}
+                  <p className="mt-2 text-sm font-medium leading-6 text-slate-600">
+                    {benefit.description}
                   </p>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-16">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-slate-950 p-8 text-white shadow-xl sm:p-10">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.25em] text-blue-300">
+                Exam Preparation
+              </p>
+
+              <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-[-0.04em]">
+                Use this bundle for faster revision and better answer writing.
+              </h2>
+
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
+                Open notes, revise important questions, check PYQ-focused
+                material and keep everything organised in one subject page.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/library"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 transition hover:bg-blue-50"
+              >
+                My Library
+                <Library size={18} />
+              </Link>
+
+              <Link
+                href="/search"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-black text-white transition hover:bg-blue-700"
+              >
+                Search More Notes
+                <Sparkles size={18} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
