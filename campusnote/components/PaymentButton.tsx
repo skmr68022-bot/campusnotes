@@ -70,9 +70,18 @@ export default function PaymentButton({
     const currentPath = window.location.pathname;
     const cleanAmount = getCleanAmount();
 
+    const userName =
+      userData.user.user_metadata?.name ||
+      userData.user.user_metadata?.full_name ||
+      "Campusnotes User";
+
+    const userEmail = userData.user.email || "";
+
     const { error } = await supabase.from("user_purchases").upsert(
       {
         user_id: userData.user.id,
+        user_name: userName,
+        user_email: userEmail,
         access_key: accessKey,
         subject_name: subjectName,
         subject_url: currentPath,
@@ -85,7 +94,9 @@ export default function PaymentButton({
 
     if (error) {
       console.error("Purchase save error:", error);
-      alert("Payment done, but purchase could not be saved. Please contact support.");
+      alert(
+        "Payment done, but purchase could not be saved. Please contact support."
+      );
       return false;
     }
 
@@ -143,6 +154,13 @@ export default function PaymentButton({
 
     const cleanAmount = getCleanAmount();
 
+    const userName =
+      userData.user.user_metadata?.name ||
+      userData.user.user_metadata?.full_name ||
+      "";
+
+    const userEmail = userData.user.email || "";
+
     const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_demo",
       amount: cleanAmount * 100,
@@ -167,11 +185,8 @@ export default function PaymentButton({
       },
 
       prefill: {
-        name:
-          userData.user.user_metadata?.name ||
-          userData.user.user_metadata?.full_name ||
-          "",
-        email: userData.user.email || "",
+        name: userName,
+        email: userEmail,
         contact: "",
       },
 
