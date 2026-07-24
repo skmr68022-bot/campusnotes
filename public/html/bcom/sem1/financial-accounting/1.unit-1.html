@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 1 · Financial Accounting · CampusNotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: #f4f7fc;
+      font-family: 'Inter', -apple-system, sans-serif;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #1e293b;
+    }
+    .campus-card {
+      max-width: 1200px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 40px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+      padding: 45px 50px;
+      transition: all 0.2s ease;
+      margin-bottom: 40px;
+    }
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+      padding: 6px 18px;
+      border-radius: 100px;
+      text-transform: uppercase;
+    }
+    .badge i { margin-right: 6px; }
+    .topic-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 5px 16px;
+      border-radius: 30px;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #475569;
+      border-left: 5px solid #3b82f6;
+      padding-left: 20px;
+      background: #f8fafc;
+      border-radius: 0 12px 12px 0;
+      padding: 14px 22px;
+      margin-bottom: 30px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .subhead i { color: #2563eb; margin-right: 8px; }
+    .section { margin-top: 38px; }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid #e9edf2;
+      padding-bottom: 14px;
+      margin-bottom: 22px;
+      color: #0f172a;
+    }
+    .section-title i { color: #2563eb; font-size: 1.3rem; width: 30px; }
+    .section-sub {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-sub i { color: #2563eb; }
+    p, li { line-height: 1.7; color: #1e293b; }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+      background: #f8fafc;
+      padding: 20px 22px;
+      border-radius: 24px;
+      margin: 16px 0 20px 0;
+      border: 1px solid #eef2f6;
+    }
+    .concept-item {
+      background: white;
+      padding: 12px 16px;
+      border-radius: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border-left: 4px solid #3b82f6;
+    }
+    .concept-item strong { display: block; font-weight: 700; font-size: 0.85rem; color: #1e293b; }
+    .concept-item span { font-size: 0.95rem; color: #334155; }
+    .formula-box {
+      background: #eff6ff;
+      border-radius: 20px;
+      padding: 22px 28px;
+      margin: 22px 0;
+      border-left: 6px solid #2563eb;
+      box-shadow: 0 4px 8px rgba(37,99,235,0.04);
+    }
+    .formula-box .label {
+      font-weight: 600;
+      color: #1e40af;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+    .formula-box code {
+      background: #dbeafe;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      display: inline-block;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 24px 0 18px 0;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      padding: 16px 18px;
+      text-align: left;
+      color: #0f172a;
+      border-bottom: 2px solid #d1d9e6;
+    }
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid #e9edf2;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    .green-tag {
+      background: #dcfce7;
+      color: #15803d;
+      padding: 3px 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: inline-block;
+    }
+    .blue-tag {
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 3px 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: inline-block;
+    }
+    .callout {
+      background: #f1f5f9;
+      border-left: 6px solid #3b82f6;
+      padding: 16px 22px;
+      border-radius: 14px;
+      margin: 18px 0;
+      font-size: 0.98rem;
+    }
+    .callout.warning {
+      border-left-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .callout.alert {
+      border-left-color: #ef4444;
+      background: #fef2f2;
+    }
+    .callout.tip {
+      border-left-color: #10b981;
+      background: #ecfdf5;
+    }
+    .note-tip {
+      background: #fffbeb;
+      border-radius: 18px;
+      padding: 16px 22px;
+      border-left: 6px solid #f59e0b;
+      margin: 24px 0 12px 0;
+      color: #78350f;
+    }
+    .note-tip i { color: #d97706; margin-right: 8px; }
+    .footer-note {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 2px solid #e9edf2;
+      text-align: center;
+      color: #64748b;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+    .footer-note i { color: #2563eb; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 16px 0 8px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin: 16px 0 8px;
+    }
+    .grid-card {
+      background: #fafcff;
+      border-radius: 18px;
+      padding: 18px 20px;
+      border: 1px solid #e4eaf2;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.01);
+    }
+    .grid-card.assets { border-left: 5px solid #2563eb; }
+    .grid-card.equity { border-left: 5px solid #16a34a; }
+    .grid-card.liabilities { border-left: 5px solid #dc2626; }
+    .grid-card h4 { margin-top: 0; margin-bottom: 8px; }
+    .step-list {
+      counter-reset: step;
+      list-style: none;
+      margin: 12px 0 16px;
+      padding-left: 6px;
+    }
+    .step-list li {
+      counter-increment: step;
+      padding: 6px 0 8px 28px;
+      position: relative;
+    }
+    .step-list li::before {
+      content: counter(step) ".";
+      font-weight: 700;
+      color: #2563eb;
+      position: absolute;
+      left: 0;
+    }
+    .study-list {
+      list-style: none;
+      padding-left: 4px;
+      margin: 10px 0 12px;
+    }
+    .study-list li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+    .study-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-weight: 700;
+    }
+    @media (max-width: 650px) {
+      .campus-card { padding: 24px 18px; }
+      h1 { font-size: 1.9rem; }
+      .concept-grid { grid-template-columns: 1fr; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .badge-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="campus-card">
+
+  <div class="badge-row">
+    <span class="badge"><i class="fas fa-graduation-cap"></i> B.Com · Sem 1</span>
+    <span class="topic-label"><i class="far fa-file-alt"></i> DSC-3 · Financial Accounting</span>
+    <span class="topic-label"><i class="fas fa-book-open"></i> Unit 1</span>
+  </div>
+
+  <h1>Unit 1 · Theoretical Framework &amp; Accounting Process</h1>
+  <div class="subhead">
+    <i class="fas fa-pencil-alt"></i> 
+    Complete theory · Accounting as an Information System · GAAP · AS · Ind AS · IFRS · Accounting Process · GST
+  </div>
+
+  <!-- ===== SECTION 1 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-brain"></i> 1. Introduction to the Accounting Framework</div>
+
+    <h3 style="font-size:1.2rem; margin-top:12px; color:#0f172a;">Accounting as an Information System (AIS)</h3>
+    <p>Accounting is the <strong>"Language of Business."</strong> It is a live system that takes messy daily business activities and turns them into a neat, readable report card.</p>
+
+    <div class="callout warning">
+      <strong>🍿 Everyday Example:</strong> Imagine you open a small backyard food stall selling burgers. On your first day, you buy buns and patties, pay a friend $20 to help flip burgers, and sell 50 burgers to hungry neighbors. At the end of the month, you want to know: <em>"Am I actually making a profit or am I losing money?"</em> Accounting is the exact system you use to clear up that confusion and find your answer.
+    </div>
+
+    <p>In university exams, professors love to ask how accounting works as a system. To write a perfect answer, just show how data flows through these four steps:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>System Step</th><th>What it Means in Simple Words</th><th>The Burger Stall Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Identification</strong></td><td>Spotting economic events. We ONLY look at transactions where actual money is involved.</td><td>You buy a customized burger grill for $150 (Record this!). You interview a supplier but buy nothing yet (Do NOT record this, no money changed hands!).</td></tr>
+          <tr><td><strong>2. Measurement</strong></td><td>Attaching a clear, exact currency value ($ or ₹) to the transaction.</td><td>You cannot write down "bought a few bags of potatoes." You must measure it precisely: "Potatoes: $35."</td></tr>
+          <tr><td><strong>3. Recording</strong></td><td>Writing down transactions chronologically in a digital or physical logbook so you never forget.</td><td>Entering your daily cash receipts and bills into diaries called Journals and Ledgers, creating an unalterable history.</td></tr>
+          <tr><td><strong>4. Communication</strong></td><td>Compiling data into final financial report cards for people to read.</td><td>Creating your final <strong>Income Statement</strong> and <strong>Balance Sheet</strong> to proudly show your family or a business partner how much you earned.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <strong>💡 Exam Short Trick / Mnemonic:</strong> To remember these 4 system steps in the exact order without mixing them up, remember the name <strong>"I M R C"</strong> → <strong>I</strong> <strong>M</strong>ust <strong>R</strong>ecord <strong>C</strong>ash!
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:20px; color:#0f172a;">Users of Financial Information</h3>
+    <div class="grid-2">
+      <div class="grid-card assets">
+        <h4>Internal Users <br><small style="font-weight: normal; opacity: 0.8;">(The Insiders)</small></h4>
+        <p><strong>Who they are:</strong> CEOs, business owners, branch managers, and team leaders.</p>
+        <p><strong>What they need:</strong> Internal details to make active daily decisions. They ask: <em>"Can we afford to buy a second delivery scooter next month?"</em> or <em>"Should we launch a new spicy chicken burger?"</em></p>
+      </div>
+      <div class="grid-card liabilities">
+        <h4>External Users <br><small style="font-weight: normal; opacity: 0.8;">(The Outsiders)</small></h4>
+        <p><strong>Who they are:</strong> Stock investors, bank loan managers, suppliers, and tax officers.</p>
+        <p><strong>What they need:</strong> Final financial statements to evaluate their risk. <br>• <strong>The Bank:</strong> <em>"If we give this business a loan, will they pay us back on time?"</em><br>• <strong>The Tax Guy:</strong> <em>"Are they calculation-cheating, or paying their fair share?"</em></p>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <strong>💡 Exam Short Trick / Mnemonic:</strong> To recall the main external users instantly under exam pressure, think of the word <strong>"B I T"</strong> → <strong>B</strong>anks, <strong>I</strong>nvestors, <strong>T</strong>ax authorities. They are all outside looking in!
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:20px; color:#0f172a;">The Three Branches of Accounting</h3>
+    <ol class="step-list">
+      <li><strong>Financial Accounting (The Historian):</strong> This branch looks completely backward. It records past transactions to create official annual statement summaries for external users. It must follow strict, unbending global laws (called GAAP or IFRS).</li>
+      <li><strong>Cost Accounting (The Factory Guard):</strong> This branch looks closely at the present. It is used inside kitchens, workshops, or factories to calculate the exact production cost of <em>one single item</em> (e.g., tracking how much cheese, flour, gas electricity, and wrapper card go into making one single burger slice).</li>
+      <li><strong>Management Accounting (The Fortune Teller):</strong> This branch looks entirely forward. It prepares confidential plans, future sales budgets, and strategic targets for internal bosses. There are zero external rules here—you format it however the manager prefers.</li>
+    </ol>
+  </div>
+
+  <!-- ===== SECTION 2 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-robot"></i> 2. Role of AI &amp; Data Analytics</div>
+
+    <p>For decades, traditional accountants spent hours doing boring, manual clerical work—like typing numbers from paper receipts, checking matching bank columns, and copying figures into Excel. Today, <strong>Artificial Intelligence (AI)</strong> software completely takes over that robotic grunt work, shifting the accountant's job toward higher strategic thinking.</p>
+
+    <div class="callout warning">
+      <strong>👟 Everyday Example:</strong> Imagine you open a premium Sneaker Resale website. You buy hundreds of limited-edition shoes daily from different sellers online. Instead of you opening every single email receipt and manually typing the prices into a spreadsheet, an AI software automatically scans your inbox, reads the invoices, and records them instantly into your ledger while you sleep!
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">The Four Pillars of Data Analytics</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Analytics Stage</th><th>The Core Question</th><th>What it Means in Simple English</th><th>The Sneaker Store Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Descriptive</strong></td><td><em>"What happened?"</em></td><td>Looking purely backward at data summaries that have already occurred.</td><td>Checking a financial report card showing you sold exactly 500 pairs of shoes last month.</td></tr>
+          <tr><td><strong>2. Diagnostic</strong></td><td><em>"Why did it happen?"</em></td><td>Drilling down into the numbers to find the root cause of a specific change.</td><td>Realizing your profits dropped because a supplier suddenly raised their shipping fees by 15%.</td></tr>
+          <tr><td><strong>3. Predictive</strong></td><td><em>"What will happen?"</em></td><td>Using historical patterns and trends to forecast future business results.</td><td>The software alerts you that based on trend logs, you will completely sell out of red sneakers by next Friday.</td></tr>
+          <tr><td><strong>4. Prescriptive</strong></td><td><em>"What should we do?"</em></td><td>Providing smart, actionable recommendations or automated solutions to exploit the trend.</td><td>The AI system automatically contacts the factory to restock the red sneakers before your shelves go empty.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout tip">
+      <strong>💡 Exam Short Trick / Mnemonic:</strong> To memorize the four analytical stages in perfect order for your test paper, remember the letters <strong>D-D-P-P</strong> → <strong>D</strong>escribe, <strong>D</strong>iagnose, <strong>P</strong>redict, <strong>P</strong>rescribe!
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-check-double"></i> 3. Qualitative Characteristics of Financial Information</div>
+
+    <p>Financial statements are like a health report card for a business. If a company just throws millions of raw ledger rows at investors, it will cause total information overload. To make the data functional, accounting bodies (like IASB and FASB) created strict quality standards called <strong>Qualitative Characteristics</strong>.</p>
+
+    <div class="callout warning">
+      <strong>🥣 Daily Life Example:</strong> Imagine you are buying cereal and looking at the nutritional label. If the company lies about the sugar content, prints it in a secret coded language, or formats the labels differently every week, that information is useless to you. Accounting data works the exact same way!
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">Fundamental Characteristics</h3>
+    <div class="grid-2">
+      <div class="grid-card assets">
+        <h4>1. Relevance (The "Right Now" Factor)</h4>
+        <p>Information is relevant if it can change or influence a user's final economic decision. It must help users predict future trends or confirm past estimations.</p>
+        <p><strong>Materiality Concept:</strong> A small sub-part of relevance. An item is "material" if leaving it out or misstating it would trick an investor. For instance, losing a $500 laptop matters to a mom-and-pop shop, but it is completely immaterial to a multi-billion dollar corporation like Apple.</p>
+      </div>
+      <div class="grid-card equity">
+        <h4>2. Faithful Representation (The Truth Factor)</h4>
+        <p>This used to be called <strong>Reliability</strong>. It means the financial statements must paint an honest, accurate picture of what actually happened behind closed doors.</p>
+        <p>To achieve this, the data must be:</p>
+        <ul class="study-list">
+          <li><strong>Complete:</strong> No critical details or hidden debts are left out.</li>
+          <li><strong>Neutral:</strong> Unbiased reporting. No "window dressing" to look overly rich.</li>
+          <li><strong>Free from Error:</strong> No careless computation mistakes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:20px; color:#0f172a;">Enhancing Characteristics (C-U-T-V)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Enhancing Attribute</th><th>What it Means (Plain English)</th><th>Practical Business Scenario</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Comparability</strong></td><td>Users must be able to compare your company's records against other industry competitors, or compare your own current year performance against your past years.</td><td>If you use the <em>Straight-Line Method</em> for depreciation in 2025, you cannot randomly flip to the <em>Written-Down Value Method</em> in 2026 without a massive justification. Consistency creates comparability!</td></tr>
+          <tr><td><strong>Understandability</strong></td><td>Reports must be laid out cleanly so that stakeholders with a reasonable understanding of business can read them without hiring an expert.</td><td>Grouping clear headings like "Current Assets" and "Long-term Liabilities" rather than dumping hundreds of raw account totals on a single page.</td></tr>
+          <tr><td><strong>Timeliness</strong></td><td>Information must be delivered to decision-makers quickly before it loses its power to influence their actions.</td><td>If a company releases its 2025 annual performance numbers in late 2027, that data is useless history. Investors have already made their choices!</td></tr>
+          <tr><td><strong>Verifiability</strong></td><td>Different independent experts (like separate audit firms) should look at your records and arrive at the exact same conclusion.</td><td>If your books claim your shop owns a delivery van worth $20,000, an auditor can easily verify this by inspecting the vehicle title and original purchase invoice.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout alert">
+      <strong>🚀 Exam Short Trick / Mnemonic:</strong> To remember the 4 Enhancing Characteristics instantly during your test, think of the word <strong>"C U T V"</strong> → <strong>C</strong>omparability, <strong>U</strong>nderstandability, <strong>T</strong>imeliness, <strong>V</strong>erifiability!
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-gavel"></i> 4. Fundamental Accounting Principles &amp; GAAP</div>
+
+    <p>Imagine if every country or company played football with their own custom set of rules. One team decides hands can be used, another decides the game lasts 3 hours, and a third decides scores don't matter. The game would become complete chaos! Similarly, if every business calculated its profits in its own unique way, investors could never compare or trust the numbers.</p>
+
+    <p>To avoid this confusion, accountants use a universal rulebook called <strong>GAAP (Generally Accepted Accounting Principles)</strong>. These are uniform guidelines and rules followed by corporate houses to maintain absolute consistency, comparability, and transparency across financial statements.</p>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">The 12 Pillars of GAAP</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>GAAP Concept</th><th>What it Means in Simple Words</th><th>🏪 Real-World Business Scenario</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Business Entity</strong></td><td>The business and its owner are completely separate legal identities in the eyes of accounting.</td><td>If you pay your personal apartment electricity bill using the company's bank account, it is recorded as <em>Drawings</em> (reducing owner equity) rather than an operating expense of the shop.</td></tr>
+          <tr><td><strong>2. Money Measurement</strong></td><td>Only activities that can be written down as an exact monetary value are entered into books.</td><td>If your sales team has an amazing, highly cooperative corporate culture, you cannot record it as an asset because there is no objective price tag for "happiness."</td></tr>
+          <tr><td><strong>3. Going Concern</strong></td><td>We assume the business will run forever and will not face sudden liquidation or bankruptcy in the near future.</td><td>This is why we value fixed assets like property at cost rather than current market value—because we have no immediate plan to sell them tomorrow.</td></tr>
+          <tr><td><strong>4. Cost Concept</strong></td><td>Assets are logged at their original acquisition price, regardless of what the market value becomes later.</td><td>If you bought an office unit for $40,000 in 2010, it stays on your asset register at $40,000, even if local real estate prices skyrocket to $500,000 today.</td></tr>
+          <tr><td><strong>5. Revenue Recognition</strong></td><td>Revenue is legally captured when a service is completed or goods are handed over—not when money lands in the bank.</td><td>If you deliver 100 customized hoodies to a college club in March, you record the sale in March, even if the students do not write you a check until June.</td></tr>
+          <tr><td><strong>6. Realization Concept</strong></td><td>Profit is only earned when a legal, binding transaction creates an official obligation to receive cash.</td><td>If you receive an inquiry email from a buyer saying "I intend to buy 20 cases next week," you do NOT log a sale yet because no value has been realized.</td></tr>
+          <tr><td><strong>7. Accruals</strong></td><td>Income and expenses are matched to the exact period they occur, independent of cash collection dates.</td><td>If your shop stays open late through December but you don't pay your workers their December wages until January 5th, you must still log that salary expense in December's profit sheet.</td></tr>
+          <tr><td><strong>8. Periodicity</strong></td><td>The continuous life of a business is chopped into fixed, equal blocks of time (usually 12 months) for report cards.</td><td>Instead of waiting 20 years for a firm to close down to calculate final profits, we break it into annual reporting cycles (e.g., April 1 to March 31).</td></tr>
+          <tr><td><strong>9. Full Disclosure</strong></td><td>All major material financial facts that might impact an external investor's view must be fully shared.</td><td>If your business is currently facing a massive law suit from a competitor that could cost you $100,000, you must disclose it clearly in the footnotes.</td></tr>
+          <tr><td><strong>10. Consistency</strong></td><td>Once you pick an accounting tracking method, you must stick with it year after year to maintain a clean timeline.</td><td>You cannot switch your inventory valuation back and forth between FIFO and LIFO methods every six months just to change your apparent profit margins.</td></tr>
+          <tr><td><strong>11. Materiality</strong></td><td>Teeny-tiny expenses don't need complex tracking rules. Keep things simple if the number doesn't matter.</td><td>Hiring an appraiser to determine the exact depreciation on a single $2 trash can is a waste of time. You write it off immediately as a minor operational expense.</td></tr>
+          <tr><td><strong>12. Prudence (Conservatism)</strong></td><td>The ultimate rule of caution: Play safe. Never anticipate future profits, but calculate and record all possible losses early.</td><td>If you know a customer is struggling with cash and might default on their bill, you create a <em>Provision for Doubtful Debts</em> immediately to stay safe.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">The Big Three: Fundamental Assumptions as per AS 1</h3>
+    <div class="grid-3">
+      <div class="grid-card assets"><h4>1. Going Concern</h4><p>Assumes the enterprise will maintain operational continuity and stay in business for a foreseeable timeline. If a firm intends to shut down, this assumption fails, and all assets must be written down to liquidation values.</p></div>
+      <div class="grid-card equity"><h4>2. Consistency</h4><p>Assumes accounting policies are applied uniformly across fiscal years. If a company suddenly alters its accounting rules without standard explanation, it breaks this baseline pillar.</p></div>
+      <div class="grid-card liabilities"><h4>3. Accrual</h4><p>Assumes revenues and costs are registered as they are earned or incurred—not when physical currency moves. True corporate financial tracking operates on an accrual basis, never a pure cash basis.</p></div>
+    </div>
+
+    <div class="callout alert">
+      <strong>🚀 Exam Short Trick / Mnemonic:</strong> To recall the three fundamental assumptions from AS-1 in 2 seconds flat, memorize the word <strong>"G C A"</strong> → <strong>G</strong>oing Concern, <strong>C</strong>onsistency, <strong>A</strong>ccrual!
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-cash-register"></i> 5. Accounting Bases &amp; Classification of Items</div>
+
+    <div class="grid-2">
+      <div class="grid-card assets">
+        <h4>Cash Basis Accounting</h4>
+        <p><strong>The Core Logic:</strong> Transactions are recognized and recorded <em>only</em> when actual, physical cash changes hands. If no green notes enter or leave your wallet, no entry is posted.</p>
+        <p><strong>Application:</strong> Mostly used by small local grocery stores, freelance clubs, or professionals like doctors and lawyers with low complexity.</p>
+      </div>
+      <div class="grid-card equity">
+        <h4>Accrual Basis Accounting</h4>
+        <p><strong>The Core Logic:</strong> Revenue is logged when it is earned, and expenses are tracked when they are incurred, completely independent of the actual movement of cash.</p>
+        <p><strong>Application:</strong> Statutorily mandatory for all corporate entities under public company laws globally to provide a true and fair view.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">Capital vs. Revenue Expenditures</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Parameter</th><th>Capital Expenditure (CapEx)</th><th>Revenue Expenditure (OpEx)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Exam Definition</strong></td><td>An outflow incurred to acquire, improve, or extend the useful life of a long-term fixed asset.</td><td>An operational outflow spent on the day-to-day maintenance and smooth running of the core business.</td></tr>
+          <tr><td><strong>Earning Capacity Impact</strong></td><td>Directly increases or upgrades the total production or profit-earning capacity of the enterprise.</td><td>Maintains the existing standard earning capacity without adding new efficiency milestones.</td></tr>
+          <tr><td><strong>Benefit Period</strong></td><td>Yields structural, economic benefits across multiple financial years (long-term).</td><td>Benefits are entirely exhausted within the current ongoing 12-month accounting timeline.</td></tr>
+          <tr><td><strong>Accounting Treatment</strong></td><td>Capitalized on the <strong>Balance Sheet</strong> as a Fixed Asset, then gradually depreciated over time.</td><td>Debited directly to the Trading or <strong>Profit & Loss Account</strong> as a regular operating cost.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-cog"></i> 6. Accounting Estimates, Policies &amp; Fair Value</div>
+
+    <p>An <strong>Accounting Estimate</strong> is a realistic approximation of a business variable made when exact information is missing.</p>
+    <p><strong>The Golden Exam Rule (Treatment of Changes):</strong> When fresh information comes to light, estimates naturally change. Changes in accounting estimates are processed using a <strong>Prospective Application</strong> method. This means you only fix the numbers for the <em>current year and future years</em>. You never go back to rewrite history or tamper with old finalized profits!</p>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">Accounting Policies</h3>
+    <p>An <strong>Accounting Policy</strong> refers to the specific principles, bases, conventions, and rules chosen by an enterprise to compile and present its official report cards. Unlike estimates, policies are the structural framework of your recording process.</p>
+
+    <div class="callout warning">
+      <strong>⚠️ CRITICAL EXAM TERMINOLOGY DISTINCTION:</strong> Changing an accounting policy requires a <strong>Retrospective Application</strong>. This means you must go back into your history logs and recalculate past years as if you had always used the new policy all along. This prevents managers from constantly swapping rules back and forth to hide weak performance periods!
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">Fair Value Hierarchy</h3>
+    <ol class="step-list">
+      <li><strong>Level 1 Inputs (The Gold Standard):</strong> Unadjusted quoted prices from active public exchanges for identical assets. <br><em>Example:</em> Checking the exact closing price of a share of Apple Inc. on the stock exchange.</li>
+      <li><strong>Level 2 Inputs (The Silver Standard):</strong> Observable market models based on similar items. <br><em>Example:</em> Determining the value of a 3-bedroom apartment by looking at recent transaction logs for an identical layout next door.</li>
+      <li><strong>Level 3 Inputs (The Bronze Standard):</strong> Unobservable internally generated estimates. <br><em>Example:</em> Valuing highly customized, top-secret military grade software code developed in-house.</li>
+    </ol>
+  </div>
+
+  <!-- ===== SECTION 7 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-file-contract"></i> 7. Provisions, Contingent Liabilities &amp; Contingent Assets</div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Element</th><th>Exam-Writable Definition (Formal Terms)</th><th>Recognition Status</th><th>Where It Appears</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Provision</strong></td><td>A present legal or constructive obligation arising from past events, where a reliable estimate can be made, and a cash outflow is probable.</td><td><strong>Recognized</strong> <br>(Formally Booked)</td><td>Debited to the Profit & Loss Account; shown as a liability on the Balance Sheet.</td></tr>
+          <tr><td><strong>Contingent Liability</strong></td><td>A possible obligation depending on whether an uncertain future event occurs, OR a present obligation where an outflow is not probable or cannot be reliably measured.</td><td><strong>Not Recognized</strong> <br>(Off-Balance Sheet)</td><td>Disclosed exclusively as an explanatory note in the <strong>Notes to Accounts</strong>.</td></tr>
+          <tr><td><strong>Contingent Asset</strong></td><td>A possible asset arising from past events whose existence will be confirmed only by the occurrence or non-occurrence of one or more uncertain future events.</td><td><strong>Not Recognized</strong> <br>(Strictly Ignored)</td><td>Disclosed in the Board of Directors' Report only if the inflow of economic benefits is highly probable.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 8 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-calendar-alt"></i> 8. Post-Balance Sheet Events, Prior Period &amp; Extraordinary Items</div>
+
+    <div class="grid-2">
+      <div class="grid-card assets">
+        <h4>A. Adjusting Events</h4>
+        <p><strong>Definition:</strong> Events that provide <em>additional evidence of conditions that already existed</em> on or before the balance sheet date.</p>
+        <p><strong>Accounting Treatment:</strong> You must physically change the numbers inside the journal entries and update the primary Balance Sheet/Income Statement metrics.</p>
+        <p><strong>🏪 Exam Example:</strong> A major wholesale buyer who owed your business $20,000 goes completely bankrupt in February. Since they were already struggling and carrying that debt on December 31, this confirms the asset was impaired at year-end. <strong>Adjust and write off the debt!</strong></p>
+      </div>
+      <div class="grid-card liabilities">
+        <h4>B. Non-Adjusting Events</h4>
+        <p><strong>Definition:</strong> Events that are indicative of <em>conditions that arose entirely after</em> the balance sheet date.</p>
+        <p><strong>Accounting Treatment:</strong> Do NOT alter the numbers in the financial statements. If material, disclose the nature and financial impact within the <strong>Notes to Accounts</strong>.</p>
+        <p><strong>🏪 Exam Example:</strong> On January 15, a massive fire breaks out in your main warehouse, destroying $50,000 worth of inventory. Since the inventory was completely safe and intact on December 31, this condition did not exist at year-end. <strong>Disclose via a footnote only!</strong></p>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">Prior Period Items</h3>
+    <p><strong>Exam-Writable Definition:</strong> <em>"Prior period items are material incomes or expenses which arise in the current financial year as a result of errors or omissions in the preparation of the financial statements of one or more prior periods."</em></p>
+    <p>Under modern frameworks, these require <strong>Retrospective Restatement</strong>. You restate the comparative figures for the prior year(s) presented and adjust the opening balance of <em>Retained Earnings</em> for the current year.</p>
+  </div>
+
+  <!-- ===== SECTION 9 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-book"></i> 9. Accounting Standards (AS) – Concept &amp; Formulation</div>
+
+    <p><strong>Exam-Writable Definition:</strong> <em>"Accounting Standards (AS) are a structured set of standardized rules, authoritative statements, measurements, and disclosure guidelines issued by a recognized professional accounting body to harmonize accounting policies and ensure uniformity across financial statements."</em></p>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">The Multi-Stage Formulation Process in India</h3>
+    <ol class="step-list">
+      <li><strong>Identification of Broad Areas:</strong> The ASB reviews the state of the national economic market and identifies specific topics where fresh guidelines or clarity are urgently required.</li>
+      <li><strong>Constitution of Study Groups:</strong> Specialist sub-committees consisting of industry experts, corporate leaders, academics, and regulatory officers are formed to research international treatments and write an initial discussion paper.</li>
+      <li><strong>Drafting the Standard (Draft Proposal):</strong> The study group prepares a preliminary working blueprint of the standard, detailing the rules for tracking, calculating, and presenting the specified transactions.</li>
+      <li><strong>Circulation and Brainstorming:</strong> The draft proposal is circulated to apex council bodies, industry chambers, government representatives, and central banking departments for expert feedback.</li>
+      <li><strong>Issuance of an Exposure Draft:</strong> The updated text is published openly to the general public as an <em>"Exposure Draft"</em> for a fixed window (usually 45 to 60 days).</li>
+      <li><strong>Finalization of the Standard:</strong> The ASB collects and reviews all public objections. The draft is refined, polished, and submitted directly to the main Council of the ICAI for approval.</li>
+      <li><strong>Government Notification:</strong> Once approved by the ICAI, it is reviewed by the <strong>National Financial Reporting Authority (NFRA)</strong> and officially notified by the Ministry of Corporate Affairs (MCA) under the Companies Act.</li>
+    </ol>
+  </div>
+
+  <!-- ===== SECTION 10 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-globe"></i> 10. Ind AS, IFRS &amp; Applicability in India</div>
+
+    <p><strong>Exam-Writable Definition:</strong> <em>"International Financial Reporting Standards (IFRS) are a globally recognized, principle-based set of accounting formats and guidelines designed and issued by the independent, London-based <strong>International Accounting Standards Board (IASB)</strong> to establish a common, highly transparent financial language across worldwide capital markets."</em></p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Basis of Distinction</th><th>Full Adoption (Adoption Pathway)</th><th>Convergence (The Indian Pathway)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Core Philosophy</strong></td><td>Taking the exact text of IFRS as written by the IASB and making it national law without altering a single sentence.</td><td>Aligning national accounting guidelines with IFRS while making specific, carefully vetted local modifications.</td></tr>
+          <tr><td><strong>Handling Local Laws</strong></td><td>National laws must completely bend or yield to match the overriding IFRS text.</td><td>The core standards are adjusted where necessary to prevent a head-on collision with domestic economic statutes.</td></tr>
+          <tr><td><strong>Terminology Applied</strong></td><td>The standards retain their original global names and branding (e.g., IFRS 15, IAS 1).</td><td>The resulting standards are given unique national titles—known in India as <strong>Indian Accounting Standards (Ind AS)</strong>.</td></tr>
+          <tr><td><strong>Modifications ("Carve-ins/outs")</strong></td><td>Completely illegal. The textbook rules must be applied universally.</td><td>Permits <strong>"Carve-outs"</strong> (departures from IFRS) and <strong>"Carve-ins"</strong> (additional localized instructions).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">Statutory Applicability in India</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Category of Corporate Entity</th><th>Net Worth / Listing Threshold Condition</th><th>Applicable Rule Set</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Listed Companies</strong></td><td>All companies whose equity or debt securities are listed or are in the process of listing on <em>any stock exchange</em> (in or outside India), regardless of their size.</td><td><strong>Ind AS (Mandatory)</strong></td></tr>
+          <tr><td><strong>Large Unlisted Companies</strong></td><td>Any unlisted company having a consolidated net worth of <strong>₹250 Crore or more</strong>.</td><td><strong>Ind AS (Mandatory)</strong></td></tr>
+          <tr><td><strong>Group Networks</strong></td><td>Any holding company, subsidiary company, joint venture, or associate company of the listed/unlisted firms qualifying above.</td><td><strong>Ind AS (Mandatory)</strong></td></tr>
+          <tr><td><strong>Smaller Unlisted Companies</strong></td><td>Unlisted companies whose net worth is strictly <strong>below ₹250 Crore</strong>.</td><td>Follows the older <strong>Traditional AS</strong><br>(May adopt Ind AS voluntarily)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 11 ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-journal-whills"></i> 11. Accounting Process – Recording to Trial Balance &amp; GST</div>
+
+    <div class="grid-3">
+      <div class="grid-card assets">
+        <h4>Stage 1: The Journal</h4>
+        <p><strong>Books of Original Entry:</strong> Transactions are caught chronologically using source documents (invoices, receipts) as evidence.</p>
+        <p>• <em>Golden Rule Application:</em> Assets/Expenses increase via Debits. Liabilities/Equity/Revenues increase via Credits.</p>
+      </div>
+      <div class="grid-card equity">
+        <h4>Stage 2: The Ledger</h4>
+        <p><strong>The Principal Book:</strong> Entries are transferred (posted) from the continuous journal into individual T-shaped category accounts.</p>
+        <p>• This groups isolated changes so management can see the net balance of any single item (like Cash or Inventory) instantly.</p>
+      </div>
+      <div class="grid-card liabilities">
+        <h4>Stage 3: Trial Balance</h4>
+        <p><strong>Verification Statement:</strong> A statement prepared at a specific date showing the debit balances and credit balances extracted from all ledger accounts, designed to verify the mathematical accuracy of the double-entry bookkeeping system.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.2rem; margin-top:16px; color:#0f172a;">Accounting Treatment of GST</h3>
+    <p>Under modern indirect tax regimes (like GST in India), tax is not treated as a business expense or business revenue. Instead, a company acts as an intermediary collection agent for the tax authorities.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Business Event</th><th>Standard Journal Entry Structure</th><th>Balance Sheet Placement</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Intrastate Purchase of Goods</strong><br>(Within same state boundary)</td><td><strong>Debit</strong> Purchases A/c <br><strong>Debit</strong> Input CGST A/c <br><strong>Debit</strong> Input SGST A/c <br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Credit</strong> Bank / Creditor A/c</td><td><strong>Current Assets</strong><br>(Unutilized Input Tax Credits)</td></tr>
+          <tr><td><strong>Intrastate Sale of Goods</strong><br>(Within same state boundary)</td><td><strong>Debit</strong> Bank / Debtor A/c <br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Credit</strong> Sales A/c <br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Credit</strong> Output CGST A/c <br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Credit</strong> Output SGST A/c</td><td><strong>Current Liabilities</strong><br>(Tax Collected Owed to State)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== MASTER CHEAT SHEET ===== -->
+  <div class="section">
+    <div class="section-title"><i class="fas fa-star"></i> Unit 1 – Master Cheat Sheet</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Concept</th><th>Mnemonic / Formula</th></tr></thead>
+        <tbody>
+          <tr><td>Accounting System Steps</td><td><strong>I-M-R-C</strong> (Identification → Measurement → Recording → Communication)</td></tr>
+          <tr><td>External Users</td><td><strong>B-I-T</strong> (Banks, Investors, Tax authorities)</td></tr>
+          <tr><td>Enhancing Characteristics</td><td><strong>C-U-T-V</strong> (Comparability, Understandability, Timeliness, Verifiability)</td></tr>
+          <tr><td>AS-1 Fundamental Assumptions</td><td><strong>G-C-A</strong> (Going Concern, Consistency, Accrual)</td></tr>
+          <tr><td>Data Analytics Stages</td><td><strong>D-D-P-P</strong> (Describe, Diagnose, Predict, Prescribe)</td></tr>
+          <tr><td>Change in Estimate</td><td><strong>Prospective</strong> (forward only)</td></tr>
+          <tr><td>Change in Policy</td><td><strong>Retrospective</strong> (restate past)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <i class="fas fa-check-circle"></i> Unit 1 · Theoretical Framework &amp; Accounting Process — Complete.  
+    <span style="display:inline-block; margin-left:14px;"><i class="fas fa-copyright"></i> CampusNotes · B.Com Sem 1</span>
+  </div>
+
+</div>
+
+</body>
+</html>

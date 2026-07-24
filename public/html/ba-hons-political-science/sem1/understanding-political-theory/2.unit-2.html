@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 2 – DSC 1: Approaches to Political Theory (Expanded)</title>
+    <style>
+        :root { --navy: #0f172a; --blue: #2563eb; --sky: #e0f2fe; --cream: #fffdf7; --gold: #f59e0b; --green: #059669; --red: #dc2626; --slate: #475569; --border: #e2e8f0; --card: #ffffff; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--navy); line-height: 1.8; padding: 20px 16px; }
+        .page { max-width: 1000px; margin: 0 auto; background: var(--card); border-radius: 32px; padding: 36px 40px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08); border: 1px solid #eef2f6; }
+        .brand-header { border-radius: 24px; background: linear-gradient(135deg, #0f172a, #1d4ed8); color: white; padding: 30px 36px; margin-bottom: 30px; }
+        .brand-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .brand { font-size: 13px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #bfdbfe; }
+        .badge { background: rgba(255,255,255,0.12); padding: 4px 16px; border-radius: 40px; font-size: 13px; font-weight: 700; color: #fff; }
+        h1 { font-size: clamp(30px, 4.5vw, 44px); margin-top: 16px; line-height: 1.1; letter-spacing: -0.02em; }
+        .subtitle { margin-top: 10px; color: #dbeafe; font-size: 17px; max-width: 750px; }
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 12px; margin-top: 18px; }
+        .meta-card { background: rgba(255,255,255,0.08); border-radius: 14px; padding: 10px 16px; }
+        .meta-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #bfdbfe; font-weight: 800; }
+        .meta-value { font-weight: 700; font-size: 15px; color: #fff; }
+        .section { margin-top: 28px; border: 1px solid var(--border); border-radius: 22px; padding: 28px 32px; background: #fafcff; }
+        h2 { font-size: 26px; margin-bottom: 14px; letter-spacing: -0.02em; color: #0f172a; }
+        h3 { font-size: 20px; margin: 28px 0 14px; color: #1d4ed8; }
+        h4 { font-size: 17px; margin: 18px 0 8px; color: #0f172a; }
+        p { margin: 12px 0; color: #1e293b; font-size: 16px; }
+        ul, ol { padding-left: 26px; color: #1e293b; }
+        li { margin: 10px 0; }
+        .highlight-box, .exam-box, .quick-box { border-radius: 18px; padding: 20px 24px; margin: 20px 0; }
+        .highlight-box { background: #eff6ff; border: 1px solid #bfdbfe; }
+        .exam-box { background: #fffbeb; border: 1px solid #fde68a; }
+        .quick-box { background: #ecfdf5; border: 1px solid #a7f3d0; }
+        .box-title { font-weight: 800; font-size: 16px; margin-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; border-radius: 16px; overflow: hidden; }
+        th { background: #0f172a; color: #fff; text-align: left; padding: 14px 16px; font-weight: 700; }
+        td { border: 1px solid #e2e8f0; padding: 14px 16px; vertical-align: top; }
+        .keyword-tag { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 2px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin: 2px 6px 2px 0; }
+        .footer { margin-top: 36px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e9edf2; padding-top: 24px; }
+        .watermark { font-weight: 800; color: #1d4ed8; letter-spacing: 0.15em; text-transform: uppercase; font-size: 12px; }
+        @media (max-width: 700px) { .page { padding: 16px 12px; } .brand-header { padding: 20px 16px; } .section { padding: 18px 14px; } }
+        @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; border: none; } }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="brand-header">
+        <div class="brand-row"><span class="brand">DSC-1 · University of Delhi</span><span class="badge">BA (Hons) Pol Sci · Sem 1</span></div>
+        <h1>Unit 2: Approaches to Political Theory<br />Normative, Historical &amp; Empirical</h1>
+        <div class="subtitle">How do we study politics? Through ideals (normative), through facts (empirical), or through the past (historical)? This unit shows you the different 'lenses' we use to understand political life.</div>
+        <div class="meta-grid">
+            <div class="meta-card"><div class="meta-label">Credits</div><div class="meta-value">4 (3L + 1T)</div></div>
+            <div class="meta-card"><div class="meta-label">Duration</div><div class="meta-value">4 Weeks</div></div>
+            <div class="meta-card"><div class="meta-label">Weightage</div><div class="meta-value">High (15–20 marks)</div></div>
+        </div>
+    </div>
+
+    <!-- A. SCOPE -->
+    <div class="section">
+        <h2>A. What is this Unit About? — The Big Picture</h2>
+        <p>Imagine you are an architect. Before you design a building, you need to choose a perspective. Do you design based on your <em>dreams</em> (a futuristic, glass skyscraper)? Or do you base it on <em>facts</em> (the soil quality, the budget, the building materials available)? Or do you look at <em>history</em> (the architecture of the surrounding area) to make sure your building fits in? Similarly, in political theory, we have different 'architectures' or <strong>approaches</strong> to studying politics.</p>
+        <p>The <strong>normative approach</strong> is about dreaming — it asks what <em>should</em> be. It is concerned with values, ideals, and justice. Thinkers like Plato and John Rawls are normative theorists; they ask: "What is the ideal state? What is a just society?"</p>
+        <p>The <strong>empirical approach</strong> is about facts — it asks what <em>actually is</em>. It uses observation, data, and statistics. Thinkers like David Easton and behaviouralists are empirical; they ask: "How do people actually vote? What causes revolutions?"</p>
+        <p>The <strong>historical approach</strong> is about context — it asks how ideas have developed over time. Thinkers like Quentin Skinner are historical; they ask: "What did Machiavelli <em>really</em> mean in 16th-century Florence?"</p>
+        <p>This unit is crucial because it teaches you that there is no single 'correct' way to do political theory. Each approach has its strengths and weaknesses. A good political theorist knows how to use all three, and also knows the debates between them. For example, the behaviourists (empirical) declared that normative theory was dead in the 1950s, but the post-behaviouralists fought back, saying that values cannot be removed from politics. This unit will give you the tools to understand and participate in these debates.</p>
+    </div>
+
+    <!-- B. KEY CONCEPTS -->
+    <div class="section">
+        <h2>B. Key Concepts — Explained in Depth</h2>
+        <ul>
+            <li><strong>Normative Approach (आदर्शात्मक दृष्टिकोण):</strong> This approach focuses on values, ideals, and prescriptions — it asks what <em>ought</em> to be. It is concerned with concepts like justice, rights, liberty, and the good life. Normative theorists use moral reasoning, philosophical argument, and conceptual analysis. They do not just describe the world; they evaluate it. Key figures: Plato, Aristotle, Kant, John Rawls. Example: A normative theorist asks: "Should the government provide free healthcare to all citizens?" This is a question of what is right or just.</li>
+            <li><strong>Empirical Approach (अनुभवजन्य दृष्टिकोण):</strong> This approach focuses on observable facts, data, and causal explanations — it asks what <em>actually is</em>. It seeks to describe, explain, and predict political behaviour and outcomes. Empirical theorists use observation, surveys, statistics, and hypothesis testing. They aim to be value-neutral — to describe without prescribing. Key figures: David Easton, Gabriel Almond, Robert Dahl. Example: An empirical theorist asks: "Do people with higher incomes vote more often?" This is a factual, testable question.</li>
+            <li><strong>Historical Approach (ऐतिहासिक दृष्टिकोण):</strong> This approach studies political ideas and institutions in their historical context. It traces the development of concepts, traditions, and intellectual lineages. It emphasises understanding texts in their original settings and recognising the contingency of political thought. Key figures: Quentin Skinner, J.G.A. Pocock, Leo Strauss (though Strauss is more textualist). Example: A historical theorist asks: "How did the concept of 'democracy' change from ancient Greece to modern America?"</li>
+            <li><strong>Behaviouralism (व्यवहारवाद):</strong> A movement in political science that emerged in the mid-20th century, advocating for the systematic, empirical, and value-free study of political behaviour. It sought to make political science a rigorous 'science' modelled on the natural sciences. Key features: (a) regularities in political behaviour, (b) verifiable data, (c) value neutrality, (d) methodological sophistication. Behaviouralists believed that political science should focus on observable behaviour, not on abstract concepts like "justice" or "freedom".</li>
+            <li><strong>Post-Behaviouralism (उत्तर-व्यवहारवाद):</strong> A reaction to behaviouralism that emerged in the late 1960s. It argued that political science cannot and should not be value-free. It emphasised relevance, action, and the importance of normative questions. David Easton, who had been a leading behaviourlist, became a proponent of post-behaviouralism. He argued that political scientists should focus on pressing social problems and should not hide behind the pretence of value-neutrality.</li>
+            <li><strong>Hermeneutics (व्याख्याशास्त्र):</strong> The theory and practice of interpretation, particularly of texts. In political theory, hermeneutic approaches emphasise understanding the meaning and context of political texts rather than merely extracting propositions or testing hypotheses. Key figure: Hans-Georg Gadamer.</li>
+            <li><strong>Positivism (प्रत्यक्षवाद):</strong> A philosophical approach that holds that knowledge is derived from sensory experience and empirical data, and that the methods of the natural sciences are applicable to the social sciences. It has been a major influence on empirical political science.</li>
+        </ul>
+    </div>
+
+    <!-- C. THINKERS -->
+    <div class="section">
+        <h2>C. Thinkers and Their Contributions — Full Profiles</h2>
+
+        <h3>1. Plato (427–347 BCE) — The Normative Idealist</h3>
+        <p><strong>Major Works:</strong> <em>The Republic</em>, <em>The Laws</em></p>
+        <p>Plato is the grand normative theorist of Western philosophy. His political theory begins with the question: <strong>What is justice?</strong> In <em>The Republic</em>, he imagines an ideal city-state (the <em>kallipolis</em>) ruled by philosopher-kings. These are not politicians as we know them; they are people who have knowledge of the Forms, particularly the Form of the Good. For Plato, justice is harmony — each class in the city (rulers, guardians, producers) performs its proper function without interfering with the others. This is a top-down, paternalistic vision: the philosopher-kings know what is good for the city, and the rest should obey.</p>
+        <p>Plato's method is deeply normative. He does not describe any existing city; he describes an ideal that may not exist anywhere on earth. But for Plato, this is precisely the point. The ideal city is a standard against which we measure all actual cities. It is a goal to aim for. Political theory, for Plato, is the pursuit of the perfect — the quest for a society based on reason, wisdom, and justice.</p>
+        <p><strong>Everyday Example:</strong> Imagine you are designing your dream house. You don't worry about budget or practical constraints; you just imagine the perfect home — the light, the space, the garden. That is a normative exercise. Later, you might compare a real house to this ideal. Plato does the same for politics.</p>
+        <p><strong>Key Quotation:</strong> "Until philosophers are kings… cities will never have rest from their evils." — <em>The Republic</em>, Book V. This shows Plato's conviction that only those who truly know what is good can rule justly.</p>
+        <p><strong>Critical Limitation:</strong> Plato's ideal state is authoritarian, anti-democratic, and dismissive of individual autonomy. His philosopher-kings have absolute power, and there is no room for dissent. Also, his normative vision is so detached from reality that it seems impractical. Critics like Karl Popper called Plato a totalitarian.</p>
+
+        <h3>2. Aristotle (384–322 BCE) — The Normative-Empirical Synthesizer</h3>
+        <p><strong>Major Works:</strong> <em>Politics</em>, <em>Nicomachean Ethics</em></p>
+        <p>Aristotle, unlike his teacher Plato, was deeply interested in the <em>real world</em>. He did not just imagine an ideal city; he studied existing constitutions. For his <em>Politics</em>, he and his students surveyed 158 Greek city-states to understand how they actually operated. This empirical research informed his normative conclusions. He asked: <strong>What is the best constitution <em>that is practically attainable</em>?</strong></p>
+        <p>Aristotle's normative ideal is the <em>polity</em> — a mixed constitution that combines elements of democracy and oligarchy, and is ruled by a strong middle class. He believed that the middle class is the best basis for a stable government because they are not so rich as to be arrogant, nor so poor as to be desperate. His normative ideal is grounded in empirical observation: he saw that mixed constitutions tended to be more stable than pure democracies or pure oligarchies.</p>
+        <p>Aristotle also argued that the purpose of politics is not just to maintain order, but to promote virtue and the good life. This is a normative goal, but he tried to achieve it through practical, realistic institutional design. He combined the dream (normative) with the blueprint (empirical).</p>
+        <p><strong>Everyday Example:</strong> A good teacher does not just imagine an ideal student; they understand the actual strengths and weaknesses of their real students, and then try to help each one reach their potential. That is Aristotle's method — starting from reality, aiming for the ideal.</p>
+        <p><strong>Key Quotation:</strong> "We must not be content with a theoretical study of the best constitution… but must also consider the best constitution that is attainable." — <em>Politics</em>, Book IV. This shows Aristotle's balanced, practical approach.</p>
+        <p><strong>Critical Limitation:</strong> Aristotle's empirical observations are limited to the Greek world. He excluded women, slaves, and non-Greeks from his political community. His vision was still deeply elitist and exclusionary.</p>
+
+        <h3>3. David Easton (1917–2014) — The Empirical Systems Analyst</h3>
+        <p><strong>Major Works:</strong> <em>The Political System</em> (1953), <em>A Systems Analysis of Political Life</em> (1965)</p>
+        <p>David Easton was the leading figure of the behavioural revolution in political science. He wanted to make political science a rigorous, empirical, and value-free discipline, modelled on the natural sciences. His key contribution is <strong>systems theory</strong>. He defined politics as the <strong>"authoritative allocation of values"</strong> for a society. This means that politics is the process by which society decides who gets what, when, and how.</p>
+        <p>Easton's model is a 'black box' diagram. The political system receives <em>inputs</em> from the environment: <em>demands</em> (people asking for things, like better roads or lower taxes) and <em>support</em> (people obeying the law, paying taxes). These inputs are processed by the political system (the government, the bureaucracy), and the system produces <em>outputs</em> (laws, policies, decisions). These outputs then feed back into the environment, generating new demands and supports. It is a continuous cycle.</p>
+        <p>Easton's approach is empirical because it focuses on observable interactions and measurable outputs. He was not interested in whether the policies were 'just' or 'good' — that would be a normative question. He wanted to describe how the system actually works, without making value judgements.</p>
+        <p><strong>Everyday Example:</strong> Think of a family budgeting system. The parents (political system) receive demands from children (demand inputs) — "I want a new phone!" The parents also get support (children doing chores). They process this and produce an output — "You can get a phone if you save up your pocket money". This output then generates feedback (the child is either happy or unhappy). Easton's systems theory is exactly this kind of input-output model.</p>
+        <p><strong>Key Quotation:</strong> "The political system is that system of interactions in any society through which binding or authoritative allocations of values are made." — <em>The Political System</em>. This is the core definition of Easton's empirical approach.</p>
+        <p><strong>Critical Limitation:</strong> Critics argue that systems theory is overly mechanistic and ignores the role of power and conflict. It assumes that the system is always stable and consensual. It also ignores normative questions — is the allocation of values <em>fair</em>? Easton's claim to value-neutrality has also been challenged. Critics argue that even choosing to focus on "authoritative allocations" is itself a value-laden choice. Easton himself acknowledged these criticisms and later advocated for a "post-behavioural" turn that would combine empirical rigour with social relevance.</p>
+
+        <h3>4. Quentin Skinner (b. 1940) — The Historical Contextualist</h3>
+        <p><strong>Major Works:</strong> <em>The Foundations of Modern Political Thought</em> (1978), <em>Liberty Before Liberalism</em> (1998)</p>
+        <p>Quentin Skinner is a historian of political thought who revolutionised the way we read classic texts. He argued that <strong>we cannot simply read Plato or Hobbes as if they were writing for our time</strong>. We must understand the historical and linguistic context in which they wrote. To understand a text, we must understand the intellectual debates and conventions of its time.</p>
+        <p>Skinner developed a method he called <strong>contextualism</strong>. He argued that the meaning of a text is not fixed; it is shaped by the linguistic conventions and intellectual debates of its time. The historian of political thought should recover the <strong>"illocutionary force"</strong> of texts — what authors were <em>doing</em> in writing them. For example, when Hobbes wrote <em>Leviathan</em>, he was not just stating philosophical truths; he was intervening in a specific political debate about sovereignty and civil war in 17th-century England.</p>
+        <p>Skinner also challenged the "mythology of doctrines" — the tendency to read later concepts back into earlier texts. For example, some historians have claimed that Hobbes was a liberal, or a totalitarian, or a democrat. Skinner says this is anachronistic. Hobbes was a 17th-century thinker who cannot be neatly categorised into modern ideologies. We must understand him on his own terms.</p>
+        <p><strong>Everyday Example:</strong> Imagine reading an old letter from your grandmother. You might not understand it fully unless you know the family history, the context of that time, and the people she was writing about. Skinner says the same applies to political texts. We cannot just read them in isolation; we must immerse ourselves in their world.</p>
+        <p><strong>Key Quotation:</strong> "We cannot simply read off the meaning of a text from its words; we must understand the linguistic context in which it was written." — <em>Foundations of Modern Political Thought</em> (Introduction).</p>
+        <p><strong>Critical Limitation:</strong> Critics argue that Skinner's contextualism can lead to a form of historicism that denies the enduring relevance of classic texts. If a text is <em>only</em> a product of its time, then what can it say to us today? Also, critics say he undervalues the philosophical content of texts in favour of their historical context. Leo Strauss, a textualist, argued that there are permanent philosophical questions (like "what is justice?") that transcend historical context, and Skinner's approach misses this.</p>
+
+        <h3>5. Leo Strauss (1899–1973) — The Textualist Defender of Philosophy</h3>
+        <p><strong>Major Works:</strong> <em>Natural Right and History</em> (1953), <em>Persecution and the Art of Writing</em> (1952)</p>
+        <p>Leo Strauss was a German-Jewish political philosopher who fled the Nazis and became a professor at the University of Chicago. He was a fierce critic of historical relativism and positivism. He argued that the great political philosophers of the past (Plato, Aristotle, Machiavelli, Hobbes) addressed <strong>permanent philosophical questions</strong> — the nature of justice, the best regime, the relationship between philosophy and politics. These questions are not just products of their time; they are eternal.</p>
+        <p>Strauss developed a method of <strong>esoteric reading</strong>. He argued that many great philosophers wrote "between the lines" because they lived under persecution (political or religious). They could not state their true views openly; they had to hide them. The true meaning of a text is not on the surface; you have to read deeply and carefully to uncover it. This is why Strauss paid such attention to textual details — word choices, contradictions, silences.</p>
+        <p>Strauss was also a critic of modernity. He believed that the Enlightenment and the rise of liberalism had led to a crisis of relativism and nihilism. By abandoning the classical idea of natural right (the idea that there is a universal standard of justice), modern political philosophy had lost its way. He called for a return to the classical tradition, particularly Plato and Aristotle, to recover the foundations of political philosophy.</p>
+        <p><strong>Everyday Example:</strong> Imagine you are reading a novel that has a surface story (a detective solves a crime) and a deeper, symbolic meaning (about the nature of justice). Strauss says that political texts are like that — the surface is the exoteric (public) teaching, and the deep meaning is the esoteric (hidden) teaching. You have to be a careful reader to find the hidden wisdom.</p>
+        <p><strong>Key Quotation:</strong> "The fundamental problem of political philosophy is the question of the best regime." — <em>Natural Right and History</em>. For Strauss, this question is eternal and cannot be reduced to historical context.</p>
+        <p><strong>Critical Limitation:</strong> Strauss's esoteric reading method has been criticised for being speculative and unverifiable. How do we know we have found the 'true' meaning? His anti-historicism has been challenged by contextualists like Skinner, who argue that historical context is essential. Also, Strauss's influence on American conservatism has been controversial; his ideas have been used to justify a kind of elitist, anti-democratic politics.</p>
+    </div>
+
+    <!-- D. DEBATES -->
+    <div class="section">
+        <h2>D. Core Debates — In-Depth Discussions</h2>
+
+        <h3>Debate 1: Normative vs. Empirical — Can Political Theory Be Value-Free?</h3>
+        <p><strong>Proposition (Empirical / Behavioural view):</strong> Political science should be a rigorous, empirical, and value-free science modelled on the natural sciences. David Easton and the behaviouralists argued that the discipline should focus on observable behaviour and verifiable data, leaving normative questions to philosophers. They believed that politics is a realm of facts, and that personal values should not influence research.</p>
+        <p><strong>Counter-proposition (Normative view):</strong> Political theory cannot and should not be value-free — it is inescapably normative because politics itself is about values, justice, and the good life. Leo Strauss argued that the attempt to create a value-free political science is itself a value-laden project that leads to relativism and nihilism. Critical theorists (like Habermas) argue that all knowledge is interest-laden and that value-neutrality is a myth.</p>
+        <p><strong>Everyday Example:</strong> Imagine a doctor who says, "I will just describe the disease and the treatments; I won't tell you which treatment is better." That would be a useless doctor. Similarly, a political scientist who says, "I will just describe the political system; I won't tell you if it is just or unjust" is also being evasive. Political questions are always normative.</p>
+        <p><strong>Synthesis:</strong> The post-behavioural revolution sought to bridge this divide. It acknowledged that while empirical rigour is important, political science must also address the urgent normative questions of its time. Most contemporary political theorists recognise that normative and empirical inquiry are complementary, not mutually exclusive. We need facts to make good normative judgments, and we need values to make facts meaningful.</p>
+
+        <h3>Debate 2: Historical vs. Textualist Approaches — How Should We Read Political Texts?</h3>
+        <p><strong>Proposition (Contextualist / Historical view — Skinner):</strong> Political texts must be understood in their historical and linguistic context. We cannot read Plato or Hobbes as if they were our contemporaries. We must recover the intellectual debates and conventions of their time. This approach avoids the "mythology of doctrines" — reading later concepts back into earlier texts.</p>
+        <p><strong>Counter-proposition (Textualist / Esoteric view — Strauss):</strong> The great political philosophers addressed permanent, transhistorical questions — the nature of justice, the best regime, the relationship between philosophy and politics. While historical context is relevant, the primary task is to recover the philosophical content of the texts, including their esoteric teachings. Strauss believed that the deepest truths are hidden and must be recovered through careful, philosophical reading.</p>
+        <p><strong>Everyday Example:</strong> Imagine you find a diary from 1945. A contextualist would say: "We need to know about World War II, the author's personal life, the language of that time, to understand this diary." A textualist would say: "The diary tells a story about love and loss; those are universal human experiences that we can understand without knowing the specific historical details."</p>
+        <p><strong>Synthesis:</strong> Most contemporary scholars recognise the value of both approaches. Historical context enriches our understanding of texts, but the texts also address questions that transcend their historical moment. A balanced approach combines contextual sensitivity with philosophical engagement. We should understand <em>what</em> the author was saying in their time, <em>and</em> what it can mean for us today.</p>
+
+        <h3>Debate 3: The Decline and Revival of Political Theory</h3>
+        <p><strong>Proposition (Decline thesis):</strong> Political theory declined in the mid-20th century due to the rise of behaviouralism, which marginalised normative inquiry. Peter Laslett famously declared in 1956 that "political philosophy is dead". The empirical turn in political science seemed to render normative theory obsolete. Many departments shifted their focus to quantitative methods and policy studies, neglecting the great philosophical questions.</p>
+        <p><strong>Counter-proposition (Revival thesis):</strong> Political theory experienced a revival from the 1970s onwards, driven by the post-behavioural turn, the publication of John Rawls's <em>A Theory of Justice</em> (1971), and the emergence of new critical perspectives (feminism, postmodernism, critical theory). Rawls's book was a massive, systematic normative theory that sparked a renewed interest in questions of justice. Feminist and postmodern thinkers also challenged the status quo and brought new issues (gender, power, discourse) into the discipline.</p>
+        <p><strong>Everyday Example:</strong> In the 1950s, many political scientists were obsessed with counting votes and measuring public opinion (behaviouralism). But then the civil rights movement, the Vietnam War, and the feminist movement demanded answers to big questions: "What is justice? Is this war justified? Is this society fair?" This forced the discipline to re-engage with normative theory.</p>
+        <p><strong>Synthesis:</strong> While behaviouralism did challenge the dominance of normative theory, political theory has not only survived but flourished. It has become more diverse, more critical, and more engaged with real-world political problems. Today, political theory is a vibrant and pluralistic field that includes normative, empirical, historical, critical, and interpretive approaches.</p>
+    </div>
+
+    <!-- E. COMPARATIVE TABLE -->
+    <div class="section">
+        <h2>E. Comparative Table: Approaches to Political Theory</h2>
+        <table>
+            <thead>
+                <tr><th>Approach</th><th>Core Question</th><th>Method</th><th>Key Thinkers</th><th>Critique</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Normative</strong></td><td>What <em>ought</em> to be?</td><td>Moral reasoning, conceptual analysis, ideal theory</td><td>Plato, Aristotle, Rawls</td><td>Detached from reality; overly abstract</td></tr>
+                <tr><td><strong>Empirical</strong></td><td>What <em>is</em>?</td><td>Observation, data, causal analysis, hypothesis testing</td><td>Easton, Almond, Dahl</td><td>Value-free pretence; neglects normative questions</td></tr>
+                <tr><td><strong>Historical (Contextual)</strong></td><td>How did ideas develop in their context?</td><td>Historical recovery, linguistic analysis, contextual interpretation</td><td>Skinner, Pocock</td><td>Risk of historicism; neglects philosophical content</td></tr>
+                <tr><td><strong>Textualist (Straussian)</strong></td><td>What are the permanent philosophical questions?</td><td>Close reading, esoteric interpretation, recovery of classical wisdom</td><td>Strauss, Bloom</td><td>Speculative; anti-historicist; politically controversial</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- F. SUMMARY -->
+    <div class="section quick-box">
+        <h2>F. Unit Summary — Must-Know Points for Revision</h2>
+        <ul>
+            <li><strong>Normative approach</strong> asks what <em>ought</em> to be — values, justice, ideals. Plato and Rawls are key exemplars.</li>
+            <li><strong>Empirical approach</strong> asks what <em>is</em> — observable behaviour, data, causal explanations. Easton's systems theory is a classic example.</li>
+            <li><strong>Historical approach</strong> situates political ideas in their context. Skinner emphasises linguistic context; Strauss emphasises textual recovery.</li>
+            <li><strong>Behaviouralism</strong> sought to make political science a rigorous, value-free science. It was challenged by the post-behavioural turn, which reasserted the importance of normative questions.</li>
+            <li><strong>The debate between normative and empirical approaches</strong> is central to understanding the nature of political theory — it is not a choice between them but a recognition that both are necessary.</li>
+            <li><strong>The historical approach</strong> reminds us that political ideas are not timeless — they are shaped by their contexts and must be interpreted accordingly.</li>
+            <li><strong>Political theory today</strong> is pluralistic — it encompasses normative, empirical, historical, critical, and interpretive methods.</li>
+        </ul>
+    </div>
+
+    <!-- G. PYQs -->
+    <div class="section exam-box">
+        <h2>G. Unit-Specific PYQs — With Detailed, Step-by-Step Model Outlines</h2>
+
+        <h3>Q1. (2019, 15 marks) "Explain the difference between the normative and the empirical approach to the study of political theory."</h3>
+        <p><strong>Detailed Model Outline:</strong></p>
+        <ul>
+            <li><strong>Introduction (3-4 lines):</strong> Political theory is a diverse discipline. It includes different methods and approaches. Two of the most important are the normative and the empirical. The normative approach focuses on values and ideals; the empirical approach focuses on facts and observations. Understanding the difference between them is essential for a comprehensive understanding of political theory.</li>
+            <li><strong>Argument 1 — Normative Approach:</strong> This approach is prescriptive. It asks what <em>should</em> be. It is concerned with ideals like justice, rights, liberty, and the good life. It uses moral reasoning, conceptual analysis, and philosophical argument. It does not just describe the world; it evaluates it. Key thinkers: Plato, Aristotle, John Rawls. Example: Asking "Is democracy the best form of government?" is a normative question.</li>
+            <li><strong>Argument 2 — Empirical Approach:</strong> This approach is descriptive. It asks what <em>actually is</em>. It focuses on observable facts, data, and causal relationships. It uses scientific methods — observation, surveys, statistics, hypothesis testing. It aims to be value-neutral. Key thinkers: David Easton, Gabriel Almond, Robert Dahl. Example: Asking "How many people voted in the last election?" is an empirical question.</li>
+            <li><strong>Argument 3 — Key Differences:</strong> (a) <em>Questions asked:</em> Normative — "What should be?"; Empirical — "What is?" (b) <em>Method:</em> Normative — philosophical reasoning; Empirical — scientific observation. (c) <em>Goal:</em> Normative — prescribe ideals; Empirical — explain reality. (d) <em>Value stance:</em> Normative — explicitly value-laden; Empirical — aims for value-neutrality.</li>
+            <li><strong>Argument 4 — Complementarity:</strong> Both approaches are needed. Normative ideals without empirical grounding are utopian; empirical facts without normative values are meaningless. For example, to say "we should reduce poverty" (normative), we need to know "how many people live in poverty" (empirical). Good political theory combines both.</li>
+            <li><strong>Conclusion (2-3 lines):</strong> The normative and empirical approaches are not enemies; they are partners. A comprehensive political theory integrates both — asking not only what is, but also what ought to be, and using facts to inform values.</li>
+        </ul>
+        <p><strong>High-Scoring Keywords:</strong> <span class="keyword-tag">Normative</span> <span class="keyword-tag">Empirical</span> <span class="keyword-tag">Prescriptive</span> <span class="keyword-tag">Descriptive</span> <span class="keyword-tag">Value-neutrality</span> <span class="keyword-tag">Moral reasoning</span> <span class="keyword-tag">Causal explanation</span></p>
+        <hr>
+
+        <h3>Q2. (2022, 12 marks) "Discuss the importance of political theory to the study of Political Science."</h3>
+        <p><strong>Detailed Model Outline:</strong></p>
+        <ul>
+            <li><strong>Introduction:</strong> Political theory is not a marginal subfield of Political Science; it is its foundational core. It provides the conceptual, normative, and analytical tools necessary for understanding political life. Without political theory, Political Science would be a collection of disconnected facts and data.</li>
+            <li><strong>Argument 1 — Conceptual Clarification:</strong> Political theory clarifies the key concepts of Political Science — state, power, sovereignty, justice, liberty, equality. Without clear definitions, empirical research lacks meaning and direction. For example, before we can count "voter turnout" (empirical), we need to know what "voting" and "citizenship" mean (conceptual).</li>
+            <li><strong>Argument 2 — Normative Framework:</strong> Political theory provides a normative framework for evaluating political institutions and practices. It asks not only how things are but how they ought to be. This is essential for a discipline that is concerned with human well-being and justice. Without normative theory, we could describe a dictatorship and a democracy in the same neutral terms, without recognising the moral superiority of democracy.</li>
+            <li><strong>Argument 3 — Critical Analysis:</strong> Political theory enables critical analysis of power, ideology, and domination. It questions taken-for-granted assumptions and exposes hidden forms of inequality and oppression. Marxist, feminist, and postmodern theories have all contributed to this critical function. This is central to the emancipatory potential of Political Science.</li>
+            <li><strong>Argument 4 — Bridging Theory and Practice:</strong> Political theory connects abstract ideas to practical political problems. It provides the normative justification for policies and institutions, and it helps us understand the ethical dimensions of political action. For example, the theory of human rights is used to justify international interventions and domestic policies.</li>
+            <li><strong>Conclusion:</strong> Political theory is indispensable to Political Science. It provides the concepts, values, and critical perspectives that make the discipline meaningful and relevant. Without it, Political Science would be a mere collection of facts, not a genuine science of politics.</li>
+        </ul>
+        <p><strong>High-Scoring Keywords:</strong> <span class="keyword-tag">Conceptual clarification</span> <span class="keyword-tag">Normative framework</span> <span class="keyword-tag">Critical analysis</span> <span class="keyword-tag">Theory and practice</span> <span class="keyword-tag">Emancipation</span> <span class="keyword-tag">Justice</span></p>
+        <hr>
+
+        <h3>Q3. (2018, 10 marks) "What is behaviouralism? Mention its main characteristics."</h3>
+        <p><strong>Detailed Model Outline:</strong></p>
+        <ul>
+            <li><strong>Introduction:</strong> Behaviouralism is a movement in political science that emerged in the mid-20th century, advocating for the systematic, empirical, and value-free study of political behaviour. It was a reaction against the traditional, normative, and institutional approaches that dominated the discipline earlier.</li>
+            <li><strong>Main Characteristics (with details):</strong> 
+                <ul>
+                    <li><em>Regularities:</em> Behaviouralists seek to discover regularities in political behaviour that can be expressed as generalisations or theories. They believe that political behaviour is patterned and predictable.</li>
+                    <li><em>Verification:</em> Propositions must be subject to empirical verification — they must be testable against observable data. This means that theories must be falsifiable.</li>
+                    <li><em>Techniques:</em> Behaviouralism emphasises rigorous and sophisticated research methods, including quantitative and statistical techniques, surveys, and experiments.</li>
+                    <li><em>Quantification:</em> Where possible, political phenomena should be measured and quantified. This allows for precise comparison and analysis.</li>
+                    <li><em>Values:</em> Behaviouralism aims for value-neutrality — the researcher's personal values should not influence the research process. The goal is objective, scientific knowledge.</li>
+                    <li><em>Systematisation:</em> Research should be systematic and cumulative, building on previous findings. This creates a body of knowledge that grows over time.</li>
+                </ul>
+            </li>
+            <li><strong>Key Figures:</strong> David Easton, Gabriel Almond, Robert Dahl, Karl Deutsch.</li>
+            <li><strong>Critical Evaluation:</strong> Behaviouralism was criticised for its claim to value-neutrality, its neglect of normative questions, and its mechanistic view of politics. It was also criticised for being too focused on the USA and Western democracies. This led to the post-behavioural turn, which reasserted the importance of relevance and normative engagement.</li>
+            <li><strong>Conclusion:</strong> Behaviouralism transformed political science by introducing scientific rigour, but its excesses led to a valuable corrective in the form of post-behaviouralism. Today, we use both empirical methods and normative theory.</li>
+        </ul>
+        <p><strong>High-Scoring Keywords:</strong> <span class="keyword-tag">Behaviouralism</span> <span class="keyword-tag">Empirical verification</span> <span class="keyword-tag">Value-neutrality</span> <span class="keyword-tag">Quantification</span> <span class="keyword-tag">Regularities</span> <span class="keyword-tag">Post-behaviouralism</span></p>
+    </div>
+
+    <div class="footer">
+        <div class="watermark">DSC-1 · Unit 2 (Expanded & Detailed)</div>
+        <p style="margin-top:6px;font-size:12px;color:#94a3b8;">Complete coverage of all approaches, thinkers, debates, and PYQs. Written in easy language with real-life examples.</p>
+    </div>
+</div>
+</body>
+</html>

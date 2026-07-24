@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit 5 – DSC 1: The Idea of Political Community</title>
+    <style>
+        :root { --navy: #0f172a; --blue: #2563eb; --sky: #e0f2fe; --cream: #fffdf7; --gold: #f59e0b; --green: #059669; --red: #dc2626; --slate: #475569; --border: #e2e8f0; --card: #ffffff; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--navy); line-height: 1.8; padding: 20px 16px; }
+        .page { max-width: 1000px; margin: 0 auto; background: var(--card); border-radius: 32px; padding: 36px 40px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08); border: 1px solid #eef2f6; }
+        .brand-header { border-radius: 24px; background: linear-gradient(135deg, #0f172a, #1d4ed8); color: white; padding: 30px 36px; margin-bottom: 30px; }
+        .brand-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .brand { font-size: 13px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #bfdbfe; }
+        .badge { background: rgba(255,255,255,0.12); padding: 4px 16px; border-radius: 40px; font-size: 13px; font-weight: 700; color: #fff; }
+        h1 { font-size: clamp(30px, 4.5vw, 44px); margin-top: 16px; line-height: 1.1; letter-spacing: -0.02em; }
+        .subtitle { margin-top: 10px; color: #dbeafe; font-size: 17px; max-width: 750px; }
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 12px; margin-top: 18px; }
+        .meta-card { background: rgba(255,255,255,0.08); border-radius: 14px; padding: 10px 16px; }
+        .meta-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #bfdbfe; font-weight: 800; }
+        .meta-value { font-weight: 700; font-size: 15px; color: #fff; }
+        .section { margin-top: 28px; border: 1px solid var(--border); border-radius: 22px; padding: 28px 32px; background: #fafcff; }
+        h2 { font-size: 26px; margin-bottom: 14px; letter-spacing: -0.02em; color: #0f172a; }
+        h3 { font-size: 20px; margin: 28px 0 14px; color: #1d4ed8; }
+        h4 { font-size: 17px; margin: 18px 0 8px; color: #0f172a; }
+        p { margin: 12px 0; color: #1e293b; font-size: 16px; }
+        ul, ol { padding-left: 26px; color: #1e293b; }
+        li { margin: 10px 0; }
+        .highlight-box, .exam-box, .quick-box { border-radius: 18px; padding: 20px 24px; margin: 20px 0; }
+        .highlight-box { background: #eff6ff; border: 1px solid #bfdbfe; }
+        .exam-box { background: #fffbeb; border: 1px solid #fde68a; }
+        .quick-box { background: #ecfdf5; border: 1px solid #a7f3d0; }
+        .box-title { font-weight: 800; font-size: 16px; margin-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; border-radius: 16px; overflow: hidden; }
+        th { background: #0f172a; color: #fff; text-align: left; padding: 14px 16px; font-weight: 700; }
+        td { border: 1px solid #e2e8f0; padding: 14px 16px; vertical-align: top; }
+        .keyword-tag { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 2px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin: 2px 6px 2px 0; }
+        .footer { margin-top: 36px; text-align: center; font-size: 13px; color: #64748b; border-top: 1px solid #e9edf2; padding-top: 24px; }
+        .watermark { font-weight: 800; color: #1d4ed8; letter-spacing: 0.15em; text-transform: uppercase; font-size: 12px; }
+        @media (max-width: 700px) { .page { padding: 16px 12px; } .brand-header { padding: 20px 16px; } .section { padding: 18px 14px; } }
+        @media print { body { background: #fff; padding: 0; } .page { box-shadow: none; border: none; } }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="brand-header">
+        <div class="brand-row"><span class="brand">DSC-1 · University of Delhi</span><span class="badge">BA (Hons) Pol Sci · Sem 1</span></div>
+        <h1>Unit 5: The Idea of Political Community<br />&amp; Political Obligation</h1>
+        <div class="subtitle">Why do we obey the state? Are we born into a political community, or do we choose it? This unit explores the glue that holds societies together.</div>
+        <div class="meta-grid">
+            <div class="meta-card"><div class="meta-label">Credits</div><div class="meta-value">4 (3L + 1T)</div></div>
+            <div class="meta-card"><div class="meta-label">Duration</div><div class="meta-value">3 Weeks</div></div>
+            <div class="meta-card"><div class="meta-label">Weightage</div><div class="meta-value">Medium-High (10-15 marks)</div></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>A. What is this Unit About? — The Glue of Society</h2>
+        <p>This is perhaps the most philosophical unit of the entire course. It asks a fundamental question: <strong>What makes a group of people a <em>political community</em>, and why do we feel obliged to obey its rules?</strong> Imagine you are born in a particular country. You didn't choose it, you didn't sign a contract, yet you are subject to its laws, its taxes, and its military conscription. Why do you accept this? Is it simply because you are forced to? Or is there a moral reason? This unit explores these questions through the lens of <strong>political obligation</strong> — the moral duty to obey the state.</p>
+        <p>The unit is divided into two interconnected parts. First, the <strong>idea of political community</strong> — what is it that binds us together? Is it shared ethnicity, language, culture, or is it something more abstract like a commitment to common values? Second, <strong>political obligation</strong> — do we have a duty to obey the law, and if so, under what conditions? Can we ever be justified in disobeying (civil disobedience)?</p>
+        <p>This unit ties together many of the themes we've explored in previous units. Liberals answer these questions through the idea of the <strong>social contract</strong> — we voluntarily agree to obey the state in exchange for protection of our rights. Marxists see the state as a tool of class domination, so the obligation is actually a form of coercion. Anarchists reject the idea of obligation altogether — we owe nothing to the state. This unit forces you to decide where you stand on the most basic question of political life: why obey?</p>
+    </div>
+
+    <div class="section">
+        <h2>B. Key Concepts — Explained in Detail</h2>
+        <ul>
+            <li><strong>Political Community (राजनीतिक समुदाय):</strong> A group of people who share a political identity and are bound together by common institutions, laws, and a sense of belonging. This is not the same as a "community" in the social sense (like a village or a religious group). A political community is typically identified with the <em>nation-state</em>. It is a community of citizens who may not know each other personally but who recognise each other as fellow members of a shared political project. Example: The "Indian political community" includes people of all religions, languages, and regions, but they share a common constitutional framework and a sense of Indianness.</li>
+            <li><strong>Political Obligation (राजनीतिक दायित्व):</strong> The moral duty of citizens to obey the laws and commands of the state. It is a core question of political philosophy: why should I obey the state? Is it because I fear punishment, because I have consented, or because it is necessary for the common good? Different traditions offer different answers. This is not the same as legal obligation (which is enforced by coercion). Political obligation is about <em>moral</em> duty — you feel you <em>ought</em> to obey, not just that you <em>must</em>.</li>
+            <li><strong>Social Contract (सामाजिक अनुबंध):</strong> A key liberal concept. It suggests that political authority derives from an agreement or contract between individuals. In the state of nature (a hypothetical pre-political condition), individuals were free but insecure. To gain security, they agreed to surrender some of their freedom to a sovereign (or a government) in exchange for the protection of their remaining rights. Thinkers like Hobbes, Locke, and Rousseau have different versions of the social contract. It is a way of explaining why we have an obligation to obey the state — because we have, in effect, consented to it.</li>
+            <li><strong>Civil Disobedience (सविनय अवज्ञा):</strong> The deliberate, public, and non-violent act of breaking a law as a way of protesting against an unjust law or policy. It is a form of political action that is central to the discussion of political obligation. When is disobedience justified? Usually, when the law is deeply unjust (e.g., apartheid laws, or colonial laws), and when all other avenues of protest have been exhausted. Key thinkers: Henry David Thoreau, Mahatma Gandhi, Martin Luther King Jr. They argued that citizens have a moral duty to disobey unjust laws, even if that means going to jail.</li>
+            <li><strong>Legitimacy (वैधता):</strong> The belief that a government has the right to rule and that its authority is justified. Legitimacy is distinct from legality (a government may be legal but not legitimate). A legitimate government is one that people <em>accept</em> as having the right to command. Legitimacy can be derived from traditions, from charisma, or from legal-rational procedures (elections). When a state is illegitimate, citizens may feel justified in not obeying.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>C. Thinkers and Their Contributions — Full Profiles</h2>
+
+        <h3>1. Thomas Hobbes (1588–1679) — The Need for an Absolute Sovereign</h3>
+        <p><strong>Major Work:</strong> <em>Leviathan</em> (1651)</p>
+        <p>Thomas Hobbes is the philosopher of <em>order</em>. He wrote during the English Civil War, a time of chaos and violence. This experience shaped his view of human nature and the state of nature. Hobbes argued that in a state of nature — without a common power to keep everyone in awe — life would be "solitary, poor, nasty, brutish, and short". In such a state, there is a "war of all against all" because humans are naturally competitive, diffident (suspicious), and glory-seeking.</p>
+        <p>To escape this terrible condition, individuals enter into a social contract. They agree to surrender all their power and authority to a single sovereign (a king or a parliament) who will enforce peace and security. Importantly, Hobbes argued that this contract is between the individuals, not between the individuals and the sovereign. The sovereign is not a party to the contract, which means he cannot breach it. The sovereign's power is absolute and unlimited.</p>
+        <p>For Hobbes, political obligation is absolute. Once you have consented to the sovereign, you must obey him in all things. The only exception is if the sovereign fails to protect your life — because self-preservation is the only right you cannot surrender. The obligation is based on <em>self-interest</em> — you obey because the alternative (anarchy) is worse. Hobbes's view is often seen as justifying authoritarianism, but it's important to remember he was writing in a time of civil war.</p>
+        <p><strong>Everyday Example:</strong> Imagine a chaotic traffic junction with no traffic lights. That is Hobbes's state of nature — chaos, accidents, everyone honking. The traffic light (the sovereign) is accepted because it brings order, even if it sometimes stops you unfairly.</p>
+        <p><strong>Critical Limitation:</strong> Hobbes's absolute sovereignty leaves no room for resistance, even against a tyrannical ruler. Critics argue that this is a recipe for despotism. Also, his view of human nature is overly pessimistic — it ignores the cooperative and altruistic aspects of human beings.</p>
+
+        <h3>2. John Locke (1632–1704) — The Limited Government and Right to Revolt</h3>
+        <p><strong>Major Work:</strong> <em>Two Treatises of Government</em> (1689)</p>
+        <p>We have already met Locke in Unit 3, but his theory of political obligation is essential here. Unlike Hobbes, Locke's state of nature is relatively peaceful. People have natural rights (life, liberty, property), and they can live together reasonably. However, there are inconveniences — some people might violate rights, and there is no impartial judge to settle disputes.</p>
+        <p>To resolve this, people create a <em>contract</em> to form a government. But Locke's contract is very different from Hobbes's. The government is a <em>trust</em> — it holds its power in trust for the people, and its only purpose is to protect the natural rights of the people. The people do not surrender all their rights; they surrender only the right to enforce the law themselves, to the government. The government is limited — it must rule by established laws, not by arbitrary will.</p>
+        <p>For Locke, political obligation is conditional. If the government respects the rights of the people and governs according to law, then the people have a duty to obey. But if the government becomes tyrannical — if it violates the rights of the people — the contract is broken. The people have the right to <em>revolt</em>, dissolve the government, and establish a new one. This was a revolutionary idea that justified the Glorious Revolution in England and later the American Revolution.</p>
+        <p><strong>Everyday Example:</strong> Think of a housing society that elects a managing committee. If the committee manages funds well and maintains the property, residents obey the rules. But if the committee becomes corrupt and steals money, residents have the right to remove them. That is Locke's contract in miniature.</p>
+        <p><strong>Critical Limitation:</strong> Locke's theory assumes that we can all agree on when a government has become tyrannical. But in practice, there is always disagreement. Also, his focus on property has been criticised as a justification for capitalism and colonialism.</p>
+
+        <h3>3. Jean-Jacques Rousseau (1712–1778) — The General Will and True Community</h3>
+        <p><strong>Major Work:</strong> <em>The Social Contract</em> (1762)</p>
+        <p>Rousseau's version of the social contract is the most radical and inspiring. He starts with a famous line: "Man is born free, and everywhere he is in chains." He argues that civilisation, private property, and inequality have corrupted human beings. The social contract is not a surrender of rights to a sovereign, but a transformation of the individual into a citizen.</p>
+        <p>Rousseau's key concept is the <strong>General Will</strong>. This is not the sum of individual wills (which is the "will of all"), nor is it the will of a majority. The General Will is the collective will of the people as a whole, directed towards the common good. When you obey the General Will, you are not obeying an external authority; you are obeying yourself, because you are a part of the sovereign people. This is what Rousseau means when he says the contract forces us to be "free" — because true freedom is not doing whatever you want, but acting in accordance with the law that you, as a citizen, have given to yourself.</p>
+        <p>Political obligation, for Rousseau, is a form of self-legislation. We obey the state because it is our own creation, and it expresses our collective will. This is a powerful communitarian vision — the political community is not a mere association of self-interested individuals; it is a moral community that transforms individuals into citizens who care for the common good.</p>
+        <p><strong>Everyday Example:</strong> Think of a sports team where each player works for the success of the whole team, not just personal glory. When the coach makes a decision that seems tough on an individual, the player accepts it because it's for the team's benefit. That's the spirit of the General Will.</p>
+        <p><strong>Critical Limitation:</strong> Rousseau's General Will is notoriously vague. Who decides what the General Will is? In practice, it can be used to justify dictatorship (if a ruler claims to represent the General Will). Also, Rousseau's vision is communitarian and can be intolerant of dissent.</p>
+
+        <h3>4. David Hume (1711–1776) — The Skeptic of the Social Contract</h3>
+        <p><strong>Major Work:</strong> <em>A Treatise of Human Nature</em>, <em>Of the Original Contract</em></p>
+        <p>David Hume was a Scottish philosopher who took a very different approach to political obligation. He was an empiricist and a skeptic, and he questioned the whole idea of a "social contract". Hume argued that the social contract is a fiction. He asked: did any of us <em>really</em> sign a contract to obey the state? Of course not. Most of us are born into a country and never explicitly consent to anything.</p>
+        <p>Hume argued that political obligation is based on <em>habit</em> and <em>utility</em>. We obey the law because we are accustomed to it, and because we see that obedience brings peace and order. We obey not because of a mythical contract, but because it is useful and convenient. If the state becomes oppressive, we might disobey, not because of a broken contract, but because it no longer serves our interests.</p>
+        <p>Hume's view is more realistic and less philosophical. It doesn't provide a strong moral foundation for obligation, but it does explain why most people obey most of the time — simply because they always have, and it works.</p>
+        <p><strong>Everyday Example:</strong> Why do you stand in a queue at the metro station? You didn't sign a contract to do so. You do it because it's the norm, and if everyone did otherwise, there would be chaos. It's habit and utility, not a formal agreement.</p>
+        <p><strong>Critical Limitation:</strong> Hume's account is descriptive, not normative. It tells us why we <em>do</em> obey, but it doesn't tell us why we <em>ought</em> to obey. It also doesn't provide a basis for resisting tyranny.</p>
+    </div>
+
+    <div class="section">
+        <h2>D. Core Debates — In-Depth Discussions</h2>
+
+        <h3>Debate 1: Is Political Obligation Based on Consent (Contract) or Habit (Utility)?</h3>
+        <p><strong>Proposition (Consent/Contract — Locke, Rousseau):</strong> The state is legitimate only if it is based on the consent of the governed. We have a moral duty to obey because we have agreed (explicitly or tacitly) to the contract. This gives a solid moral foundation to the state. Without consent, rule is mere tyranny.</p>
+        <p><strong>Counter-proposition (Utility/Habit — Hume):</strong> Consent is a fantasy. Most people never consent to anything. Obligation arises from habit, convenience, and the benefits of civil society. It is not a moral duty but a practical one. We obey because it works. This is more realistic and avoids the philosophical contortions of the contractarians.</p>
+        <p><strong>Synthesis:</strong> Most contemporary political theorists accept that explicit consent is rare, but they argue that we can still have tacit consent (by accepting the benefits of the state, like roads and protection, we consent implicitly). So consent, in a weak sense, still matters. However, Hume's point is valid: without the habits of obedience, no society could survive.</p>
+
+        <h3>Debate 2: When is Disobedience Justified? (Civil Disobedience vs. Revolution)</h3>
+        <p><strong>Proposition (Locke / Thoreau / Gandhi):</strong> Disobedience is justified when the state violates fundamental rights or when the law is deeply unjust. The method should be non-violent, public, and accept punishment (civil disobedience). This is a way of appealing to the moral conscience of the majority. It strengthens democracy by calling attention to injustice.</p>
+        <p><strong>Counter-proposition (Hobbes / Law and Order):</strong> Disobedience is almost never justified because it leads to anarchy and the breakdown of order. Even if a law is unjust, it is better to obey it and try to change it through legal means. Revolution is a last resort and usually ends in chaos. The state must maintain order to protect all citizens.</p>
+        <p><strong>Synthesis:</strong> Most democrats accept that there is a limited right to civil disobedience, but only for serious injustices (like racial discrimination, or war crimes), and only when legal remedies have been exhausted. The key is that the disobedient must be willing to face the consequences — that is what makes it a form of <em>respect</em> for the law, not a rejection of it.</p>
+    </div>
+
+    <div class="section">
+        <h2>E. Quick Comparison Table — Thinkers on Obligation</h2>
+        <table>
+            <thead><tr><th>Thinker</th><th>Basis of Obligation</th><th>Is the State Limited?</th><th>Right to Disobey?</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Hobbes</strong></td><td>Self-interest, fear of death</td><td>No — sovereign is absolute</td><td>No, except if life is threatened</td></tr>
+                <tr><td><strong>Locke</strong></td><td>Consent (explicit or tacit)</td><td>Yes — trust, limited to protecting rights</td><td>Yes, if government becomes tyrannical</td></tr>
+                <tr><td><strong>Rousseau</strong></td><td>General Will — self-legislation</td><td>Yes — sovereignty lies with the people</td><td>Debatable — General Will cannot be wrong</td></tr>
+                <tr><td><strong>Hume</strong></td><td>Habit, utility, convenience</td><td>No fixed limit — based on practical need</td><td>Yes, if it ceases to be useful</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section quick-box">
+        <h2>F. Unit Summary — Must-Know Points</h2>
+        <ul>
+            <li><strong>Political community</strong> is a group bound by shared political institutions and identity. The nation-state is the primary example.</li>
+            <li><strong>Political obligation</strong> is the moral duty to obey the state. It is a central problem of political philosophy.</li>
+            <li><strong>Hobbes</strong> says we obey to avoid chaos — obligation is absolute.</li>
+            <li><strong>Locke</strong> says we obey because we have consented — obligation is conditional.</li>
+            <li><strong>Rousseau</strong> says we obey because we are part of the General Will — obligation is self-imposed.</li>
+            <li><strong>Hume</strong> says we obey out of habit and utility — there is no deep moral reason.</li>
+            <li><strong>Civil disobedience</strong> is justified when laws are deeply unjust, but only as a last resort and non-violently.</li>
+            <li><strong>Exam tip:</strong> For questions on political obligation, compare at least two thinkers (e.g., Hobbes vs. Locke). For questions on civil disobedience, mention Gandhi, Thoreau, and Martin Luther King Jr.</li>
+        </ul>
+    </div>
+
+    <div class="section exam-box">
+        <h2>G. Unit-Specific PYQs — With Detailed Model Outlines</h2>
+
+        <h3>Q1. (2018, 15 marks) "Explain the idea of 'political community' with suitable examples."</h3>
+        <p><strong>Detailed Model Outline:</strong></p>
+        <ul>
+            <li><strong>Introduction (3-4 lines):</strong> The idea of a political community is central to political theory. It refers to a group of individuals who are bound together by a shared system of governance, institutions, and a sense of belonging. Unlike a mere social or ethnic community, a political community is characterised by formal membership (citizenship) and mutual obligations.</li>
+            <li><strong>Key Elements of a Political Community:</strong>
+                <ul>
+                    <li><em>Territoriality:</em> A political community is typically associated with a defined territory (a nation-state). Example: India, with its borders.</li>
+                    <li><em>Shared Institutions:</em> The community is governed by common laws, a constitution, and a state apparatus. Example: The Indian Constitution, Parliament, and judiciary.</li>
+                    <li><em>Sense of Belonging:</em> Members identify themselves as part of the community. This is often expressed through patriotism or nationalism. It can be based on culture, language, or simply a commitment to shared values (like democracy and secularism in India).</li>
+                    <li><em>Mutual Obligations:</em> Members feel a duty towards each other — e.g., paying taxes, serving in the military, or abiding by laws.</li>
+                </ul>
+            </li>
+            <li><strong>Suitable Examples:</strong>
+                <ul>
+                    <li><em>India:</em> A vast, diverse country with multiple religions, languages, and ethnicities, yet united by a common constitutional framework and a shared history of anti-colonial struggle. The idea of "unity in diversity" defines the Indian political community.</li>
+                    <li><em>European Union:</em> A community of nations that have pooled their sovereignty to some extent. They share laws, a common market, and a court of justice. It shows that political communities can exist beyond the nation-state.</li>
+                    <li><em>Local Communities:</em> A city corporation or a village panchayat is also a political community, albeit a smaller one.</li>
+                </ul>
+            </li>
+            <li><strong>Theoretical Perspectives:</strong>
+                <ul>
+                    <li><em>Liberal view:</em> Political community is based on individual consent and shared values (Locke, Rawls).</li>
+                    <li><em>Communitarian view:</em> Community is prior to the individual — identity is shaped by the community (Rousseau, MacIntyre).</li>
+                    <li><em>Postmodern view:</em> There is no single, fixed community; identities are fluid and multiple.</li>
+                </ul>
+            </li>
+            <li><strong>Conclusion (2-3 lines):</strong> The idea of political community is both a factual description (we live together under a state) and a normative ideal (we should care for each other). It remains a contested concept, but it is fundamental to understanding how we organise our collective lives.</li>
+        </ul>
+        <p><strong>High-Scoring Keywords:</strong> <span class="keyword-tag">Territoriality</span> <span class="keyword-tag">Shared institutions</span> <span class="keyword-tag">Sense of belonging</span> <span class="keyword-tag">Nation-state</span> <span class="keyword-tag">Constitutional framework</span></p>
+        <hr>
+
+        <h3>Q2. (2022, 10 marks) "What is political obligation? Discuss with reference to any one thinker."</h3>
+        <p><strong>Detailed Model Outline:</strong></p>
+        <ul>
+            <li><strong>Introduction:</strong> Political obligation is the moral duty of citizens to obey the laws and commands of the state. It is a foundational question in political philosophy because it asks why we should accept the authority of the state and its coercive power.</li>
+            <li><strong>Explaining Political Obligation:</strong> It is distinguished from legal obligation (which is based on the threat of punishment) because it is about <em>moral</em> duty — you feel you <em>ought</em> to obey, even if you could get away with disobeying.</li>
+            <li><strong>Thinker 1: John Locke (Detailed):</strong>
+                <ul>
+                    <li>For Locke, political obligation is based on <em>consent</em>. In the state of nature, individuals are free but insecure. They consent to form a government to protect their natural rights (life, liberty, property).</li>
+                    <li>Once consent is given, the individual is obliged to obey the government. However, this obligation is <em>conditional</em>. The government is a trust; if it violates the rights of the people, the contract is broken, and the people have a right to revolt.</li>
+                    <li>Locke's concept of "tacit consent" is important — by accepting the benefits of the state (roads, protection), you implicitly consent to its authority.</li>
+                </ul>
+            </li>
+            <li><strong>Alternative Thinker (Brief): Thomas Hobbes:</strong>
+                <ul>
+                    <li>Hobbes's obligation is based on <em>self-preservation</em>. We obey the sovereign to avoid the "war of all against all". The obligation is absolute, and we cannot resist the sovereign except when our life is directly threatened.</li>
+                </ul>
+            </li>
+            <li><strong>Conclusion:</strong> Political obligation is a complex and contested concept. Different thinkers offer different justifications — consent, self-interest, utility, or the General Will. Understanding these justifications helps us understand the nature of political authority.</li>
+        </ul>
+        <p><strong>High-Scoring Keywords:</strong> <span class="keyword-tag">Political obligation</span> <span class="keyword-tag">Consent</span> <span class="keyword-tag">Social contract</span> <span class="keyword-tag">Trust</span> <span class="keyword-tag">Tacit consent</span> <span class="keyword-tag">Right to revolt</span></p>
+        <hr>
+
+        <h3>Q3. (2019, 10 marks) "What is civil disobedience? Explain with examples."</h3>
+        <p><strong>Detailed Model Outline:</strong></p>
+        <ul>
+            <li><strong>Introduction:</strong> Civil disobedience is a form of political action in which individuals deliberately and publicly break a law as a form of protest. It is non-violent, and those who practice it accept the legal consequences of their actions (e.g., going to jail) to demonstrate their sincerity and respect for the rule of law.</li>
+            <li><strong>Key Features:</strong>
+                <ul>
+                    <li><em>Non-violence:</em> It is a moral commitment to avoid harm to others. Gandhi famously called it "satyagraha" — the force of truth.</li>
+                    <li><em>Publicity:</em> It is not done in secret; it is meant to be seen and to draw attention to an injustice.</li>
+                    <li><em>Acceptance of Punishment:</em> The disobedient does not try to escape punishment. This distinguishes civil disobedience from ordinary law-breaking.</li>
+                    <li><em>Target:</em> It targets a specific law or policy that is seen as deeply unjust.</li>
+                </ul>
+            </li>
+            <li><strong>Examples:</strong>
+                <ul>
+                    <li><em>Mahatma Gandhi and the Salt March (1930):</em> Gandhi led a 240-mile march to the sea to make salt, breaking the British law that gave the state a monopoly on salt production. This was a symbolic act of defiance against colonial rule and inspired millions.</li>
+                    <li><em>Martin Luther King Jr. and the Civil Rights Movement (1960s):</em> King led boycotts, sit-ins, and marches to challenge segregation laws in the southern United States. He was arrested multiple times and wrote his famous "Letter from Birmingham Jail", arguing that there is a moral duty to disobey unjust laws.</li>
+                    <li><em>Anti-CAA/NRC protests (2019-2020, India):</em> Many citizens engaged in non-violent protests against the Citizenship Amendment Act, arguing it was discriminatory against Muslims. Some engaged in civil disobedience by blocking roads and holding sit-ins.</li>
+                </ul>
+            </li>
+            <li><strong>Theoretical Justification:</strong> Thoreau argued that individuals have a duty to disobey laws that violate their conscience. Locke argued that resistance is justified when the government violates its contract with the people.</li>
+            <li><strong>Conclusion:</strong> Civil disobedience is a powerful tool for challenging injustice in a democracy. It is a way of saying, "We respect the law, but this particular law is so unjust that we must disobey it to appeal to the higher moral sense of the community."</li>
+        </ul>
+        <p><strong>High-Scoring Keywords:</strong> <span class="keyword-tag">Civil disobedience</span> <span class="keyword-tag">Non-violence</span> <span class="keyword-tag">Publicity</span> <span class="keyword-tag">Accepting punishment</span> <span class="keyword-tag">Satyagraha</span> <span class="keyword-tag">Unjust laws</span></p>
+    </div>
+
+    <div class="footer">
+        <div class="watermark">DSC-1 · Unit 5 (Complete & Expanded)</div>
+        <p style="margin-top:6px;font-size:12px;color:#94a3b8;">Political community, obligation, and civil disobedience — fully explained with thinkers and examples.</p>
+    </div>
+</div>
+</body>
+</html>
