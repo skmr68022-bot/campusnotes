@@ -22,31 +22,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const showError = (error: unknown, fallback: string) => {
-    if (error instanceof Error && error.message) {
-      setMessage(error.message);
-      return;
-    }
-
-    if (
-      typeof error === "object" &&
-      error !== null &&
-      "message" in error &&
-      typeof (error as { message?: unknown }).message === "string"
-    ) {
-      setMessage((error as { message: string }).message);
-      return;
-    }
-
-    if (typeof error === "string" && error.trim()) {
-      setMessage(error);
-      return;
-    }
-
-    setMessage(fallback);
-  };
-
-  const resetFormMessage = () => {
+  const resetMessage = () => {
     setMessage("");
   };
 
@@ -62,7 +38,7 @@ export default function LoginPage() {
     });
 
     if (error) {
-      showError(error, "Google login failed. Please try again.");
+      setMessage(error.message);
       setLoading(false);
     }
   };
@@ -81,7 +57,7 @@ export default function LoginPage() {
     setLoading(true);
     setMessage("");
 
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email: email.trim(),
       password: password.trim(),
       options: {
@@ -96,21 +72,12 @@ export default function LoginPage() {
     setLoading(false);
 
     if (error) {
-      console.error("Signup error:", error);
-      showError(
-        error,
-        "Signup failed. Please check Supabase email or SMTP settings."
-      );
-      return;
-    }
-
-    if (!data.user) {
-      setMessage("Signup failed. Please try again.");
+      setMessage(error.message);
       return;
     }
 
     setSignupStep("otp");
-    setMessage("OTP sent to your email. Check inbox, spam or promotions folder.");
+    setMessage("OTP sent to your email. Check inbox or spam folder.");
   };
 
   const verifySignupOtp = async () => {
@@ -131,11 +98,7 @@ export default function LoginPage() {
     setLoading(false);
 
     if (error) {
-      console.error("OTP verification error:", error);
-      showError(
-        error,
-        "OTP verification failed. Please check the OTP and try again."
-      );
+      setMessage(error.message);
       return;
     }
 
@@ -160,8 +123,7 @@ export default function LoginPage() {
     setLoading(false);
 
     if (error) {
-      console.error("Login error:", error);
-      showError(error, "Login failed. Please check your email and password.");
+      setMessage(error.message);
       return;
     }
 
@@ -212,7 +174,7 @@ export default function LoginPage() {
               setMode("login");
               setSignupStep("details");
               setOtp("");
-              resetFormMessage();
+              resetMessage();
             }}
             className={`rounded-full px-4 py-2 text-sm font-black transition ${
               mode === "login"
@@ -229,7 +191,7 @@ export default function LoginPage() {
               setMode("signup");
               setSignupStep("details");
               setOtp("");
-              resetFormMessage();
+              resetMessage();
             }}
             className={`rounded-full px-4 py-2 text-sm font-black transition ${
               mode === "signup"
@@ -342,7 +304,7 @@ export default function LoginPage() {
         )}
 
         {message && (
-          <p className="mt-4 rounded-2xl bg-slate-50 px-4 py-3 text-sm font-bold leading-6 text-slate-700">
+          <p className="mt-4 rounded-2xl bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700">
             {message}
           </p>
         )}
