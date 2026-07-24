@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYQ Solutions: Business Law | B.Com (Hons) Sem 1 - CampusNotes</title>
+    <style>
+        :root {
+            --navy: #0f172a;
+            --blue: #2563eb;
+            --sky: #e0f2fe;
+            --cream: #fffdf7;
+            --gold: #f59e0b;
+            --green: #059669;
+            --red: #dc2626;
+            --slate: #475569;
+            --border: #e2e8f0;
+            --card: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 18px 60px;
+        }
+
+        .brand-header {
+            border-radius: 28px;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: white;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #bfdbfe;
+        }
+
+        .badge {
+            display: inline-flex;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin: 20px 0 0;
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin-top: 14px;
+            max-width: 720px;
+            color: #dbeafe;
+            font-size: 17px;
+        }
+
+        .meta-grid {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .meta-card {
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #bfdbfe;
+            font-weight: 900;
+        }
+
+        .meta-value {
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .section {
+            margin-top: 28px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+            color: var(--navy);
+        }
+
+        h3 {
+            margin: 15px 0 8px;
+            font-size: 18px;
+            color: #1d4ed8;
+        }
+
+        ul, ol {
+            color: var(--slate);
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        .exam-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+        }
+
+        .highlight-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .quick-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+        }
+
+        .box-title {
+            margin: 0 0 8px;
+            font-weight: 900;
+            color: var(--navy);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        th {
+            background: #0f172a;
+            color: white;
+            text-align: left;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        td {
+            border: 1px solid var(--border);
+            padding: 10px;
+            color: var(--slate);
+            vertical-align: top;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .watermark {
+            margin-top: 8px;
+            font-weight: 900;
+            color: #1d4ed8;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { max-width: 100%; padding: 0; }
+            .section, .brand-header { box-shadow: none; }
+        }
+
+        @media (max-width: 700px) {
+            .meta-grid { grid-template-columns: 1fr; }
+            .section, .brand-header { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <div class="brand-header">
+            <div class="brand-row">
+                <span class="brand">CampusNotes</span>
+                <span class="badge">Solution Guide</span>
+            </div>
+            <h1>PYQ Solutions (Paper 1404)</h1>
+            <div class="subtitle">Business Law (DSC-2) | B.Com (Hons) Sem I | Delhi University</div>
+            <div class="meta-grid">
+                <div class="meta-card"><div class="meta-label">Format</div><div class="meta-value">6+6+6 & 3x18</div></div>
+                <div class="meta-card"><div class="meta-label">Coverage</div><div class="meta-value">All PYQs Solved</div></div>
+                <div class="meta-card"><div class="meta-label">Export</div><div class="meta-value">Press Ctrl+P</div></div>
+            </div>
+        </div>
+
+        <div class="quick-box" style="margin-top:20px;">
+            <div class="box-title">📌 How to use this guide</div>
+            <p>Every answer below is structured using the exact <strong>IRAC method</strong> (Issue, Rule, Application, Conclusion) expected by DU examiners. For every 6+6+6 mark question, I have divided the answer into an <strong>Introduction (1 mark)</strong>, <strong>Main Body/Principles (4 marks)</strong>, and <strong>Conclusion/Example (1 mark)</strong>. Look for the <em>bolded case names</em> and <em>italicized section numbers</em> to maximize your marks!</p>
+        </div>
+
+        <!-- ==================== PYQ 1 ==================== -->
+        <div class="section">
+            <h2>Question 1 (6+6+6 Marks) - Unit 1</h2>
+            
+            <div class="exam-box">
+                <div class="box-title">(a) Define the term "void agreements"? Discuss the agreements in restraint of trade with suitable examples.</div>
+                <p><strong>1. Introduction (1 Mark):</strong> As per <em>Section 2(g)</em> of the Indian Contract Act, 1872, a <strong>"Void Agreement"</strong> is an agreement which is not enforceable by law.</p>
+                <p><strong>2. Void vs Illegal (1 Mark):</strong> While a void agreement is simply unenforceable, an illegal agreement is not only unenforceable but also punishable by criminal law (e.g., smuggling). All illegal agreements are void, but not all void agreements are illegal.</p>
+                <p><strong>3. Restraint of Trade (Sec 27) (3 Marks):</strong> Section 27 explicitly states that any agreement which restricts a person from exercising a lawful trade, profession, or business is void. However, the law provides <strong>two major exceptions</strong>:
+                <ul>
+                    <li><strong>Sale of Goodwill:</strong> When a business is sold, the seller can validly agree to not carry on a similar business within a specific local area and timeframe to protect the goodwill of the buyer.</li>
+                    <li><strong>Partnership Agreements:</strong> Partners can agree that they will not compete directly with their own partnership firm during their tenure as partners.</li>
+                </ul></p>
+                <p><strong>4. Examples (1 Mark):</strong> 
+                <ul>
+                    <li><strong>Void Example:</strong> A doctor signs a contract never to practice medicine anywhere in the entire country. This blanket restraint is void.</li>
+                    <li><strong>Valid Example:</strong> A shopkeeper sells his grocery shop and agrees not to open a similar shop within a 5km radius for 5 years. This is legally valid.</li>
+                </ul></p>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(b) Define the term "offer". What are the legal rules relating to a valid offer under Indian Contract Act, 1872?</div>
+                <p><strong>1. Introduction (1 Mark):</strong> Under <em>Section 2(a)</em>, an <strong>Offer (Proposal)</strong> is defined as: "When one person signifies to another his willingness to do or to abstain from doing anything, with a view to obtaining the assent of that other to such act or abstinence."</p>
+                <p><strong>2. Legal Rules (4 Marks):</strong></p>
+                <ul>
+                    <li><strong>Communication is Mandatory:</strong> The offer must be communicated to the offeree. If the offeree is unaware of the offer, they cannot accept it (<em>Lalman Shukla v. Gauri Dutt</em>).</li>
+                    <li><strong>Definite and Certain:</strong> The terms of the offer cannot be vague. If it is unclear, the offer is invalid under Sec 29.</li>
+                    <li><strong>Intention to Create Legal Relations:</strong> The offer must be made with a serious intent to create legally binding obligations.</li>
+                    <li><strong>Express or Implied:</strong> An offer can be express (spoken/written) or implied (through conduct, like boarding a bus).</li>
+                    <li><strong>Distinction from Invitation to Offer:</strong> An offer is not an "invitation to offer". Price lists, display of goods in a shop window, and auction notices are merely invitations, not legal offers.</li>
+                </ul>
+                <p><strong>3. Conclusion (1 Mark):</strong> The offer is the foundational building block of every contract. Without a valid, properly communicated offer, no valid acceptance can exist.</p>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(c) "An agreement with a minor is void ab initio." Discuss. Also state the provisions related to restitution in case of minor's agreements.</div>
+                <p><strong>1. Basic Rule (2 Marks):</strong> Under <em>Sec 11</em>, a minor (below 18 years) lacks the capacity to contract. As established in the landmark case <strong><em>Mohori Bibee v. Dharmodas Ghose (1903)</em></strong>, any agreement with a minor is <strong>"void ab initio"</strong> (absolutely void from the very beginning). A minor cannot be sued for breach, and cannot be held personally liable for debts.</p>
+                <p><strong>2. Consequences of a Minor's Contract (2 Marks):</strong></p>
+                <ul>
+                    <li>The contract cannot be ratified (approved) when the minor turns 18.</li>
+                    <li>A minor cannot be declared an insolvent.</li>
+                    <li>A minor can be an agent (to bind the principal) but cannot be held liable to the principal for any losses.</li>
+                    <li>Under <em>Sec 68</em>, a minor <strong>is liable</strong> to pay for "necessaries" (food, clothing, shelter, medicine) supplied to them, out of their own property.</li>
+                </ul>
+                <p><strong>3. Provisions related to Restitution (2 Marks):</strong></p>
+                <ul>
+                    <li>If a minor fraudulently misrepresents his age and obtains property/goods, the court can order the minor to <strong>return the goods</strong> if they are still in his possession.</li>
+                    <li>However, if the goods have been consumed, eaten, or destroyed, the court <strong>cannot</strong> force the minor to pay monetary compensation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ==================== PYQ 2 ==================== -->
+        <div class="section">
+            <h2>Question 2 (6+6+6 Marks) - Unit 2</h2>
+            
+            <div class="exam-box">
+                <div class="box-title">(a) What do you mean by the term discharge of contract? Discuss the modes of discharge of contract by agreement under Indian Contract Act, 1872.</div>
+                <p><strong>1. Introduction (1 Mark):</strong> When the rights and duties of the parties under a contract come to an end, the contract is said to be <strong>"Discharged"</strong>. The parties are then freed from their legal obligations.</p>
+                <p><strong>2. Modes of Discharge (2 Marks):</strong> A contract can be discharged by (a) Performance, (b) Mutual Agreement, (c) Supervening Impossibility (Sec 56), (d) Breach of Contract, (e) Operation of Law, and (f) Lapse of Time.</p>
+                <p><strong>3. Discharge by Agreement (Sec 62) (3 Marks):</strong> The parties themselves can mutually agree to end the contract in these 5 distinct ways:</p>
+                <ul>
+                    <li><strong>Novation:</strong> Replacing the old contract with a completely new contract (possibly involving new parties or new terms).</li>
+                    <li><strong>Rescission:</strong> Canceling the contract entirely, wiping it out from the beginning.</li>
+                    <li><strong>Alteration:</strong> Changing the existing terms of the contract (e.g., extending the delivery date).</li>
+                    <li><strong>Waiver:</strong> One party intentionally gives up their legal right to enforce a specific term.</li>
+                    <li><strong>Merger:</strong> A smaller, simpler contract merges into a larger, more complex contract.</li>
+                </ul>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(b) What do you mean by the term "breach of contract"? Differentiate between actual and anticipatory breach of contract.</div>
+                <p><strong>1. Introduction (1 Mark):</strong> A <strong>Breach of Contract</strong> occurs when one party fails to fulfill their legal obligation under the contract, without any valid legal excuse.</p>
+                <p><strong>2. Difference Table (5 Marks):</strong></p>
+                <table>
+                    <tr>
+                        <th>Basis of Difference</th>
+                        <th>Actual Breach</th>
+                        <th>Anticipatory Breach (Sec 39)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Time of Occurrence</strong></td>
+                        <td>Happens on the exact date the performance is due.</td>
+                        <td>Happens <strong>BEFORE</strong> the performance is due.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Repudiation</strong></td>
+                        <td>The party fails to perform on the due date.</td>
+                        <td>The party clearly indicates they will not perform, even though the date hasn't arrived.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Right to Sue</strong></td>
+                        <td>The victim can only sue after the due date has passed.</td>
+                        <td>The victim can sue <strong>immediately</strong> without waiting for the due date. (<em>Hochster v. De La Tour</em>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example</strong></td>
+                        <td>A promises to deliver apples on Dec 1st. On Dec 1st, he delivers nothing.</td>
+                        <td>A promises to deliver apples on Dec 1st. On Nov 15th, A says, "I will never deliver."</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(c) Mr. Rahim, a renowned tailor, delivered clothes at Surat railway station for consignment to Lucknow on 1st November. He needed it by month-end for peak demand but did not inform railways. Delayed 1 month. Is he entitled to claim loss of profit?</div>
+                <p><strong>1. Rule of Law (2 Marks):</strong> This situation is governed by the <strong>Rule of Remoteness of Damages</strong>, established in <strong><em>Hadley v. Baxendale (1854)</em></strong>. The rule states that <em>Special Damages</em> (unusual or consequential losses like loss of profit) can <strong>only</strong> be claimed if the breaching party had actual <strong>prior knowledge</strong> of those special circumstances at the time of making the contract.</p>
+                <p><strong>2. Application of Facts (2 Marks):</strong> Mr. Rahim needed the lot urgently for the peak Sherwani season, which would have generated high profits. However, he <strong>failed to inform</strong> the railway authorities about this seasonal urgency and peak demand at the time he handed over the consignment.</p>
+                <p><strong>3. Conclusion (2 Marks):</strong> Since the railways were kept in the dark about the special circumstances, the loss of profit is considered "too remote". Therefore, Mr. Rahim <strong>is NOT entitled</strong> to claim the loss of profit. He can only recover Ordinary Damages (e.g., cost of delayed transport).</p>
+            </div>
+        </div>
+
+        <!-- ==================== PYQ 3 ==================== -->
+        <div class="section">
+            <h2>Question 3 (6+6+6 Marks) - Unit 3</h2>
+            
+            <div class="exam-box">
+                <div class="box-title">(a) What is meant by 'Agency by Estoppel' and 'Agency by Necessity'? Explain the provisions of the Indian Contract Act relevant to them.</div>
+                <p><strong>1. Agency by Estoppel (2 Marks):</strong> Also known as "Holding Out." If the principal, by their words or actions, leads a third party to reasonably believe that someone is their agent, the principal is <strong>estopped</strong> (stopped) from later denying that agency relationship. The principal is bound by the agent's acts.</p>
+                <p><strong>2. Agency by Necessity (2 Marks):</strong> This arises during an emergency when the principal is unreachable, and immediate action is required to save the principal's property from total destruction. For example, a ship's captain selling cargo to pay for emergency repairs during a storm acts as an agent of necessity.</p>
+                <p><strong>3. Relevant Provisions (2 Marks):</strong> While not explicitly codified in one section, these types of implied agency flow from the general definitions in <em>Sec 182</em> (Agent and Principal), supported by case laws like <em>Lalman Shukla</em> (Communication) and common law emergency principles.</p>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(b) Differentiate between sale and agreement to sell under the Sales of Goods Act, 1930.</div>
+                <p><strong>1. Introduction (1 Mark):</strong> Under <em>Sec 4</em> of the Sale of Goods Act, a Sale and an Agreement to Sell are two distinct stages of a transaction. The core difference lies in the transfer of ownership.</p>
+                <p><strong>2. Comparison Table (4 Marks):</strong></p>
+                <table>
+                    <tr>
+                        <th>Basis</th>
+                        <th>Sale (Sec 4(3))</th>
+                        <th>Agreement to Sell (Sec 4(4))</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Nature</strong></td>
+                        <td>Executed Contract. The contract is completed instantly.</td>
+                        <td>Executory Contract. The contract is promised for a future date.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transfer of Ownership</strong></td>
+                        <td>Passes immediately to the buyer.</td>
+                        <td>Passes to the buyer at a future date or upon a condition.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risk of Loss</strong></td>
+                        <td>Risk falls on the <strong>Buyer</strong> (even if goods are destroyed).</td>
+                        <td>Risk falls on the <strong>Seller</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Remedy</strong></td>
+                        <td>Seller can sue for the <strong>Price</strong>.</td>
+                        <td>Seller can only sue for <strong>Damages</strong> (not the price).</td>
+                    </tr>
+                </table>
+                <p><strong>3. Example (1 Mark):</strong> Walking out of a supermarket with a product is a Sale. Ordering a custom-made sofa with 3 weeks delivery is an Agreement to Sell.</p>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(c) Define the terms condition and warranties under the Sales of Goods Act, 1930. Also discuss the implied conditions.</div>
+                <p><strong>1. Definitions (2 Marks):</strong> Under <em>Sec 12</em>:
+                <ul>
+                    <li><strong>Condition:</strong> A stipulation essential to the main purpose of the contract. Breach gives the right to <strong>reject</strong> the goods and claim damages.</li>
+                    <li><strong>Warranty:</strong> A collateral stipulation. Breach gives the right to claim <strong>damages only</strong> (cannot reject the goods).</li>
+                </ul></p>
+                <p><strong>2. Implied Conditions (Sec 14) (4 Marks):</strong> Even if not expressly written, the law implies these conditions in every sale:
+                <ul>
+                    <li><strong>Title:</strong> Seller has the absolute right to sell the goods.</li>
+                    <li><strong>Description:</strong> Goods must strictly match the sample/description.</li>
+                    <li><strong>Fitness for Specific Purpose:</strong> If buyer tells the purpose and relies on seller's skill, goods must be fit for that purpose.</li>
+                    <li><strong>Merchantable Quality:</strong> Goods must be in a saleable, usable condition.</li>
+                    <li><strong>Sale by Sample:</strong> Bulk must correspond to the sample provided.</li>
+                </ul></p>
+            </div>
+        </div>
+
+        <!-- ==================== PYQ 4 ==================== -->
+        <div class="section">
+            <h2>Question 4 (6+6+6 Marks) - Unit 5</h2>
+            
+            <div class="exam-box">
+                <div class="box-title">(a) Who can become partner in an LLP? What are the disqualifications for becoming a partner?</div>
+                <p><strong>1. Who can be a partner? (2 Marks):</strong> Under the LLP Act, <strong>any person</strong> can become a partner. This includes both an <strong>Individual</strong> (natural person) and a <strong>Body Corporate</strong> (like another Company). However, to be a designated partner, the person must strictly be an individual.</p>
+                <p><strong>2. Disqualifications (4 Marks):</strong> A person is disqualified from becoming a partner if they are:
+                <ul>
+                    <li><strong>Convicted of Fraud:</strong> Convicted of a criminal offense involving fraud, unless 10 years have passed since the conviction.</li>
+                    <li><strong>Undischarged Insolvent:</strong> Currently declared bankrupt by a court.</li>
+                    <li><strong>Unsound Mind:</strong> Declared mentally unsound by a competent court of law.</li>
+                    <li><strong>Disqualified by Order:</strong> Disqualified from acting as a director/partner by a court order under the Companies Act.</li>
+                </ul></p>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(b) Explain the registration process of LLP under the LLP Act, 2008.</div>
+                <p><strong>1. Introduction (1 Mark):</strong> Registration of an LLP is a 100% online process administered through the Ministry of Corporate Affairs (MCA) portal. This grants the LLP a separate legal identity.</p>
+                <p><strong>2. Step-by-Step Process (5 Marks):</strong></p>
+                <ul>
+                    <li><strong>Step 1: Name Reservation:</strong> The partners apply for a unique name using the <strong>RUN-LLP</strong> form, proposing 2-3 choices ending with "LLP".</li>
+                    <li><strong>Step 2: Obtain DPIN:</strong> The designated partners must obtain a <strong>DPIN</strong> (Designated Partner Identification Number) from the MCA.</li>
+                    <li><strong>Step 3: File Incorporation Document:</strong> The partners file <strong>Form LLP-1</strong>, which includes the proposed name, nature of business, registered office address, and partners' contribution.</li>
+                    <li><strong>Step 4: Certificate of Incorporation:</strong> Once the Registrar is satisfied, a <strong>Certificate of Incorporation</strong> is issued, legally birthing the LLP.</li>
+                    <li><strong>Step 5: File LLP Agreement:</strong> Within 30 days of the certificate, the LLP must file the <strong>LLP Agreement (Form LLP-3)</strong> detailing the mutual rights and duties of the partners.</li>
+                </ul>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(c) Discuss the provisions related to conversion of a firm into LLP under the LLP Act, 2008.</div>
+                <p><strong>1. Background (2 Marks):</strong> Section 55 of the LLP Act, 2008 allows a Traditional Partnership Firm to legally convert into an LLP. This is done to gain the immediate benefit of <strong>limited liability</strong> while preserving the continuity of the business.</p>
+                <p><strong>2. Procedure for Conversion (4 Marks):</strong></p>
+                <ul>
+                    <li><strong>Consent:</strong> All partners of the existing partnership firm must pass a resolution consenting to the conversion.</li>
+                    <li><strong>Application:</strong> The firm must file an application with the Registrar of Companies (ROC), paying the necessary stamp duty and registration fees.</li>
+                    <li><strong>Documents:</strong> The application must include an Incorporation Document and a statement of the firm's assets and liabilities.</li>
+                    <li><strong>Issuance of Certificate:</strong> Upon approval, the ROC issues a fresh Certificate of Registration confirming the conversion.</li>
+                    <li><strong>Automatic Transfer:</strong> All assets, properties, and liabilities of the old partnership firm are automatically and seamlessly transferred to the new LLP without needing separate transfer deeds.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ==================== PYQ 5 ==================== -->
+        <div class="section">
+            <h2>Question 5 (Short Notes - 3 x 18 Marks)</h2>
+            <p><em>Instructions: Write short notes on any three of the following.</em></p>
+            
+            <div class="exam-box">
+                <div class="box-title">(a) Contract of Indemnity v/s Contract of Guarantee</div>
+                <p><strong>1. Introduction:</strong> Both are contracts of compensation, but they differ fundamentally in their structure and liability.</p>
+                <p><strong>2. Difference Table (Main answer):</strong></p>
+                <table>
+                    <tr>
+                        <th>Basis</th>
+                        <th>Indemnity (Sec 124)</th>
+                        <th>Guarantee (Sec 126)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Parties</strong></td>
+                        <td>2 Parties: Indemnifier and Indemnity-holder.</td>
+                        <td>3 Parties: Surety, Creditor, Principal Debtor.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Liability</strong></td>
+                        <td><strong>Primary:</strong> Indemnifier must compensate immediately upon loss.</td>
+                        <td><strong>Secondary:</strong> Surety only pays if the principal debtor defaults.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example</strong></td>
+                        <td>Car Insurance Policy</td>
+                        <td>Bank loan co-signed by a parent</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(b) Whistle blowing under LLP Act, 2008</div>
+                <p><strong>1. Meaning:</strong> Whistleblowing refers to an employee or partner exposing illegal, unethical, or fraudulent practices that are happening inside the organization.</p>
+                <p><strong>2. Legal Protection (Sec 34):</strong> The LLP Act specifically protects whistleblowers. If a partner or employee raises a genuine complaint about fraud or mismanagement, the LLP is strictly prohibited from firing, demoting, harassing, or penalizing them.</p>
+                <p><strong>3. Remedy:</strong> If the LLP takes adverse action against the whistleblower, the aggrieved party can directly approach the tribunal to seek protection, reinstatement, and compensation.</p>
+            </div>
+
+            <div class="exam-box">
+                <div class="box-title">(c) Provisions related to Termination of Agency</div>
+                <p>A Contract of Agency can be terminated in two broad categories:</p>
+                <p><strong>1. By Act of Parties:</strong>
+                <ul>
+                    <li><strong>Revocation:</strong> The Principal cancels the agent's authority.</li>
+                    <li><strong>Renunciation:</strong> The Agent voluntarily resigns from the agency.</li>
+                    <li><strong>Completion:</strong> The specific business for which the agent was hired is finished.</li>
+                </ul></p>
+                <p><strong>2. By Operation of Law:</strong>
+                <ul>
+                    <li><strong>Death/Insolvency:</strong> Death or bankruptcy (insolvency) of either the Principal or the Agent automatically ends the agency.</li>
+                    <li><strong>Insanity:</strong> If the Agent loses their mental capacity (unsound mind), the agency is terminated.</li>
+                    <li><strong>Destroyed Subject Matter:</strong> If the subject matter of the agency is destroyed (e.g., a broker hired to sell a house that burns down).</li>
+                </ul></p>
+                <p><strong>3. Note on Irrevocable Agency (Sec 202):</strong> If the agency is coupled with an interest (where the agent has a personal financial stake in the property), it cannot be revoked by the principal.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 CampusNotes | PYQ Solutions for Delhi University</p>
+            <div class="watermark">B.Com (Hons) | Business Laws (DSC-2) | Sem I</div>
+        </div>
+
+    </div>
+</body>
+</html>

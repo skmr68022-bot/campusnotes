@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master Tricks · Important Points · Financial Accounting · CampusNotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f0f4fa;
+      font-family: 'Inter', -apple-system, sans-serif;
+      padding: 30px 20px;
+      color: #0b1e33;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    /* Header */
+    .sheet-header {
+      background: linear-gradient(145deg, #0b2b4a, #1a4b6d);
+      border-radius: 28px;
+      padding: 35px 40px 28px;
+      color: white;
+      box-shadow: 0 20px 40px rgba(0, 20, 40, 0.15);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .sheet-header .badge {
+      background: rgba(255, 215, 0, 0.15);
+      color: #fcd34d;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      padding: 6px 20px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255, 215, 0, 0.15);
+    }
+    .sheet-header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .sheet-header p {
+      font-size: 1rem;
+      opacity: 0.85;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .sheet-header .sub {
+      font-size: 0.8rem;
+      opacity: 0.5;
+      margin-top: 6px;
+    }
+
+    /* Cards */
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 24px 28px 28px;
+      box-shadow: 0 8px 24px rgba(0, 20, 40, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      margin-bottom: 22px;
+      transition: 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 14px 32px rgba(0, 20, 40, 0.08);
+    }
+    .card .title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0a1e3c;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid #e9edf2;
+      padding-bottom: 10px;
+    }
+    .card .title i { color: #2563eb; }
+    .card .title .tag {
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 2px 12px;
+      border-radius: 30px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-left: auto;
+    }
+    .card .title .tag.u2 { background: #dcfce7; color: #15803d; }
+    .card .title .tag.u3 { background: #fef3c7; color: #d97706; }
+    .card .title .tag.u4 { background: #ede9fe; color: #7c3aed; }
+    .card .title .tag.u5 { background: #fce4ec; color: #dc2626; }
+    .card .title .tag.all { background: #f59e0b; color: #fff; }
+
+    /* Trick Box */
+    .trick-box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 16px 20px;
+      border-left: 4px solid #2563eb;
+      margin: 10px 0 12px;
+    }
+    .trick-box .trick-label {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trick-box .trick-label i { color: #2563eb; }
+    .trick-box p {
+      font-size: 0.92rem;
+      color: #1e293b;
+      margin-top: 4px;
+    }
+    .trick-box .highlight {
+      background: #dbeafe;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+    .trick-box .highlight.gold {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    /* Steps Box */
+    .steps-box {
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 16px 20px;
+      border-left: 4px solid #f59e0b;
+      margin: 10px 0 12px;
+    }
+    .steps-box .steps-label {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #d97706;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .steps-box .steps-label i { color: #d97706; }
+    .steps-box ol {
+      margin-left: 20px;
+      line-height: 2.2;
+      font-size: 0.92rem;
+    }
+    .steps-box ol li strong {
+      color: #0b2b4a;
+    }
+
+    /* Grid for tricks */
+    .trick-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 8px 0;
+    }
+    .trick-item {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 14px 18px;
+      border: 1px solid #e2e8f0;
+      transition: 0.2s;
+    }
+    .trick-item:hover {
+      border-color: #2563eb;
+      background: #f1f5f9;
+    }
+    .trick-item .icon {
+      font-size: 1.2rem;
+      color: #2563eb;
+      margin-right: 8px;
+    }
+    .trick-item .text {
+      font-size: 0.92rem;
+    }
+    .trick-item .text strong {
+      color: #0b2b4a;
+    }
+    .trick-item .text .highlight {
+      background: #dbeafe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+
+    /* Memory Box */
+    .memory-box {
+      background: #fffbeb;
+      border-radius: 16px;
+      padding: 16px 20px;
+      border-left: 6px solid #f59e0b;
+      margin: 10px 0 12px;
+    }
+    .memory-box .memory-label {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #d97706;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .memory-box .memory-label i { color: #d97706; }
+    .memory-box .mnemonic {
+      font-family: 'Courier New', monospace;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #78350f;
+      background: #fef3c7;
+      padding: 4px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 4px 0;
+    }
+    .memory-box p {
+      font-size: 0.92rem;
+      color: #78350f;
+      margin-top: 4px;
+    }
+
+    .warning-box {
+      background: #fef2f2;
+      border-radius: 16px;
+      padding: 14px 20px;
+      border-left: 6px solid #dc2626;
+      margin: 10px 0 12px;
+    }
+    .warning-box .warn-label {
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #dc2626;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .warning-box .warn-label i { color: #dc2626; }
+    .warning-box p {
+      font-size: 0.92rem;
+      color: #991b1b;
+      margin-top: 4px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.85rem;
+      padding: 20px 0 10px;
+      border-top: 2px solid #e9edf2;
+      margin-top: 10px;
+    }
+    .footer-note i { color: #2563eb; }
+
+    @media (max-width: 700px) {
+      .trick-grid { grid-template-columns: 1fr; }
+      .sheet-header h1 { font-size: 1.8rem; }
+      .card { padding: 18px 16px; }
+      .card .title { font-size: 1rem; flex-wrap: wrap; }
+      .card .title .tag { margin-left: 0; }
+    }
+    @media print {
+      body { background: white; padding: 10px; }
+      .card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+      .sheet-header { background: #0b2b4a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .trick-item:hover { border-color: #e2e8f0; background: #f8fafc; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== HEADER ===== -->
+  <header class="sheet-header">
+    <span class="badge"><i class="fas fa-bolt"></i> EXAM MASTER</span>
+    <h1>Master Tricks &amp; Important Points</h1>
+    <p>Financial Accounting · B.Com (Hons.) Semester 1 · University of Delhi</p>
+    <p class="sub">Shortcuts · Memory Tricks · Step-by-Step Guides · Common Mistakes to Avoid</p>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 1: GOLDEN RULES                                       -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <div class="title">
+      <i class="fas fa-crown"></i> Golden Rules — Must Memorize
+      <span class="tag all">ALL UNITS</span>
+    </div>
+
+    <div class="trick-grid">
+      <div class="trick-item">
+        <span class="icon">📌</span>
+        <div class="text"><strong>Rule 1:</strong> Every adjustment has <span class="highlight">TWO</span> effects — one in P&amp;L/Trading and one in Balance Sheet.</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📌</span>
+        <div class="text"><strong>Rule 2:</strong> Trial Balance items go to <span class="highlight">ONLY ONE</span> place (Trading, P&amp;L, or Balance Sheet).</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📌</span>
+        <div class="text"><strong>Rule 3:</strong> PDD calculated <span class="highlight">AFTER</span> writing off bad debts.</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📌</span>
+        <div class="text"><strong>Rule 4:</strong> Discount on Debtors calculated <span class="highlight">AFTER</span> PDD.</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📌</span>
+        <div class="text"><strong>Rule 5:</strong> Change in Estimate = <span class="highlight">Prospective</span> (forward only). Change in Policy = <span class="highlight">Retrospective</span> (restate past).</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📌</span>
+        <div class="text"><strong>Rule 6:</strong> CGST and SGST can <span class="highlight">NEVER</span> be set off against each other.</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="warn-label"><i class="fas fa-exclamation-triangle"></i> Common Mistake Alert</div>
+      <p><strong>Don't forget:</strong> In Final Accounts, if you only record one side of an adjustment, your Balance Sheet will <strong>NOT tally</strong>! Always check: Debit effect + Credit effect = Complete entry.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 2: UNIT 1 — THEORETICAL FRAMEWORK                    -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <div class="title">
+      <i class="fas fa-book-open"></i> Unit 1 · Theoretical Framework
+      <span class="tag">UNIT 1</span>
+    </div>
+
+    <div class="trick-box">
+      <div class="trick-label"><i class="fas fa-memory"></i> Memory Tricks</div>
+      <p>
+        <strong>I-M-R-C:</strong> <span class="highlight">I</span>dentification → <span class="highlight">M</span>easurement → <span class="highlight">R</span>ecording → <span class="highlight">C</span>ommunication<br>
+        <strong>B-I-T:</strong> <span class="highlight">B</span>anks, <span class="highlight">I</span>nvestors, <span class="highlight">T</span>ax authorities (External Users)<br>
+        <strong>C-U-T-V:</strong> <span class="highlight">C</span>omparability, <span class="highlight">U</span>nderstandability, <span class="highlight">T</span>imeliness, <span class="highlight">V</span>erifiability<br>
+        <strong>G-C-A:</strong> <span class="highlight">G</span>oing Concern, <span class="highlight">C</span>onsistency, <span class="highlight">A</span>ccrual (AS-1)
+      </p>
+    </div>
+
+    <div class="steps-box">
+      <div class="steps-label"><i class="fas fa-list-check"></i> How to Solve Provisions &amp; Contingencies</div>
+      <ol>
+        <li><strong>Identify</strong> — Is it a present obligation or possible obligation?</li>
+        <li><strong>Probability Check</strong> — ≥50% = Probable → <span class="highlight">Provision</span>; &lt;50% = Possible → <span class="highlight">Contingent Liability</span></li>
+        <li><strong>Reliability Check</strong> — Can you estimate the amount reliably? If yes → Provision; If no → Contingent Liability</li>
+        <li><strong>Treatment</strong> — Provision = <span class="highlight gold">Recognized</span> (Debit P&amp;L, Liability in B/S); Contingent = <span class="highlight gold">NOT recognized</span> (Disclose in Notes)</li>
+      </ol>
+    </div>
+
+    <div class="memory-box">
+      <div class="memory-label"><i class="fas fa-brain"></i> Quick Recall</div>
+      <div class="mnemonic">"Provisions are Probable &amp; Reliable — Contingent are Possible &amp; Unreliable"</div>
+      <p><strong>Ind AS Applicability:</strong> Listed + Unlisted (Net Worth ≥ ₹250 Cr) → <span class="highlight">Ind AS</span> · Others → Traditional AS</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 3: UNIT 2 — DEPRECIATION & INVENTORY                 -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <div class="title">
+      <i class="fas fa-chart-line"></i> Unit 2 · Depreciation &amp; Inventory
+      <span class="tag u2">UNIT 2</span>
+    </div>
+
+    <div class="trick-grid">
+      <div class="trick-item">
+        <span class="icon">📐</span>
+        <div class="text"><strong>SLM Depreciation:</strong> (Cost – Scrap) × Rate % → <span class="highlight">Same every year</span></div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📐</span>
+        <div class="text"><strong>WDV Depreciation:</strong> Opening WDV × Rate % → <span class="highlight">Decreases every year</span></div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📅</span>
+        <div class="text"><strong>Depreciation Rule:</strong> Bought <span class="highlight">before 1st April</span> = Full year · After <span class="highlight">1st October</span> = Half year</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📦</span>
+        <div class="text"><strong>FIFO:</strong> Oldest stock sold first → Closing stock from <span class="highlight">latest purchases</span></div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">⚖️</span>
+        <div class="text"><strong>Weighted Average:</strong> Recalculate average <span class="highlight">after EVERY purchase</span></div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">🔥</span>
+        <div class="text"><strong>Normal Loss:</strong> Reduce <span class="highlight">quantity only</span> · <strong>Abnormal Loss:</strong> Remove <span class="highlight">quantity &amp; cost</span> → Charge to P&amp;L</div>
+      </div>
+    </div>
+
+    <div class="steps-box">
+      <div class="steps-label"><i class="fas fa-list-check"></i> How to Solve Change in Depreciation Method</div>
+      <ol>
+        <li><strong>Step 1:</strong> Calculate depreciation under <span class="highlight">OLD method</span> for all years.</li>
+        <li><strong>Step 2:</strong> Recalculate depreciation under <span class="highlight">NEW method</span> from <strong>Day 1</strong> (Retrospective).</li>
+        <li><strong>Step 3:</strong> Compare cumulative totals → <span class="highlight gold">Shortfall</span> = Debit to P&amp;L; <span class="highlight gold">Excess</span> = Credit to P&amp;L.</li>
+        <li><strong>Step 4:</strong> In the year of change, adjust the difference in P&amp;L.</li>
+      </ol>
+    </div>
+
+    <div class="memory-box">
+      <div class="memory-label"><i class="fas fa-brain"></i> Quick Recall</div>
+      <div class="mnemonic">"FIFO = First In First Out · WDV = Written Down Value · SLM = Same Every Year"</div>
+      <p><strong>AS 2:</strong> Inventory = <span class="highlight">Lower of Cost or NRV</span> · <strong>AS 10:</strong> PPE Cost = Price + Freight + Customs + Installation</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="warn-label"><i class="fas fa-exclamation-triangle"></i> Common Mistake Alert</div>
+      <p><strong>Don't forget:</strong> In WDV method, depreciation is calculated on <span class="highlight">Opening WDV</span> — NOT on cost! And in FIFO, always sell the <span class="highlight">oldest stock first</span>.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 4: UNIT 3 — FINAL ACCOUNTS & NPOs                    -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <div class="title">
+      <i class="fas fa-balance-scale"></i> Unit 3 · Final Accounts &amp; NPOs
+      <span class="tag u3">UNIT 3</span>
+    </div>
+
+    <div class="trick-grid">
+      <div class="trick-item">
+        <span class="icon">📊</span>
+        <div class="text"><strong>COGS:</strong> Opening Stock + Purchases + Direct Expenses – Closing Stock</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📊</span>
+        <div class="text"><strong>Gross Profit:</strong> Sales – COGS</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📊</span>
+        <div class="text"><strong>Net Profit:</strong> GP + Other Incomes – Other Expenses</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📊</span>
+        <div class="text"><strong>Balance Sheet:</strong> Assets = Liabilities + Capital</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📋</span>
+        <div class="text"><strong>Closing Capital:</strong> Opening Capital + Net Profit + Interest on Capital – Drawings – Interest on Drawings</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📋</span>
+        <div class="text"><strong>NPO Subscription:</strong> Received – Outstanding(beg) – Advance(end) + Outstanding(end) + Advance(beg)</div>
+      </div>
+    </div>
+
+    <div class="steps-box">
+      <div class="steps-label"><i class="fas fa-list-check"></i> How to Solve Final Accounts (Step-by-Step)</div>
+      <ol>
+        <li><strong>Step 1:</strong> Read the Trial Balance and <span class="highlight">mark all adjustments</span> (star them!).</li>
+        <li><strong>Step 2:</strong> Draw <span class="highlight">Trading A/c, P&amp;L A/c, and Balance Sheet</span> formats side by side.</li>
+        <li><strong>Step 3:</strong> <span class="highlight">One-touch rule</span> — Post each Trial Balance item to ONLY ONE place.</li>
+        <li><strong>Step 4:</strong> For adjustments, use the <span class="highlight">inner column</span> — show adjustment in inner column, net in outer column.</li>
+        <li><strong>Step 5:</strong> Always record <span class="highlight">TWO effects</span> for each adjustment (one in P&amp;L/Trading, one in Balance Sheet).</li>
+        <li><strong>Step 6:</strong> Check if totals match! If not, run the diagnostic check.</li>
+      </ol>
+    </div>
+
+    <div class="memory-box">
+      <div class="memory-label"><i class="fas fa-brain"></i> Quick Recall — Adjustments</div>
+      <div class="mnemonic">"Closing Stock = Credit to Trading + Asset · Outstanding = Add to Expense + Liability · Prepaid = Subtract from Expense + Asset"</div>
+      <p><strong>PDD:</strong> Calculate <span class="highlight">AFTER</span> bad debts · <strong>Discount on Debtors:</strong> Calculate <span class="highlight">AFTER</span> PDD</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="warn-label"><i class="fas fa-exclamation-triangle"></i> Common Mistake Alert</div>
+      <p><strong>Don't forget:</strong> In PDD, Debtors amount = <span class="highlight">Sundry Debtors – Further Bad Debts</span>. In Discount on Debtors, amount = <span class="highlight">Debtors after PDD</span>.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 5: UNIT 4 — BRANCHES, DEPARTMENTS & LEASES            -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <div class="title">
+      <i class="fas fa-store-alt"></i> Unit 4 · Branches, Departments &amp; Leases
+      <span class="tag u4">UNIT 4</span>
+    </div>
+
+    <div class="trick-grid">
+      <div class="trick-item">
+        <span class="icon">🏪</span>
+        <div class="text"><strong>Debtors System — Branch Account:</strong> Debit = Opening Stock + Goods sent + Expenses · Credit = Sales + Cash from Debtors + Closing Stock</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📐</span>
+        <div class="text"><strong>Closing Debtors:</strong> Opening + Credit Sales – Cash – Discount – Bad Debts</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">🏷️</span>
+        <div class="text"><strong>Loading (Cost+25%):</strong> <span class="highlight">1/5</span> of Invoice Price · <strong>Loading (Cost+50%):</strong> <span class="highlight">1/3</span> of Invoice Price</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">🏢</span>
+        <div class="text"><strong>Departmental — Rent:</strong> Floor Area · <strong>Salaries:</strong> Employees · <strong>Depreciation:</strong> Asset Value · <strong>Selling:</strong> Sales</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📄</span>
+        <div class="text"><strong>GIL:</strong> (Rental × Years) + GRV + UGRV</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📄</span>
+        <div class="text"><strong>UFI:</strong> GIL – Fair Value · <strong>Net Investment:</strong> Fair Value – UGRV</div>
+      </div>
+    </div>
+
+    <div class="steps-box">
+      <div class="steps-label"><i class="fas fa-list-check"></i> How to Solve Stock &amp; Debtors System (with Loading)</div>
+      <ol>
+        <li><strong>Step 1:</strong> Find Loading % — Cost+25% = <span class="highlight">1/5 of IP</span>; Cost+50% = <span class="highlight">1/3 of IP</span>.</li>
+        <li><strong>Step 2:</strong> Prepare <span class="highlight">Branch Stock A/c</span> — all entries at Invoice Price.</li>
+        <li><strong>Step 3:</strong> Prepare <span class="highlight">Branch Debtors A/c</span> — find closing debtors.</li>
+        <li><strong>Step 4:</strong> Calculate <span class="highlight">Stock Reserve</span> = Closing Stock × Loading %.</li>
+        <li><strong>Step 5:</strong> Prepare <span class="highlight">Branch Adjustment A/c</span> — remove loading from Goods sent, Returns, Stock, Abnormal Loss → finds <span class="highlight gold">Gross Profit</span>.</li>
+        <li><strong>Step 6:</strong> Prepare <span class="highlight">Branch P&amp;L A/c</span> — Gross Profit – Expenses = <span class="highlight gold">Net Profit</span>.</li>
+      </ol>
+    </div>
+
+    <div class="memory-box">
+      <div class="memory-label"><i class="fas fa-brain"></i> Quick Recall</div>
+      <div class="mnemonic">"Cost+25 = 1/5 IP · Cost+50 = 1/3 IP · GIL = Total Money · UFI = Profit/Interest"</div>
+      <p><strong>Branch Profit/Loss:</strong> Credit side bigger = <span class="highlight green">Profit</span> · Debit side bigger = <span class="highlight red">Loss</span></p>
+    </div>
+
+    <div class="warning-box">
+      <div class="warn-label"><i class="fas fa-exclamation-triangle"></i> Common Mistake Alert</div>
+      <p><strong>Don't forget:</strong> In Stock &amp; Debtors System, <span class="highlight">Stock Reserve</span> is calculated on <span class="highlight">Closing Stock</span> only! And in Branch Debtors A/c, <span class="highlight">Credit Sales</span> comes from Branch Stock A/c.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 6: UNIT 5 — COMPUTERIZED ACCOUNTING                  -->
+  <!-- ============================================================ -->
+
+  <div class="card">
+    <div class="title">
+      <i class="fas fa-laptop"></i> Unit 5 · Computerized Accounting
+      <span class="tag u5">UNIT 5</span>
+    </div>
+
+    <div class="trick-grid">
+      <div class="trick-item">
+        <span class="icon">⌨️</span>
+        <div class="text"><strong>Contra (F4):</strong> Cash/Bank transfers</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">⌨️</span>
+        <div class="text"><strong>Payment (F5):</strong> All payments</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">⌨️</span>
+        <div class="text"><strong>Receipt (F6):</strong> All receipts</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">⌨️</span>
+        <div class="text"><strong>Journal (F7):</strong> Adjustments, credit purchases of assets</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">⌨️</span>
+        <div class="text"><strong>Sales (F8):</strong> All sales · <strong>Purchase (F9):</strong> All purchases</div>
+      </div>
+      <div class="trick-item">
+        <span class="icon">📊</span>
+        <div class="text"><strong>Reports:</strong> Cash Book · Ledger · Trial Balance · P&amp;L · B/S · Cash Flow</div>
+      </div>
+    </div>
+
+    <div class="steps-box">
+      <div class="steps-label"><i class="fas fa-list-check"></i> How to Solve GST — ITC Utilization</div>
+      <ol>
+        <li><strong>Step 1:</strong> Start with <span class="highlight">Input IGST</span> → set off against Output IGST <span class="highlight gold">FIRST</span>.</li>
+        <li><strong>Step 2:</strong> Use remaining Input IGST against Output CGST, then Output SGST.</li>
+        <li><strong>Step 3:</strong> Use <span class="highlight">Input CGST</span> → set off against Output CGST <span class="highlight gold">FIRST</span>, then Output IGST.</li>
+        <li><strong>Step 4:</strong> Use <span class="highlight">Input SGST</span> → set off against Output SGST <span class="highlight gold">FIRST</span>, then Output IGST.</li>
+        <li><strong>Step 5:</strong> <span class="highlight red">REMEMBER:</span> CGST and SGST can <strong>NEVER</strong> be set off against each other!</li>
+        <li><strong>Step 6:</strong> Cash Payable = Total Output GST – Total ITC Utilized.</li>
+      </ol>
+    </div>
+
+    <div class="memory-box">
+      <div class="memory-label"><i class="fas fa-brain"></i> Quick Recall — GST Order</div>
+      <div class="mnemonic">"IGST can go anywhere (IGST → CGST → SGST). CGST can go to CGST or IGST. SGST can go to SGST or IGST. <span style="color:#dc2626;">CGST and SGST can NEVER swap with each other!</span>"</div>
+      <p><strong>3-2-1 Backup:</strong> <span class="highlight">3</span> copies · <span class="highlight">2</span> media · <span class="highlight">1</span> off-site</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="warn-label"><i class="fas fa-exclamation-triangle"></i> Common Mistake Alert</div>
+      <p><strong>Don't forget:</strong> Input CGST <span class="highlight red">CANNOT</span> be set off against Output SGST! And Input SGST <span class="highlight red">CANNOT</span> be set off against Output CGST! This is the <strong>BIGGEST GST trap</strong> in exams.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 7: MASTER DIAGNOSTIC CHECKLIST                        -->
+  <!-- ============================================================ -->
+
+  <div class="card" style="border: 2px solid #2563eb; background: #eff6ff;">
+    <div class="title" style="border-bottom-color: #93c5fd;">
+      <i class="fas fa-stethoscope" style="color:#2563eb;"></i> Diagnostic Checklist — If Balance Sheet Doesn't Tally
+      <span class="tag all">ALL UNITS</span>
+    </div>
+
+    <div class="trick-grid">
+      <div class="trick-item" style="border-left: 4px solid #dc2626;">
+        <span class="icon">🔍</span>
+        <div class="text"><strong>Check 1:</strong> Did you bring down <span class="highlight">Net Profit/Loss</span> from P&amp;L to Balance Sheet? (Most common mistake!)</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #f59e0b;">
+        <span class="icon">🔍</span>
+        <div class="text"><strong>Check 2:</strong> Did you record <span class="highlight">TWO effects</span> for every adjustment? (One in P&amp;L/Trading, one in B/S)</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #7c3aed;">
+        <span class="icon">🔍</span>
+        <div class="text"><strong>Check 3:</strong> Did you calculate <span class="highlight">PDD</span> correctly? (After bad debts, not before)</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #15803d;">
+        <span class="icon">🔍</span>
+        <div class="text"><strong>Check 4:</strong> Did you calculate <span class="highlight">Discount on Debtors</span> correctly? (After PDD, not before)</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #d97706;">
+        <span class="icon">🔍</span>
+        <div class="text"><strong>Check 5:</strong> Did you <span class="highlight">deduct</span> depreciation from the correct asset in Balance Sheet?</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #2563eb;">
+        <span class="icon">🔍</span>
+        <div class="text"><strong>Check 6:</strong> Did you <span class="highlight">add</span> outstanding expenses and <span class="highlight">subtract</span> prepaid expenses correctly?</div>
+      </div>
+    </div>
+
+    <div class="memory-box" style="border-left-color: #2563eb; background: #dbeafe;">
+      <div class="memory-label" style="color:#1d4ed8;"><i class="fas fa-rocket"></i> Exam-Day Speed Trick</div>
+      <p><strong>Inner Column Method:</strong> When solving adjustments, write the adjustment in an <span class="highlight">inner column</span> and the <span class="highlight">net amount</span> in the outer column. This saves time and reduces errors!</p>
+      <div style="background:white; padding:10px 16px; border-radius:8px; margin-top:6px; font-family:monospace; font-size:0.85rem; border:1px solid #93c5fd;">
+        Example: Salaries ₹2,20,000 + Outstanding ₹20,000 = <strong>Net ₹2,40,000</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 8: SPEED TRICKS                                       -->
+  <!-- ============================================================ -->
+
+  <div class="card" style="border: 2px solid #f59e0b; background: #fffbeb;">
+    <div class="title" style="border-bottom-color: #fde68a;">
+      <i class="fas fa-rocket" style="color:#f59e0b;"></i> Speed Tricks — Save Time in Exams
+      <span class="tag all">ALL UNITS</span>
+    </div>
+
+    <div class="trick-grid">
+      <div class="trick-item" style="border-left: 4px solid #f59e0b;">
+        <span class="icon">⚡</span>
+        <div class="text"><strong>Depreciation:</strong> If machine bought on <span class="highlight">1st October</span> = Half year. If bought on <span class="highlight">1st July</span> = 9 months (if year ends 31st March).</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #f59e0b;">
+        <span class="icon">⚡</span>
+        <div class="text"><strong>FIFO:</strong> Closing stock always from <span class="highlight">latest purchases</span>. No need to track every sale — just remove oldest layers first.</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #f59e0b;">
+        <span class="icon">⚡</span>
+        <div class="text"><strong>Weighted Average:</strong> After each purchase, <span class="highlight">recalculate average</span> = Total Cost ÷ Total Units. Use this average for the next sale.</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #f59e0b;">
+        <span class="icon">⚡</span>
+        <div class="text"><strong>Branch Account:</strong> Debit = <span class="highlight">Opening + Goods sent + Expenses</span> · Credit = <span class="highlight">Sales + Cash from Debtors + Closing Stock</span></div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #f59e0b;">
+        <span class="icon">⚡</span>
+        <div class="text"><strong>GST:</strong> Always start with <span class="highlight">Input IGST</span> first. Then Input CGST. Then Input SGST.</div>
+      </div>
+      <div class="trick-item" style="border-left: 4px solid #f59e0b;">
+        <span class="icon">⚡</span>
+        <div class="text"><strong>Voucher Types:</strong> <span class="highlight">F4</span> Contra · <span class="highlight">F5</span> Payment · <span class="highlight">F6</span> Receipt · <span class="highlight">F7</span> Journal · <span class="highlight">F8</span> Sales · <span class="highlight">F9</span> Purchase</div>
+      </div>
+    </div>
+
+    <div class="memory-box" style="border-left-color: #f59e0b; background: #fef3c7;">
+      <div class="memory-label" style="color:#d97706;"><i class="fas fa-bolt"></i> Last-Minute Exam Strategy</div>
+      <ol style="margin-left:20px; line-height:2.2; color:#78350f;">
+        <li><strong>Read adjustments first</strong> — mark them in the Trial Balance.</li>
+        <li><strong>Draw formats</strong> — Trading, P&amp;L, and Balance Sheet side by side.</li>
+        <li><strong>One-touch rule</strong> — post each TB item once.</li>
+        <li><strong>Inner column trick</strong> — show adjustment in inner column, net in outer column.</li>
+        <li><strong>Always add narration</strong> — it secures marks even if figures are slightly off.</li>
+        <li><strong>Check totals</strong> — P&amp;L and Balance Sheet must balance.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                        -->
+  <!-- ============================================================ -->
+
+  <div class="footer-note">
+    <i class="fas fa-check-circle"></i> Master Tricks &amp; Important Points — Complete Reference.
+    <span style="display:inline-block; margin-left:12px;"><i class="fas fa-copyright"></i> CampusNotes · B.Com Sem 1</span>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Revision: Business Law | B.Com (Hons) Sem 1 - CampusNotes</title>
+    <style>
+        :root {
+            --navy: #0f172a;
+            --blue: #2563eb;
+            --sky: #e0f2fe;
+            --cream: #fffdf7;
+            --gold: #f59e0b;
+            --green: #059669;
+            --red: #dc2626;
+            --slate: #475569;
+            --border: #e2e8f0;
+            --card: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            line-height: 1.65;
+        }
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 32px 18px 60px;
+        }
+
+        .brand-header {
+            border-radius: 28px;
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: white;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+        }
+
+        .brand-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #bfdbfe;
+        }
+
+        .badge {
+            display: inline-flex;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        h1 {
+            margin: 20px 0 0;
+            font-size: clamp(32px, 5vw, 54px);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .subtitle {
+            margin-top: 14px;
+            max-width: 720px;
+            color: #dbeafe;
+            font-size: 17px;
+        }
+
+        .meta-grid {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .meta-card {
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #bfdbfe;
+            font-weight: 900;
+        }
+
+        .meta-value {
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .section {
+            margin-top: 28px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+            page-break-inside: avoid;
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: 26px;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            margin: 22px 0 10px;
+            font-size: 20px;
+            color: #1d4ed8;
+        }
+
+        p {
+            margin: 10px 0;
+            color: var(--slate);
+        }
+
+        ul, ol {
+            color: var(--slate);
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        .highlight-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .exam-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+        }
+
+        .quick-box {
+            margin: 18px 0;
+            border-radius: 20px;
+            padding: 18px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+        }
+
+        .box-title {
+            margin: 0 0 8px;
+            font-weight: 900;
+            color: var(--navy);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            overflow: hidden;
+            border-radius: 18px;
+            page-break-inside: avoid;
+        }
+
+        th {
+            background: #0f172a;
+            color: white;
+            text-align: left;
+            padding: 14px;
+            font-size: 14px;
+        }
+
+        td {
+            border: 1px solid var(--border);
+            padding: 14px;
+            color: var(--slate);
+            vertical-align: top;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .watermark {
+            margin-top: 8px;
+            font-weight: 900;
+            color: #1d4ed8;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { max-width: 100%; padding: 0; }
+            .section, .brand-header { box-shadow: none; }
+            .section { page-break-inside: avoid; }
+        }
+
+        @media (max-width: 700px) {
+            .meta-grid { grid-template-columns: 1fr; }
+            .section, .brand-header { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <div class="brand-header">
+            <div class="brand-row">
+                <span class="brand">CampusNotes</span>
+                <span class="badge">Last-Minute Revision</span>
+            </div>
+            <h1>Quick Revision: Business Law</h1>
+            <div class="subtitle">DSC-2 | B.Com (Hons) Sem I | Paper 1404</div>
+            <div class="meta-grid">
+                <div class="meta-card"><div class="meta-label">Total Units</div><div class="meta-value">1 to 5</div></div>
+                <div class="meta-card"><div class="meta-label">Exam Focus</div><div class="meta-value">High Yield Tables & Cases</div></div>
+                <div class="meta-card"><div class="meta-label">PDF Export</div><div class="meta-value">Press Ctrl+P</div></div>
+            </div>
+        </div>
+
+        <!-- ======================== UNIT 1 ======================== -->
+        <div class="section">
+            <h2>🔹 Unit 1: Indian Contract Act, 1872</h2>
+            <div class="quick-box">
+                <div class="box-title">Contract Formula</div>
+                <p><strong>Sec 2(h):</strong> Agreement + Legal Enforceability = Contract.<br>
+                <strong>Sec 10 Essentials:</strong> Offer, Acceptance, Consideration, Capacity, Free Consent, Lawful Object, Legal Relations.</p>
+            </div>
+            <h3>Consideration (Sec 2(d))</h3>
+            <p><strong>Rule:</strong> "No consideration, no contract."<br>
+            <strong>Exceptions:</strong> Natural love/affection (written/registered), Past voluntary services, Time-barred debt (written), Agency, Gifts.</p>
+
+            <h3>Capacity (Sec 11-12)</h3>
+            <ul>
+                <li><strong>Minor:</strong> Agreement is <em>Void ab initio</em> (<strong>Case:</strong> Mohori Bibee v. Dharmodas Ghose).</li>
+                <li><strong>Restitution:</strong> Minor must return goods only if they still possess them; no monetary compensation for consumed goods.</li>
+                <li><strong>Sound Mind:</strong> Lunatics/insane persons cannot contract.</li>
+            </ul>
+
+            <h3>Free Consent (Vitiating Factors)</h3>
+            <ul>
+                <li><strong>Coercion (Sec 15):</strong> Threatening with criminal force (Voidable).</li>
+                <li><strong>Undue Influence (Sec 16):</strong> Dominating will (Voidable).</li>
+                <li><strong>Fraud (Sec 17):</strong> Intentional deceit (Voidable).</li>
+                <li><strong>Misrepresentation (Sec 18):</strong> Innocent falsehood (Voidable).</li>
+                <li><strong>Mistake (Sec 20):</strong> Both parties misunderstand a material fact (Void).</li>
+            </ul>
+
+            <div class="highlight-box">
+                <div class="box-title">Void Agreements (Sec 24-30)</div>
+                <ul>
+                    <li><strong>Sec 27 (Restraint of Trade):</strong> Void. <strong>Exception:</strong> Sale of Goodwill (restricting trade within a specific local area/time).</li>
+                    <li><strong>Sec 28:</strong> Restraint of legal proceedings → Void.</li>
+                    <li><strong>Sec 30:</strong> Wagering agreements (Gambling) → Void.</li>
+                </ul>
+            </div>
+            <h3>Quasi-Contracts (Sec 68-72)</h3>
+            <p>Obligations imposed by law to prevent unjust enrichment. Include: Supply of necessaries to minors (Sec 68), Finder of goods (Sec 71), Money paid by mistake (Sec 72).</p>
+        </div>
+
+        <!-- ======================== UNIT 2 ======================== -->
+        <div class="section">
+            <h2>🔹 Unit 2: Discharge & Remedies</h2>
+            <h3>Modes of Discharge</h3>
+            <ul>
+                <li><strong>Performance:</strong> Natural completion.</li>
+                <li><strong>Agreement (Sec 62):</strong> Novation (replace contract), Rescission (cancel), Alteration (change), Waiver (give up right), Merger.</li>
+                <li><strong>Supervening Impossibility (Sec 56):</strong> Frustration. E.g., destruction of subject matter, war, death. (<strong>Case:</strong> Taylor v. Caldwell).</li>
+                <li><strong>Breach:</strong> Failure to perform.</li>
+            </ul>
+            <h3>Breach of Contract</h3>
+            <ul>
+                <li><strong>Actual:</strong> Occurs on due date.</li>
+                <li><strong>Anticipatory:</strong> Occurs BEFORE due date. Victim can sue immediately. (<strong>Case:</strong> Hochster v. De La Tour).</li>
+            </ul>
+            <h3>Remedies (5 Types)</h3>
+            <ul>
+                <li><strong>Rescission:</strong> Cancel the contract.</li>
+                <li><strong>Damages (Sec 73-74):</strong>
+                    <ul>
+                        <li>Ordinary (Natural loss).</li>
+                        <li>Special (Remoteness - need prior knowledge; <strong>Case:</strong> Hadley v. Baxendale).</li>
+                        <li>Exemplary (Punitive - dishonor of cheque, marriage breach).</li>
+                        <li>Nominal (No actual loss, just recognition).</li>
+                        <li>Liquidated (Genuine estimate - allowed) vs Penalty (Exorbitant - not allowed, court gives reasonable).</li>
+                    </ul>
+                </li>
+                <li><strong>Quantum Meruit (Sec 65):</strong> "As much as earned" - claim for work already done.</li>
+                <li><strong>Specific Performance:</strong> Court orders actual execution (for unique goods/land).</li>
+                <li><strong>Injunction:</strong> Court orders to STOP doing something.</li>
+            </ul>
+        </div>
+
+        <!-- ======================== UNIT 3 ======================== -->
+        <div class="section">
+            <h2>🔹 Unit 3: Special Contracts</h2>
+            <h3>Indemnity vs Guarantee</h3>
+            <table>
+                <tr><th>Basis</th><th>Indemnity</th><th>Guarantee</th></tr>
+                <tr><td>Parties</td><td>2 (Indemnifier, Holder)</td><td>3 (Principal Debtor, Creditor, Surety)</td></tr>
+                <tr><td>Liability</td><td>Primary</td><td>Secondary (Surety pays if Debtor defaults)</td></tr>
+                <tr><td>Example</td><td>Insurance Policies</td><td>Bank Loans with Co-Signer</td></tr>
+            </table>
+
+            <h3>Bailment vs Pledge</h3>
+            <table>
+                <tr><th>Basis</th><th>Bailment</th><th>Pledge</th></tr>
+                <tr><td>Purpose</td><td>Safekeeping / Repair</td><td>Security for a Debt</td></tr>
+                <tr><td>Right to Sell</td><td>Bailee CANNOT sell</td><td>Pawnee CAN sell (after notice)</td></tr>
+            </table>
+
+            <h3>Contract of Agency</h3>
+            <ul>
+                <li><strong>Creation:</strong> Express, Implied, Estoppel (Holding out), Necessity (Emergency), Ratification (Approval later).</li>
+                <li><strong>Termination:</strong> Revocation, Renunciation, Death/Insolvency, Completion of objective.</li>
+                <li><strong>Sec 202:</strong> Agency "coupled with interest" is irrevocable.</li>
+            </ul>
+        </div>
+
+        <!-- ======================== UNIT 4 ======================== -->
+        <div class="section">
+            <h2>🔹 Unit 4: Sale of Goods Act, 1930</h2>
+            <h3>Sale vs Agreement to Sell</h3>
+            <table>
+                <tr><th>Basis</th><th>Sale (Executed)</th><th>Agreement to Sell (Executory)</th></tr>
+                <tr><td>Ownership</td><td>Passes immediately</td><td>Passes in future</td></tr>
+                <tr><td>Risk</td><td>On Buyer</td><td>On Seller</td></tr>
+                <tr><td>Remedy</td><td>Sue for Price</td><td>Sue for Damages only</td></tr>
+            </table>
+            
+            <h3>Conditions (Essential) vs Warranties (Collateral)</h3>
+            <ul>
+                <li><strong>Condition:</strong> Breach → Right to reject goods + Damages.</li>
+                <li><strong>Warranty:</strong> Breach → Right to claim Damages ONLY (cannot reject).</li>
+                <li><strong>Implied Conditions (Sec 14):</strong> Title, Description, Fitness for purpose, Merchantable quality, Sale by sample.</li>
+            </ul>
+
+            <div class="exam-box">
+                <div class="box-title">Golden Rules for Unit 4</div>
+                <ul>
+                    <li><strong>Caveat Emptor (Sec 16):</strong> "Buyer beware." <strong>Exceptions:</strong> Specific purpose + relying on seller, Fraud, Latent defects, Merchantable quality.</li>
+                    <li><strong>Nemo dat (Sec 27):</strong> "No one gives what he doesn't have." <strong>Exceptions:</strong> Mercantile agent, Co-owner, Voidable title, Unpaid seller's resale.</li>
+                    <li><strong>Unpaid Seller's rights (Sec 47-54):</strong> (Against goods) - <strong>Lien</strong> (retain possession), <strong>Stoppage in transit</strong> (stop goods with carrier), <strong>Resale</strong> (sell to 3rd party).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ======================== UNIT 5 ======================== -->
+        <div class="section">
+            <h2>🔹 Unit 5: Limited Liability Partnership Act, 2008</h2>
+            <h3>Salient Features</h3>
+            <ul>
+                <li><strong>Hybrid:</strong> Limited liability of Company + Flexibility of Partnership.</li>
+                <li><strong>Separate Legal Entity:</strong> Owns assets, sues in its own name.</li>
+                <li><strong>Limited Liability:</strong> Partners' personal assets are safe (except for own fraud).</li>
+                <li><strong>Perpetual Succession:</strong> Death of a partner doesn't dissolve it.</li>
+                <li><strong>Minimum Partners:</strong> 2 (No max limit). At least 2 must be <strong>Designated Partners</strong> (Individuals).</li>
+            </ul>
+            
+            <h3>LLP v/s Partnership Firm</h3>
+            <ul>
+                <li><strong>Registration:</strong> LLP is <em>mandatory</em>; Partnership is <em>optional</em>.</li>
+                <li><strong>Liability:</strong> LLP is <em>Limited</em>; Partnership is <em>Unlimited</em>.</li>
+            </ul>
+
+            <h3>LLP Agreement (Sec 23) & Incorporation</h3>
+            <ul>
+                <li>Apply for Name (RUN-LLP) → File Form LLP-1 (Incorporation Doc) → Get Certificate of Incorporation → File LLP-3 (Agreement) within 30 days.</li>
+                <li><strong>Designated Partners:</strong> Responsible for all statutory filings/compliances.</li>
+                <li><strong>Whistleblowing (Sec 34):</strong> Partners/employees protected from harassment if they report fraud.</li>
+                <li><strong>Conversion (Sec 55):</strong> Partnership Firm or Private Company can convert into LLP with consent.</li>
+            </ul>
+        </div>
+
+        <!-- ======================== FINAL SUMMARY ======================== -->
+        <div class="section" style="border: 2px solid var(--gold); background: #fffbeb;">
+            <h2>🎯 5-Minute Exam Checklist</h2>
+            <ul>
+                <li><strong>Unit 1</strong> - Memorize: Minor = Void ab initio. Exception to No Consideration. Sec 27 Restraint of Trade (Sale of Goodwill allowed).</li>
+                <li><strong>Unit 2</strong> - Memorize: Difference between Damages vs Penalty. 3 rights under Quantum Meruit. Rule of Remoteness (Hadley v. Baxendale) for Mr. Rahim case.</li>
+                <li><strong>Unit 3</strong> - Memorize: Difference tables (Indemnity vs Guarantee, Bailment vs Pledge). Agency creation (Estoppel/Necessity).</li>
+                <li><strong>Unit 4</strong> - Memorize: Caveat Emptor exceptions. Nemo dat exceptions. Unpaid Seller's 3 rights against goods (Lien, Stoppage, Resale).</li>
+                <li><strong>Unit 5</strong> - Memorize: Features of LLP. Difference from Partnership. Designated Partners & Whistleblowing.</li>
+            </ul>
+            <div style="text-align: center; margin-top: 15px; border-top: 1px dashed var(--gold); padding-top: 15px;">
+                <p><strong>Best of Luck for your Semester 1 Exams! 🎓</strong></p>
+                <p style="font-size: 0.8rem; color: var(--slate);">Press Ctrl+P to save this page as a high-quality PDF revision guide.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 CampusNotes | Premium Study Materials for Delhi University</p>
+            <div class="watermark">B.Com (Hons) | Business Laws (DSC-2) | Sem I</div>
+        </div>
+
+    </div>
+</body>
+</html>
